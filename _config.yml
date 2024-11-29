@@ -20,10 +20,8 @@ author: Eglantine Vialaneix, Gabrielle Blouvac, Julia Guignon, Anasse El boudiri
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  Dataset: "https://snap.stanford.edu/data/wikispeedia.html"
+  GitHub: "https://github.com/epfl-ada/ada-2024-project-outlier-1"
   Author's home: "https://deanattali.com"
 
 ################

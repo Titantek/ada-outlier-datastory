@@ -9,7 +9,7 @@ subtitle: This is where I will tell my friends way too much about me
 First analysis: categories.
 Explanation of categories cleaning.
 Plots of the dataset:
-<iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" alt='Pie chart of the categories'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="600px" height="600px" alt='Pie chart of the categories'></iframe>
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20647045"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20647045/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
 
 Analysis of categories of paths finished/unfinished:
@@ -18,13 +18,13 @@ Analysis of categories of paths finished/unfinished:
 + statistical tests
 
 Analysis of other datas for finished/unfinished:
-![distrib_shortest_paths_duration](ada-outlier-datastory/distrib_shortest_paths_duration.png)
+![distrib_shortest_paths_duration](/ada-outlier-datastory/distrib_shortest_paths_duration.png)
 
 Further comparison between finished/unfinished:
-![distrib_paths_per_game](ada-outlier-datastory/distrib_paths_per_game.png)
+![distrib_paths_per_game](/ada-outlier-datastory/distrib_paths_per_game.png)
 
 Influence of the shortest path on success:
-<iframe src="/ada-outlier-datastory/assets/img/comparison_distrib_paths.html" alt='comparison_distrib_paths'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/comparison_distrib_paths.html" width="600px" height="3000px" alt='comparison_distrib_paths'></iframe>
 
 Influence of the number of links:
 scatter plot

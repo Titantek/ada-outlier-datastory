@@ -18,10 +18,10 @@ Analysis of categories of paths finished/unfinished:
 + statistical tests
 
 Analysis of other datas for finished/unfinished:
-![distrib_shortest_paths_duration]({{ '/distrib_shortest_paths_duration.png' | relative_url }})
+![distrib_shortest_paths_duration](ada-outlier-datastory/distrib_shortest_paths_duration.png)
 
 Further comparison between finished/unfinished:
-![distrib_paths_per_game]({{ '/distrib_paths_per_game.png' | relative_url }})
+![distrib_paths_per_game](ada-outlier-datastory/distrib_paths_per_game.png)
 
 Influence of the shortest path on success:
 <iframe src="/ada-outlier-datastory/assets/img/comparison_distrib_paths.html" alt='comparison_distrib_paths'></iframe>

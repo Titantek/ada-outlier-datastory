@@ -19,7 +19,7 @@ Analysis of categories of paths finished/unfinished:
 
 Analysis of other datas for finished/unfinished:
 
-![distrib_shortest_paths_duration](/ada-outlier-datastory/assets/img/distrib_shortest_paths_duration.png)
+![distrib_shortest_paths_duration](/ada-outlier-datastory/assets/img/distrib_shortest_path_duration.png)
 
 Further comparison between finished/unfinished:
 

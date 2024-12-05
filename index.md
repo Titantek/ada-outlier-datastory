@@ -9,7 +9,8 @@ ceci est un test
 
 voici de chouettes plots:
 
-![Pie chart of the categories]({{'/assets/img/pie_cat.html'}})
+![Pie chart of the categories]({{ '/assets/img/pie_cat.html' | relative_url }})
+
 # Part 2
 
 # Part 3

@@ -6,6 +6,10 @@ subtitle: This is where I will tell my friends way too much about me
 
 # Part 1
 ceci est un test
+
+voici de chouettes plots:
+
+![Pie chart of the categories]({{'/assets/img/pie_cat.html'}})
 # Part 2
 
 # Part 3

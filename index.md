@@ -9,7 +9,7 @@ ceci est un test
 
 voici de chouettes plots:
 
-![Pie chart of the categories]({{ '/assets/img/pie_cat.html' | relative_url }})
+<iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="100%" height="100%" alt='Pie chart of the categories'></iframe>
 
 # Part 2
 

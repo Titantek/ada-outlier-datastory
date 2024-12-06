@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Back to the Future \: Time-Traveling through Wikispeedia
+title: Back to the Future - Time-Traveling through Wikispeedia
 ---
 
 # Part 1

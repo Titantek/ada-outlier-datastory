@@ -28,7 +28,7 @@ Further comparison between finished/unfinished:
 Influence of the shortest path on success:
 <iframe src="/ada-outlier-datastory/assets/img/comparison_distrib_paths.html" width="100%" height="2000px" alt='comparison_distrib_paths'></iframe>
 
-<iframe src="/ada-outlier-datastory/assets/img/distrib_path_length_wrt_shortest_path.html" width="500px" height="500px" alt='comparison_distrib_paths'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="500px" height="500px" alt='comparison_distrib_paths'></iframe>
 
 Influence of the number of links:
 scatter plot

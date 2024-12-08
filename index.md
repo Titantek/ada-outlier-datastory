@@ -58,12 +58,14 @@ table with results?
 
 Wikipedia structure comparison : 
 overall differences 
+
 ![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
 
 
 ![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
 
 network differences 
+
 ![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png)
 
 

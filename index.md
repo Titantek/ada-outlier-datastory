@@ -56,6 +56,20 @@ table with results?
 
 # Part 2
 
+Wikipedia structure comparison : 
+overall differences 
+![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
+
+
+![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
+
+network differences 
+![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png)
+
+
+![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
+
+
 # Part 3
 
 # Part 4

@@ -8,12 +8,12 @@ subtitle: Back to the Future - Time-Traveling through Wikispeedia
 M: Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would.
 D: What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
 M: Ok, ok, hear me out:
-* small presentation about Wikispeedia principle and how to play the game *
+~ small presentation about Wikispeedia principle and how to play the game ~
 D: Fascinating! Marty, you are saying it is harder that you thought, how so?
 M: Yeah Doc, I dunno, sometimes i don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me?Am I just bad at this game?
 D: Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
 M: Sure Doc, take the lead!
-* Presentation of the dataset by Doc *
+~ Presentation of the dataset by Doc ~
 
 # Part 1: How are people performing in Wikispeedia?
 

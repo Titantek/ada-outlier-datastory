@@ -37,8 +37,9 @@ Further comparison between finished/unfinished:
 
 ![distrib_paths_per_game](/ada-outlier-datastory/assets/img/distrib_paths_per_game.png)
 
-Influence of the shortest path on success:
-<iframe src="/ada-outlier-datastory/assets/img/comparison_distrib_paths.html" width="100%" height="2000px" alt='comparison_distrib_paths'></iframe>
+
+Are there other factors that influence the success rate? Let's investigate that.
+One can assume that the shortest is the shortest path, the more likely it is to find a path because both articles are close to each other in terms of links number. This is well illustrated in the following plot. The bigger the shortest path is, 
 
 Super plot interactif:
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="700px" height="500px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>

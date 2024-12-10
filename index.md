@@ -93,3 +93,13 @@ network differences
 
 # Part 4
 
+# References
+
+[1] Robert West and Jure Leskovec:
+     Human Wayfinding in Information Networks.
+     21st International World Wide Web Conference (WWW), 2012.
+     
+[2] Robert West, Joelle Pineau, and Doina Precup:
+     Wikispeedia: An Online Game for Inferring Semantic Distances between Concepts.
+     21st International Joint Conference on Artificial Intelligence (IJCAI), 2009.
+

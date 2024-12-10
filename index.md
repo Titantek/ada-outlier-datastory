@@ -49,12 +49,18 @@ Further comparison between finished/unfinished:
 
 ![distrib_paths_per_game](/ada-outlier-datastory/assets/img/distrib_paths_per_game.png)
 
-
 Are there other factors that influence the success rate? Let's investigate that.
-One can assume that the shortest is the shortest path, the more likely it is to find a path because both articles are close to each other in terms of links number. This is well illustrated in the following plot. The bigger the shortest path is, 
 
-Super plot interactif:
-<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="700px" height="500px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+HERE:: definition of the shortest path = number of links clicked + 1. Shortest path of 2 = the link of the target is already on the start article.
+explain that we kicked out games where player didn't click at all. so shortest length possible of a game = 2
+
+One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expected it, the bigger success rate occurs for a shortest path of 3 and decreases monotonically while the shortest path increases. 
+
+<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+
+Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. The distributions look different! Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. Using the `ttest_ind_from_stats` function from scipy, we obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different! Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1.
+
+<iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
 Influence of the number of links:
 scatter plot

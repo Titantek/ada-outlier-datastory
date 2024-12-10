@@ -3,13 +3,25 @@ layout: page
 title: Back to the Future 
 subtitle: Back to the Future - Time-Traveling through Wikispeedia
 ---
+# Introduction (mainly datastory)
 
-# Part 1
+M: Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would.
+D: What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
+M: Ok, ok, hear me out:
+* small presentation about Wikispeedia principle and how to play the game *
+D: Fascinating! Marty, you are saying it is harder that you thought, how so?
+M: Yeah Doc, I dunno, sometimes i don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me?Am I just bad at this game?
+D: Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
+M: Sure Doc, take the lead!
+* Presentation of the dataset by Doc *
 
-The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
+# Part 1: How are people performing in Wikispeedia?
 
 
-First, how the categories look like? For most of them one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can observe here the distribution of those main categories. HERE::\<insert image of Einstein the dog\>
+D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
+
+
+First, how do the categories look like? For most of them one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can observe here the distribution of those main categories. HERE::\<insert image of Einstein the dog\>
 <iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
 Back in 2007, science articles represented almost 1/4 of the encyclopedia where as art articles consisted of less than 1% of it! HERE:: more analysis?
 
@@ -56,7 +68,9 @@ table with results?
 
 
 
-# Part 2
+# Part 2: How did Wikipedia's structure evolve since 2007?
+
+M: Okay I know more about Wikispeedia and the general performance of players on the game. I wonder 
 
 Wikipedia structure comparison : 
 overall differences 

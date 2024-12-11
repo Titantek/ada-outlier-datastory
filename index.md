@@ -21,9 +21,9 @@ M: Sure Doc, take the lead!
 D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
 
 
-First, how do the categories look like? For most of them one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
+First, how do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
 <iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
-Back in 2007, science articles represented almost 1/4 of the encyclopedia where as art articles consisted of less than 1% of it! HERE:: more analysis?
+Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it! HERE:: more analysis?
 
 
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories that is completely arbitrary.

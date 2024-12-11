@@ -39,30 +39,40 @@ Ok, now we are ready for some data analysis. Let's first look at the links betwe
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20671114"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20671114/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
 --->
 
-
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
+Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles harder to guess for players?
 
-It seems really to reach articles about countries: there are more than twice of links pointing to countries than links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the less to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles harder to guess for players?
 
-
-To answer this question, we can investigate the categories of starting articles and target articles of the players.
+To answer this question, we can investigate the categories of starting articles and target articles of the players. 
+<!---
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20646616"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20646616/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
+--->
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
+Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $\alpha=1$%.
+What is meant by distribution is a vector of $15\times15$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
+We did $\chi^2$-test between the start-to-target article categories distributions of finished paths and unfinished paths and between the start-to-target and start-to-end article categories distributions of unfinished paths. Both give a p-value of 0 and a test statistic of respectively 3018.55 and 8297.54. We can thus safely reject the null hypothesis of independence and declare the categories distributions similar. HERE:: should I add the 2 other stats tests? (same results)
+Well, our analysis of the categories does not explain why players lose!
+
+
+<!---
 For unfinished paths, the middle step corresponds to the category of the last article visited. In 28% of the cases, the player is already in the good category when he/she stops playing. But do we need to be in the same category as the target article to find it? It depends! For "People" category for example, less than 10% of players who succeeded were on an article in this category right before winning! However, in the case of "Science", the rate goes up to 81%!
+--->
+
+<!---
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20673754"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20673754/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
-
-
+--->
+<!---
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2end.html" width="900px" height="600px" alt='categories_unfinished_paths_start2end'></iframe>
 
 
 <iframe src="/ada-outlier-datastory/assets/img/graph_complique.html" width="900px" height="600px" alt='graph_complique'></iframe>
-
-Let's do some tests to compare the distribution of categories between finished and unfinished paths.  
+--->
 
 Analysis of other datas for finished/unfinished:
 

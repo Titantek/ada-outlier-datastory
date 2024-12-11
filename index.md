@@ -21,7 +21,7 @@ M: Sure Doc, take the lead!
 D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
 
 
-First, how do the categories look like? For most of them one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can observe here the distribution of those main categories. HERE::\<insert image of Einstein the dog\>
+First, how do the categories look like? For most of them one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
 <iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
 Back in 2007, science articles represented almost 1/4 of the encyclopedia where as art articles consisted of less than 1% of it! HERE:: more analysis?
 
@@ -31,7 +31,9 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 Ok, now we are ready for some data analysis. Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20671114"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20671114/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
 
-<iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
+
+
 It seems really to reach articles about countries: there are more than twice of links pointing to countries than links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the less to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles harder to guess for players?
 
 

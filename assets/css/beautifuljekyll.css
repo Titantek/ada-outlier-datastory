@@ -1140,10 +1140,10 @@ pre {
   word-wrap: break-word;
 }
 .Marty {
-  background-color: #e0f7fa;
+  background-color: #ededff;
   align-self: flex-start;
 }
 .Doc {
-  background-color: #c8e6c9;
+  background-color: #edffff;
   align-self: flex-end;
 }

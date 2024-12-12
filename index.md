@@ -131,6 +131,16 @@ network differences
 
 # Part 4
 
+**Marty** : Doc are the players today stronger than in 2007 ? 
+**Doc** : I don't know Marty, we don't have any data about the players in 2024.
+**Marty** : But we have the data from 2007, can't we compare the two years ?
+**Doc** : We might be able to do that, let me think about it... we can use my favorite tool LLMs <3 to compare the two years.
+**Marty** : LLMs ? But, the results will differ from the ones we got from the players's data, right ? Which model should we use ?
+**Doc** : Yes, it might be different, but we can test different models and see which is the most similar to the players' data.
+**Marty** : That's a great idea Doc, let's do it ! but how would we know if the model is similar to the players' data ?
+**Doc** : First, we can verify that the model can finish a game, then we can compare the path length with the players, and eventually, we can measure if the model has chosen the same articles as the players.
+**Marty** : Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.
+
 # References
 
 [1] Robert West and Jure Leskovec:

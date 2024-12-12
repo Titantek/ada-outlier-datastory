@@ -168,8 +168,11 @@ network differences
 **Marty** : Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.
 
 ![players_path_length](/ada-outlier-datastory/assets/img/players_path_length.svg)
+
 ![llms_path_not_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
+
 ![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
+
 ![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama3_2007_2024.svg)
 
 

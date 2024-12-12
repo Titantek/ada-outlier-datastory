@@ -1123,3 +1123,27 @@ pre {
     display: inline-block;
   }
 }
+
+/* Custom styles for chat dialog */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+.Marty {
+  background-color: #e0f7fa;
+  align-self: flex-start;
+}
+.Doc {
+  background-color: #c8e6c9;
+  align-self: flex-end;
+}

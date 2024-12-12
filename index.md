@@ -18,7 +18,7 @@ M: Ok, ok, hear me out:
 
 <div class="chat">
   <div class="message Doc">Fascinating! Marty, you are saying it is harder that you thought, how so?</div>
-  <div class="message Marty">Yeah Doc, I dunno, sometimes i don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me?Am I just bad at this game?</div>
+  <div class="message Marty">Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?</div>
   <div class="message Doc">Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!</div>
   <div class="message Marty">Sure Doc, take the lead!</div>
 </div>
@@ -125,13 +125,25 @@ table with results?
 
 M: Okay I know more about Wikispeedia and the general performance of players on the game. I wonder 
 
-Wikipedia structure comparison : 
-overall differences 
+Let us now compare the differences between the old wikipedia from 2007 and our current wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
+
+> 2007 : 119882 links
+> 2024 : 225800 links
 
 ![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
 
+As expected, there is much more links per pages in our 2024 dataset ! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
+
+<div class="chat">
+  <div class="message Marty">Cool! So that's why the game is harder in 2007?</div>
+  <div class="message Doc">Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles:</div>
+</div>
+
+In this plot, we visualize every articles within our dataset of the 4604 selected articles from the Wikispeedia game on the x axis and compute the differences in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, orange, corresponds to less links in the page in 2024 than in 2007.
 
 ![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
+
+
 
 network differences 
 

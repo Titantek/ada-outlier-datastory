@@ -166,6 +166,8 @@ network differences
 **Marty** : That's a great idea Doc, let's do it ! but how would we know if the model is similar to the players' data ?
 **Doc** : First, we can verify that the model can finish a game, then we can compare the path length with the players, and eventually, we can measure if the model has chosen the same articles as the players.
 **Marty** : Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.
+**Marty** : Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data ?
+**Doc** : I will use the games that at least 10 players have played and I will train the models with [Ollama](https://ollama.com/) and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.
 
 ![players_path_length](/ada-outlier-datastory/assets/img/players_path_length.svg)
 

@@ -129,7 +129,7 @@ network differences
 
 # Part 3
 
-# Part 4
+# Part 4: Are the players(LLMs) stronger in 2024 than in 2007 ?
 
 **Marty** : Doc are the players today stronger than in 2007 ? 
 **Doc** : I don't know Marty, we don't have any data about the players in 2024.

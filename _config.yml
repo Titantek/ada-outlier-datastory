@@ -20,7 +20,9 @@ author: Outlier
 ###############################################
 
 navbar-links:
-  Dataset: "https://snap.stanford.edu/data/wikispeedia.html"
+  Wikispeedia:
+    - Dataset: "https://snap.stanford.edu/data/wikispeedia.html"
+    - Game: "https://dlab.epfl.ch/wikispeedia/play/"
   GitHub: "https://github.com/epfl-ada/ada-2024-project-outlier-1"
  # Author's home: "https://deanattali.com"
 

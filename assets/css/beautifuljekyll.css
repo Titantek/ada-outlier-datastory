@@ -1220,7 +1220,7 @@ pre {
 .Doc{
   display:flex;
   align-items:flex-end;
-  flex-direction:column-reverse;
+  justify-content: flex-end;
 }
 
 .Doc .icon{
@@ -1231,6 +1231,7 @@ pre {
 }
 
 .Doc .message{
+  order:1;
   background: #edffff;
   margin:2em 0;
   margin-left:100px;

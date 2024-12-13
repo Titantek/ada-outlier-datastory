@@ -5,8 +5,8 @@ subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
 cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
-# Introduction (mainly datastory)
-
+# Introduction (mainly datastore)
+<!--
 <div class="chat">
   <div class="message Marty">
      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.</div>
@@ -15,6 +15,41 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
   <div class="message Marty">
      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Ok, ok, hear me out:</div>
 </div>
+-->
+<div class="box">
+  <div class="Marty">
+    <div class="icon">
+    </div> <!-- icon-->
+    <div class="message">
+    Cat ipsum dolor sit amet, sit on human they not getting up ever and purr while eating. 
+    </div><!-- message -->
+  </div><!-- person a -->
+  
+  <div class="Doc">
+    
+  
+  <div class="message">
+  Lies down claw drapes jump off balcony
+    </div><!-- message -->
+  </div><!-- person b -->
+  
+
+  <div class="Marty">
+   <div class="icon">
+    </div> <!-- icon-->
+    <div class="message">
+    knock everything off the table
+    </div><!-- message -->
+  </div><!-- person a -->
+  
+  <div class="Doc">
+    
+  <div class="message">
+intently stare at the same spot stand in doorway
+    </div><!-- message -->
+  </div><!-- person b -->
+  
+</div><!-- box -->
 
 M: Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would.
 D: What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.

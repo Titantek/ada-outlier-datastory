@@ -1185,9 +1185,6 @@ pre {
   --size:80px;
   width:var(--size);
   height:var(--size);
-  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
-  background-position:center;
-  background-size:cover;
   border-radius:100%;
   margin-right:.8em;
   position:relative;
@@ -1201,6 +1198,11 @@ pre {
   align-items:flex-end;
 }
 
+.Marty .icon{ 
+  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
+  background-position:center;
+  background-size:cover;
+}
 
 /*
 .Marty .icon::after{
@@ -1214,9 +1216,18 @@ pre {
   right:0;
 }
 */
+
+.Doc{
+  display:flex;
+  align-items:flex-end;
+  flex-direction:column-reverse;
+}
+
 .Doc .icon{
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
-  left: calc(100% - var(--size));
+  background-position:center;
+  background-size:cover;
+  /*left: calc(100% - var(--size));*/
 }
 
 .Doc .message{

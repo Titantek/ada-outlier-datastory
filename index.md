@@ -7,11 +7,11 @@ subtitle: Back to the Future - Time-Traveling through Wikispeedia
 
 <div class="chat">
   <div class="message Marty">
-     <img src="../img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.</div>
+     <img src="../assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.</div>
   <div class="message Doc">
-     <img src="../img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
+     <img src="../assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
   <div class="message Marty">
-     <img src="../img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Ok, ok, hear me out:</div>
+     <img src="../assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Ok, ok, hear me out:</div>
 </div>
 
 M: Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would.

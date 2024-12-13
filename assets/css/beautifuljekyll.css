@@ -1176,10 +1176,22 @@ pre {
   margin:2em auto;
 }
 .message{
-  width:calc(100% - 100px);
+  width:calc(100% - 200px);
   border-radius:15px;
   padding:1em;
 }
+
+.icon{
+  --size:80px;
+  width:var(--size);
+  height:var(--size);
+  background-position:center;
+  background-size:cover;
+  border-radius:100%;
+  margin-right:.8em;
+  position:relative;
+}
+
 .Marty .message{
   background: #ededff;
 }
@@ -1187,16 +1199,9 @@ pre {
   display:flex;
   align-items:flex-end;
 }
+
 .Marty .icon{
-  --size:80px;
-  width:var(--size);
-  height:var(--size);
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
-  background-position:center;
-  background-size:cover;
-  border-radius:100%;
-  margin-right:.8em;
-  position:relative;
 }
 /*
 .Marty .icon::after{
@@ -1211,22 +1216,14 @@ pre {
 }
 */
 .Doc .icon{
-  --size:80px;
-  width:var(--size);
-  height:var(--size);
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
-  background-position:center;
-  background-size:cover;
-  border-radius:100%;
-  margin-right:.8em;
-  position:relative;
+  left: calc(100% - var(--size));
 }
 
 .Doc .message{
   background: #edffff;
   margin:2em 0;
   margin-left:100px;
-  color:white;
   text-align:right;
 }
 .message svg{

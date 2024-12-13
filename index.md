@@ -2,6 +2,7 @@
 layout: page
 title: Back to the Future 
 subtitle: Back to the Future - Time-Traveling through Wikispeedia
+mathjax: true
 ---
 # Introduction (mainly datastory)
 
@@ -29,8 +30,8 @@ M: Ok, ok, hear me out:
      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty">Sure Doc, take the lead!</div>
 </div>
 
-D: Fascinating! Marty, you are saying it is harder that you thought, how so?
-M: Yeah Doc, I dunno, sometimes i don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me?Am I just bad at this game?
+D: Fascinating! Marty, you are saying it is harder than you thought, how so?
+M: Yeah Doc, I dunno, sometimes I don't even know the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
 D: Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
 M: Sure Doc, take the lead!
 ~ Presentation of the dataset by Doc ~
@@ -41,7 +42,7 @@ M: Sure Doc, take the lead!
 D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
 
 
-First, how do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
+First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
 
 HERE:: more analysis?
 
@@ -61,10 +62,11 @@ Ok, now we are ready for some data analysis. Let's first look at the links betwe
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
-Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles harder to guess for players?
+Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players. 
+
 <!---
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20646616"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20646616/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
 --->
@@ -72,9 +74,9 @@ To answer this question, we can investigate the categories of starting articles 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
-Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $\alpha=1$%.
-What is meant by distribution is a vector of $15\times15$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
-We did $\chi^2$-test between the start-to-target article categories distributions of finished paths and unfinished paths and between the start-to-target and start-to-end article categories distributions of unfinished paths. Both give a p-value of 0 and a test statistic of respectively 3018.55 and 8297.54. We can thus safely reject the null hypothesis of independence and declare the categories distributions similar. HERE:: should I add the 2 other stats tests? (same results)
+Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $$\alpha=1$$%.
+What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
+We did $$\chi^2$$-test between the start-to-target article categories distributions of finished paths and unfinished paths and between the start-to-target and start-to-end article categories distributions of unfinished paths. Both give a p-value of 0 and a test statistic of respectively 3018.55 and 8297.54. We can thus safely reject the null hypothesis of independence and declare the categories distributions similar. HERE:: should I add the 2 other stats tests? (same results)
 Well, our analysis of the categories does not explain why players lose!
 
 
@@ -92,7 +94,7 @@ For unfinished paths, the middle step corresponds to the category of the last ar
 
 
 <iframe src="/ada-outlier-datastory/assets/img/graph_complique.html" width="900px" height="600px" alt='graph_complique'></iframe>
---->
+
 
 Analysis of other datas for finished/unfinished:
 
@@ -101,9 +103,12 @@ Analysis of other datas for finished/unfinished:
 Further comparison between finished/unfinished:
 
 ![distrib_paths_per_game](/ada-outlier-datastory/assets/img/distrib_paths_per_game.png)
+--->
+
 
 Are there other factors that influence the success rate? Let's investigate that.
 
+The shortest path between two articles is given by the minimum number of links you must click plus 1.
 HERE:: definition of the shortest path = number of links clicked + 1. Shortest path of 2 = the link of the target is already on the start article.
 explain that we kicked out games where player didn't click at all. so shortest length possible of a game = 2
 

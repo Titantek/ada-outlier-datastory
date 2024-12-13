@@ -1170,7 +1170,7 @@ pre {
 }
 */
 
-.box{
+.chat{
   width:80%;
   max-width:800px;
   margin:2em auto;
@@ -1183,6 +1183,16 @@ pre {
 }
 
 .icon{
+  --size:80px;
+  width:var(--size);
+  height:var(--size);
+  border-radius:100%;
+  margin-right:.8em;
+  position:relative;
+}
+
+
+.icon_crazy{
   --size:80px;
   width:var(--size);
   height:var(--size);
@@ -1205,6 +1215,11 @@ pre {
   background-size:cover;
 }
 
+.Marty .icon_crazy{ 
+  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png);
+  background-position:center;
+  background-size:cover;
+}
 /*
 .Marty .icon::after{
   content:' ';
@@ -1229,6 +1244,13 @@ pre {
   background-position:center;
   background-size:cover;
   /*left: calc(100% - var(--size));*/
+}
+
+
+.Doc .icon_crazy{ 
+  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png);
+  background-position:center;
+  background-size:cover;
 }
 
 .Doc .message{

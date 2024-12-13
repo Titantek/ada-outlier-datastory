@@ -1144,20 +1144,14 @@ pre {
   word-wrap: break-word;
 }
 
-.Marty {
-  flex-direction: row;
-}
-
-.Doc {
-  flex-direction: row-reverse;
-}
-
 .Marty .message {
+  flex-direction: row;
   background-color: #ededff;
   align-self: flex-start;
 }
 
 .Doc .message {
+  flex-direction: row-reverse;
   background-color: #edffff;
   align-self: flex-end;
 }

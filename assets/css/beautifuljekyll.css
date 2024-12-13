@@ -1178,7 +1178,7 @@ pre {
 
 .box{
   width:80%;
-  max-width:400px;
+  max-width:800px;
   margin:2em auto;
 }
 .message{
@@ -1197,13 +1197,14 @@ pre {
   --size:40px;
   width:var(--size);
   height:var(--size);
-background:url(https://i.ibb.co/vB9B6G8/mWDLI93.gif);
+  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
   background-position:center;
   background-size:cover;
   border-radius:100%;
   margin-right:.8em;
   position:relative;
 }
+/*
 .Marty .icon::after{
   content:' ';
   position:absolute;
@@ -1214,6 +1215,7 @@ background:url(https://i.ibb.co/vB9B6G8/mWDLI93.gif);
   bottom:0;
   right:0;
 }
+*/
 .Doc .message{
   background:lightblue;
   margin:2em 0;

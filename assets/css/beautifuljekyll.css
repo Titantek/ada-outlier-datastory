@@ -1185,6 +1185,7 @@ pre {
   --size:80px;
   width:var(--size);
   height:var(--size);
+  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
   background-position:center;
   background-size:cover;
   border-radius:100%;
@@ -1200,9 +1201,7 @@ pre {
   align-items:flex-end;
 }
 
-.Marty .icon{
-  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
-}
+
 /*
 .Marty .icon::after{
   content:' ';

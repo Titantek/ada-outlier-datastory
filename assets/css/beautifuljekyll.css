@@ -1216,6 +1216,18 @@ pre {
   right:0;
 }
 */
+.Doc .icon{
+  --size:40px;
+  width:var(--size);
+  height:var(--size);
+  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
+  background-position:center;
+  background-size:cover;
+  border-radius:100%;
+  margin-right:.8em;
+  position:relative;
+}
+
 .Doc .message{
   background:lightblue;
   margin:2em 0;

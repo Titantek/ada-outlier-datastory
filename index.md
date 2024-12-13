@@ -26,11 +26,11 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
   </div><!-- person a -->
   
   <div class="Doc">
-    <div class="icon">
-    </div> <!-- icon-->
       <div class="message">
         What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
       </div><!-- message -->
+      <div class="icon">
+      </div> <!-- icon-->
   </div><!-- person b -->
   
   <div class="Marty">

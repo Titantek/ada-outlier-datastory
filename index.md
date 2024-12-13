@@ -21,38 +21,25 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
     <div class="icon">
     </div> <!-- icon-->
     <div class="message">
-    Cat ipsum dolor sit amet, sit on human they not getting up ever and purr while eating. 
+        Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
     </div><!-- message -->
   </div><!-- person a -->
   
   <div class="Doc">
-    
-   <div class="icon">
-   </div> <!-- icon-->
-    
-  
-   <div class="message">
-  Lies down claw drapes jump off balcony
-    </div><!-- message -->
+    <div class="icon">
+    </div> <!-- icon-->
+      <div class="message">
+        What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
+      </div><!-- message -->
   </div><!-- person b -->
   
   <div class="Marty">
-   <div class="icon">
-    </div> <!-- icon-->
-    <div class="message">
-    knock everything off the table
-    </div><!-- message -->
-  </div><!-- person a -->
-  
-  <div class="Doc">
-    
-   <div class="icon">
-   </div> <!-- icon-->
-  <div class="message">
-intently stare at the same spot stand in doorway
-    </div><!-- message -->
-  </div><!-- person b -->
-  
+     <div class="icon">
+     </div> <!-- icon-->
+        <div class="message">
+            Ok, ok, hear me out:
+        </div><!-- message -->
+    </div><!-- person a -->
 </div><!-- box -->
 
 M: Hey Doc what's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would.

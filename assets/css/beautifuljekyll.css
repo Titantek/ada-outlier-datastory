@@ -1143,14 +1143,21 @@ pre {
   max-width: 90%;
   word-wrap: break-word;
 }
+
 .Marty {
   flex-direction: row;
-  background-color: #ededff;
-  align-self: flex-start;
 }
 
 .Doc {
   flex-direction: row-reverse;
+}
+
+.Marty .message {
+  background-color: #ededff;
+  align-self: flex-start;
+}
+
+.Doc .message {
   background-color: #edffff;
   align-self: flex-end;
 }

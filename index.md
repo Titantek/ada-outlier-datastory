@@ -21,9 +21,12 @@ M: Ok, ok, hear me out:
 
 <div class="chat">
   <div class="message Doc">Fascinating! Marty, you are saying it is harder that you thought, how so?</div>
-  <div class="message Marty">Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?</div>
-  <div class="message Doc">Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!</div>
-  <div class="message Marty">Sure Doc, take the lead!</div>
+  <div class="message Marty">
+     <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty"> Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?</div>
+  <div class="message Doc">
+     <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!</div>
+  <div class="message Marty">
+     <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty">Sure Doc, take the lead!</div>
 </div>
 
 D: Fascinating! Marty, you are saying it is harder that you thought, how so?
@@ -138,8 +141,10 @@ Let us now compare the differences between the old wikipedia from 2007 and our c
 As expected, there is much more links per pages in our 2024 dataset ! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
 
 <div class="chat">
-  <div class="message Marty">Cool! So that's why the game is harder in 2007?</div>
-  <div class="message Doc">Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles:</div>
+  <div class="message Marty">
+     <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty">Cool! So that's why the game is harder in 2007?</div>
+  <div class="message Doc">
+     <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles:</div>
 </div>
 
 In this plot, we visualize every articles within our dataset of the 4604 selected articles from the Wikispeedia game on the x axis and compute the differences in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, orange, corresponds to less links in the page in 2024 than in 2007.

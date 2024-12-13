@@ -2,6 +2,7 @@
 layout: page
 title: Back to the Future 
 subtitle: Back to the Future - Time-Traveling through Wikispeedia
+mathjax: true
 ---
 # Introduction (mainly datastory)
 

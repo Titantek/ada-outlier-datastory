@@ -1187,14 +1187,14 @@ pre {
   padding:1em;
 }
 .Marty .message{
-  background:#f8f8f8;
+  background:#ededff;
 }
 .Marty{
   display:flex;
   align-items:flex-end;
 }
 .Marty .icon{
-  --size:40px;
+  --size:80px;
   width:var(--size);
   height:var(--size);
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
@@ -1217,7 +1217,7 @@ pre {
 }
 */
 .Doc .icon{
-  --size:40px;
+  --size:80px;
   width:var(--size);
   height:var(--size);
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
@@ -1229,7 +1229,7 @@ pre {
 }
 
 .Doc .message{
-  background:lightblue;
+  background:#edffff;
   margin:2em 0;
   margin-left:100px;
   color:white;

@@ -1240,6 +1240,7 @@ pre {
 }
 
 .Doc .icon{
+  order: 2;
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
   background-position:center;
   background-size:cover;
@@ -1248,6 +1249,7 @@ pre {
 
 
 .Doc .icon_crazy{ 
+  order: 2;
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png);
   background-position:center;
   background-size:cover;

@@ -1179,6 +1179,7 @@ pre {
   width:calc(100% - 200px);
   border-radius:15px;
   padding:1em;
+  margin-top:1em;
 }
 
 .icon{
@@ -1233,7 +1234,6 @@ pre {
 .Doc .message{
   order:1;
   background: #edffff;
-  margin:2em 0;
   margin-left:100px;
   text-align:right;
 }

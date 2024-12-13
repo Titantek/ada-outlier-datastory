@@ -29,8 +29,8 @@ M: Ok, ok, hear me out:
      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty">Sure Doc, take the lead!</div>
 </div>
 
-D: Fascinating! Marty, you are saying it is harder that you thought, how so?
-M: Yeah Doc, I dunno, sometimes i don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me?Am I just bad at this game?
+D: Fascinating! Marty, you are saying it is harder than you thought, how so?
+M: Yeah Doc, I dunno, sometimes I don't even know the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
 D: Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
 M: Sure Doc, take the lead!
 ~ Presentation of the dataset by Doc ~
@@ -41,7 +41,7 @@ M: Sure Doc, take the lead!
 D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
 
 
-First, how do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has for main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
+First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
 
 HERE:: more analysis?
 
@@ -61,7 +61,7 @@ Ok, now we are ready for some data analysis. Let's first look at the links betwe
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
-Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles harder to guess for players?
+Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players. 

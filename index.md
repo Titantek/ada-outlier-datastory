@@ -173,6 +173,8 @@ network differences
 
 ![llms_path_not_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
 
+<iframe src="/ada-outlier-datastory/assets/img/performance_scatter.html" width="900px" height="600px" alt='models_performance'></iframe>
+
 ![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
 
 ![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama3_2007_2024.svg)

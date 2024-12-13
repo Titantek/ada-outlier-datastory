@@ -3,6 +3,7 @@ layout: page
 title: Back to the Future 
 subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
+cover-img: "/ada-outlier-datastory/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
 # Introduction (mainly datastory)
 

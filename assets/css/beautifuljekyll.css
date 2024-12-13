@@ -1170,12 +1170,6 @@ pre {
 }
 */
 
-
-
-*{
-  box-sizing:border-box;
-}
-
 .box{
   width:80%;
   max-width:800px;
@@ -1187,7 +1181,7 @@ pre {
   padding:1em;
 }
 .Marty .message{
-  background:#ededff;
+  background: #ededff;
 }
 .Marty{
   display:flex;
@@ -1229,7 +1223,7 @@ pre {
 }
 
 .Doc .message{
-  background:#edffff;
+  background: #edffff;
   margin:2em 0;
   margin-left:100px;
   color:white;

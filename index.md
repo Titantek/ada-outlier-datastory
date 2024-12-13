@@ -65,6 +65,7 @@ Wow, lots of information on this plot! First, the diagonal, i.e. links staying i
 
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players. 
+
 <!---
 <div class="flourish-embed flourish-sankey" data-src="visualisation/20646616"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20646616/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
 --->
@@ -72,9 +73,9 @@ To answer this question, we can investigate the categories of starting articles 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
-Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $\alpha=1$%.
-What is meant by distribution is a vector of $15\times15$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
-We did $\chi^2$-test between the start-to-target article categories distributions of finished paths and unfinished paths and between the start-to-target and start-to-end article categories distributions of unfinished paths. Both give a p-value of 0 and a test statistic of respectively 3018.55 and 8297.54. We can thus safely reject the null hypothesis of independence and declare the categories distributions similar. HERE:: should I add the 2 other stats tests? (same results)
+Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $$\alpha=1$$%.
+What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
+We did $$\chi^2$$-test between the start-to-target article categories distributions of finished paths and unfinished paths and between the start-to-target and start-to-end article categories distributions of unfinished paths. Both give a p-value of 0 and a test statistic of respectively 3018.55 and 8297.54. We can thus safely reject the null hypothesis of independence and declare the categories distributions similar. HERE:: should I add the 2 other stats tests? (same results)
 Well, our analysis of the categories does not explain why players lose!
 
 
@@ -92,7 +93,7 @@ For unfinished paths, the middle step corresponds to the category of the last ar
 
 
 <iframe src="/ada-outlier-datastory/assets/img/graph_complique.html" width="900px" height="600px" alt='graph_complique'></iframe>
---->
+
 
 Analysis of other datas for finished/unfinished:
 
@@ -101,9 +102,12 @@ Analysis of other datas for finished/unfinished:
 Further comparison between finished/unfinished:
 
 ![distrib_paths_per_game](/ada-outlier-datastory/assets/img/distrib_paths_per_game.png)
+--->
+
 
 Are there other factors that influence the success rate? Let's investigate that.
 
+The shortest path between two articles is given by the minimum number of links you must click plus 1.
 HERE:: definition of the shortest path = number of links clicked + 1. Shortest path of 2 = the link of the target is already on the start article.
 explain that we kicked out games where player didn't click at all. so shortest length possible of a game = 2
 

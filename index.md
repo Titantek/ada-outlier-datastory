@@ -27,13 +27,15 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
   
   <div class="Doc">
     
+   <div class="icon">
+   </div> <!-- icon-->
+    
   
-  <div class="message">
+   <div class="message">
   Lies down claw drapes jump off balcony
     </div><!-- message -->
   </div><!-- person b -->
   
-
   <div class="Marty">
    <div class="icon">
     </div> <!-- icon-->
@@ -44,6 +46,8 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
   
   <div class="Doc">
     
+   <div class="icon">
+   </div> <!-- icon-->
   <div class="message">
 intently stare at the same spot stand in doorway
     </div><!-- message -->

@@ -9,24 +9,28 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 
 
 <div class="chat">
+
    <div class="message-wrapper">
       <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
       </div>
    </div>
+
    <div class="message-wrapper">
       <div class="message Doc">
          What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
       </div>
       <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div>
+
    <div class="message-wrapper">
       <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Ok, ok, hear me out:
       </div>
    </div>
+
 </div>
 
 ~ small presentation about Wikispeedia principle and how to play the game ~
@@ -70,35 +74,122 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 
 
 <div class="chat">
-  <div class="Doc">
-    <div class="icon"></div> 
-    <div class="message"> The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together! </div>
-  </div>  
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Well, tell me Doc, what do the categories look like?
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         Apparently, for most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         I see! We notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page.
+      </div>
+   </div>
+
 </div>
 
-
+<!--
 First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
 
 HERE:: more analysis?
 
-
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
+-->
 
-<iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
+<iframe src="assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
+
+<div class="chat">
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Wow! Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         You're right! Let's now look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+</div>
+
+<!--
 Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
-
 Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
+-->
+
+<iframe src="assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
 
-<iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
+<div class="chat">
 
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Wow, lots of information on this plot! Help me there Doc!
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. 
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Ok I see! But then, do you think that there are categories of articles that are harder to guess?
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         To answer this question Marty, we can investigate the categories of starting articles and target articles of the players! 
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+   </div> 
+
+</div>
+
+<!--
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
-
 To answer this question, we can investigate the categories of starting articles and target articles of the players.
+-->
+
 <div class="chat">
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         Wait a second Marty! We have to clean a bit the data...
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+   </div> 
+
   <div class="Doc">
     <div class="icon"></div> 
     <div class="message"> Wait a second Marty! We have to clean a bit the data... </div>
@@ -127,8 +218,8 @@ To answer this question, we can investigate the categories of starting articles 
 
 
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
+<iframe src="assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are identical. 
 What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
@@ -159,11 +250,11 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 
-<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+<iframe src="assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. The distributions look different! Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. Using the `ttest_ind_from_stats` function from scipy, we obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different! Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1.
 
-<iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
+<iframe src="assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
 How can we now use these observations to predict player success? Let's do a logistic regression! We want to predict if a player will succeed for a given start and end article, depending on the shortest path and the number of links pointing to the target.
 
@@ -349,7 +440,7 @@ For now, we only have been looking at the repartitions of links on the pages wit
 
 ![llms_path_not_found](/assets/img/llms_path_not_found.svg)
 
-<iframe src="/ada-outlier-datastory/assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
+<iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
 
 ![llm_jacard](/assets/img/jacard.svg)
 

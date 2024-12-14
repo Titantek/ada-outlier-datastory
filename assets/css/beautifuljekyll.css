@@ -1275,7 +1275,7 @@ pre {
 }
 
 /* Eglantine's Custom styles for chat dialog */
-/* 
+
 .chat {
   display: flex;
   flex-direction: column;
@@ -1334,4 +1334,4 @@ pre {
 .message-wrapper .Doc {
   flex-direction: row-reverse; / * Right-to-left layout for Doc's messages * /
 }
-*/
+

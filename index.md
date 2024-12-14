@@ -6,86 +6,61 @@ mathjax: true
 cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
 # Introduction (mainly datastore)
-<!--
-<div class="chat">
-  <div class="message Marty">
-     <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.</div>
-  <div class="message Doc">
-     <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
-  <div class="message Marty">
-     <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Ok, ok, hear me out:</div>
-</div>
--->
+
 <div class="chat">
   <div class="Marty">
-    <div class="icon">
-    </div> <!-- icon-->
-    <div class="message">
-        Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
-    </div><!-- message -->
-  </div><!-- Marty -->
+    <div class="icon"></div>
+    <div class="message"> Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be. </div>
+  </div>
   
   <div class="Doc">
-      <div class="message">
-        What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
-      </div><!-- message -->
-      <div class="icon">
-      </div> <!-- icon-->
-  </div><!-- Doc -->
+    <div class="icon"></div> 
+    <div class="message"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
+  </div>
   
   <div class="Marty">
-     <div class="icon">
-     </div> <!-- icon-->
-        <div class="message">
-            Ok, ok, hear me out:
-        </div><!-- message -->
-    </div><!-- Marty -->
-</div><!-- box -->
+    <div class="icon"></div> 
+    <div class="message"> Ok, ok, hear me out:</div>
+  </div>
+</div>
 
 ~ small presentation about Wikispeedia principle and how to play the game ~
 
 <div class="chat">
   <div class="Doc">
-        <div class="message">
-          Fascinating! Marty, you are saying it is harder that you thought, how so?
-        </div><!-- message -->
-        <div class="icon">
-        </div> <!-- icon-->
-  </div><!-- Doc -->  
+    <div class="icon"></div> 
+    <div class="message"> Fascinating! Marty, you are saying it is harder that you thought, how so? </div>
+  </div>  
   <div class="Marty">
-     <div class="icon">
-     </div> <!-- icon-->
-        <div class="message">
-            Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
-        </div><!-- message -->
-    </div><!-- Marty -->
+     <div class="icon"></div> 
+      <div class="message">
+        Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
+      </div>
+    </div>
   
   <div class="Doc">
-          <div class="message">
-            Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
-          </div><!-- message -->
-          <div class="icon_crazy">
-          </div> <!-- icon-->
-  </div><!-- Doc -->  
+    <div class="icon_crazy"></div>
+      <div class="message"> Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created! </div>         
+  </div>  
+
   <div class="Marty">
-     <div class="icon">
-     </div> <!-- icon-->
-        <div class="message">
-            Sure Doc, take the lead!
-        </div><!-- message -->
-    </div><!-- Marty -->
+    <div class="icon"></div> 
+    <div class="message"> Sure Doc, take the lead! </div>
+  </div>
 </div>
 
-D: Fascinating! Marty, you are saying it is harder than you thought, how so?
-M: Yeah Doc, I dunno, sometimes I don't even know the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
-D: Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
-M: Sure Doc, take the lead!
 ~ Presentation of the dataset by Doc ~
 
 # Part 1: How are people performing in Wikispeedia?
 
 
-D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
+
+<div class="chat">
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message"> The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together! </div>
+  </div>  
+</div>
 
 
 First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
@@ -102,9 +77,6 @@ Back in 2007, science articles represented almost 1/4 of the encyclopedia, where
 
 Ok, now we are ready for some data analysis. Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
 
-<!---
-<div class="flourish-embed flourish-sankey" data-src="visualisation/20671114"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20671114/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
---->
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
@@ -113,9 +85,6 @@ Wow, lots of information on this plot! First, the diagonal, i.e. links staying i
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players. 
 
-<!---
-<div class="flourish-embed flourish-sankey" data-src="visualisation/20646616"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20646616/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
---->
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
@@ -126,30 +95,6 @@ We did $$\chi^2$$-test between the start-to-target article categories distributi
 Well, our analysis of the categories does not explain why players lose!
 
 
-<!---
-For unfinished paths, the middle step corresponds to the category of the last article visited. In 28% of the cases, the player is already in the good category when he/she stops playing. But do we need to be in the same category as the target article to find it? It depends! For "People" category for example, less than 10% of players who succeeded were on an article in this category right before winning! However, in the case of "Science", the rate goes up to 81%!
---->
-
-<!---
-<div class="flourish-embed flourish-sankey" data-src="visualisation/20673754"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20673754/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
---->
-<!---
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
-
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2end.html" width="900px" height="600px" alt='categories_unfinished_paths_start2end'></iframe>
-
-
-<iframe src="/ada-outlier-datastory/assets/img/graph_complique.html" width="900px" height="600px" alt='graph_complique'></iframe>
-
-
-Analysis of other datas for finished/unfinished:
-
-![distrib_shortest_paths_duration](/ada-outlier-datastory/assets/img/distrib_shortest_path_duration.png)
-
-Further comparison between finished/unfinished:
-
-![distrib_paths_per_game](/ada-outlier-datastory/assets/img/distrib_paths_per_game.png)
---->
 
 
 Are there other factors that influence the success rate? Let's investigate that.

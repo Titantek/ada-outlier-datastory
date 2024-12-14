@@ -5,7 +5,7 @@ subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
 cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
-# Introduction (mainly datastore)
+# Introduction (mainly datastory)
 
 <div class="chat">
   <div class="Marty">
@@ -63,19 +63,19 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 </div>
 
 
-First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
+First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
 
 HERE:: more analysis?
 
 
-Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories that is completely arbitrary.
+Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 
 <iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
 Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
 
-Ok, now we are ready for some data analysis. Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
+Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
 
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
@@ -83,25 +83,53 @@ Ok, now we are ready for some data analysis. Let's first look at the links betwe
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
 
-To answer this question, we can investigate the categories of starting articles and target articles of the players. 
+To answer this question, we can investigate the categories of starting articles and target articles of the players.
+<div class="chat">
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message"> Wait a second Marty! We have to clean a bit the data... </div>
+  </div>  
+  <div class="Marty">
+     <div class="icon"></div> 
+      <div class="message">
+        What do you mean? What's wrong with the data?
+      </div>
+  </div>
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message"> First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths. </div>
+  </div>  
+  <div class="Marty">
+     <div class="icon"></div> 
+      <div class="message">
+        But don't we introduce a bias in this way?
+      </div>
+  </div>
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message">  We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can looks big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is the best option. </div>
+  </div>  
+</div>
+
 
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
-Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $$\alpha=1$$%.
-What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
-We did $$\chi^2$$-test between the start-to-target article categories distributions of finished paths and unfinished paths and between the start-to-target and start-to-end article categories distributions of unfinished paths. Both give a p-value of 0 and a test statistic of respectively 3018.55 and 8297.54. We can thus safely reject the null hypothesis of independence and declare the categories distributions similar. HERE:: should I add the 2 other stats tests? (same results)
-Well, our analysis of the categories does not explain why players lose!
+Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are identical. 
+What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
+
+Let's dig through some details. A few major differences occur. First, there is 4 times less target from the Countries category in among the unfinished paths, whereas there is 2 times more target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
+
+We can then conclude that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
+
 
 
 
 
 Are there other factors that influence the success rate? Let's investigate that.
 
-The shortest path between two articles is given by the minimum number of links you must click plus 1.
-HERE:: definition of the shortest path = number of links clicked + 1. Shortest path of 2 = the link of the target is already on the start article.
-explain that we kicked out games where player didn't click at all. so shortest length possible of a game = 2
+The shortest path between two articles is given by the minimum number of links you must click plus 1. For this reason, we will not take into account the games where the shortest path is 2, because it means that only 1 click is necessary. 
 
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 

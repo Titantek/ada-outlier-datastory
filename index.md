@@ -8,6 +8,34 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 # Introduction (mainly datastory)
 
 
+<!--
+TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
+
+
+<div class="chat">
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         message marty
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         message doc
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+</div>
+
+-->
+
+
+
+
+
 <div class="chat">
 
    <div class="message-wrapper">
@@ -184,12 +212,49 @@ To answer this question, we can investigate the categories of starting articles 
 <div class="chat">
 
    <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Hah! Leave it to me Doc…
+      </div>
+   </div>
+
+   <div class="message-wrapper">
       <div class="message Doc">
          Wait a second Marty! We have to clean a bit the data...
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         What do you mean? What's wrong with the data?
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         But don't we introduce a bias in this way?
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+   </div> 
+</div>
+
+<!--
   <div class="Doc">
     <div class="icon"></div> 
     <div class="message"> Wait a second Marty! We have to clean a bit the data... </div>
@@ -215,30 +280,83 @@ To answer this question, we can investigate the categories of starting articles 
     <div class="message">  We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is the best option. </div>
   </div>  
 </div>
-
-
+-->
 
 <iframe src="assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+
 <iframe src="assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
+<div class="chat">
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Both heatmaps look similar! Should we conclude that there is no difference between finished and unfinished paths categories?
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         We cannot conclude that quickly Marty. Let's perform a statistical test for that. In our case, we should use a chi2 contingency test: our null hypothesis is that both distributions are identical. What is meant by distribution is a vector of 15x15 that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of alpha=0.01.
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Ok, let me see… The results are the following: `pvalue=0.0, statistic=2953.30`. And, the test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
+      </div>
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         Great! We can thus safely reject the null hypothesis!
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         If we dig into the details, we see that a few major differences occur. First, there is 4 times less target from the Countries category in among the unfinished paths, whereas there is 2 times more target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         So apparently, finding an article in Countries category is easier than finding an article in Design_and_Technology or Everyday_Life for example.
+      </div>
+   </div>
+
+</div>
+
+<!--
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are identical. 
 What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
 
 Let's dig through some details. A few major differences occur. First, there is 4 times less target from the Countries category in among the unfinished paths, whereas there is 2 times more target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
 
 We can then conclude that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
+-->
 
 <div class="chat">
-  <div class="Marty">
-     <div class="icon_crazy"></div> 
-      <div class="message">
-        Youhou! We found why the players lose!
+
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Hah! We found why the players lose! Wasn't that hard.
       </div>
-  </div>
-  <div class="Doc">
-    <div class="icon"></div> 
-    <div class="message">  Hold on a second Marty! I'm sure there might be other factors </div>
-  </div>  
+   </div>
+
+   <div class="message-wrapper">
+      <div class="message Doc">
+         Hold on a second Marty! There might be other interesting factors…
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div> 
+
 </div>
 
 

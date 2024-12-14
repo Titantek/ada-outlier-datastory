@@ -6,86 +6,61 @@ mathjax: true
 cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
 # Introduction (mainly datastore)
-<!--
-<div class="chat">
-  <div class="message Marty">
-     <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.</div>
-  <div class="message Doc">
-     <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
-  <div class="message Marty">
-     <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">Ok, ok, hear me out:</div>
-</div>
--->
+
 <div class="chat">
   <div class="Marty">
-    <div class="icon">
-    </div> <!-- icon-->
-    <div class="message">
-        Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
-    </div><!-- message -->
-  </div><!-- Marty -->
+    <div class="icon"></div>
+    <div class="message"> Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be. </div>
+  </div>
   
   <div class="Doc">
-      <div class="message">
-        What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
-      </div><!-- message -->
-      <div class="icon">
-      </div> <!-- icon-->
-  </div><!-- Doc -->
+    <div class="icon"></div> 
+    <div class="message"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
+  </div>
   
   <div class="Marty">
-     <div class="icon">
-     </div> <!-- icon-->
-        <div class="message">
-            Ok, ok, hear me out:
-        </div><!-- message -->
-    </div><!-- Marty -->
-</div><!-- box -->
+    <div class="icon"></div> 
+    <div class="message"> Ok, ok, hear me out:</div>
+  </div>
+</div>
 
 ~ small presentation about Wikispeedia principle and how to play the game ~
 
 <div class="chat">
   <div class="Doc">
-        <div class="message">
-          Fascinating! Marty, you are saying it is harder that you thought, how so?
-        </div><!-- message -->
-        <div class="icon">
-        </div> <!-- icon-->
-  </div><!-- Doc -->  
+    <div class="icon"></div> 
+    <div class="message"> Fascinating! Marty, you are saying it is harder that you thought, how so? </div>
+  </div>  
   <div class="Marty">
-     <div class="icon">
-     </div> <!-- icon-->
-        <div class="message">
-            Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
-        </div><!-- message -->
-    </div><!-- Marty -->
+     <div class="icon"></div> 
+      <div class="message">
+        Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
+      </div>
+    </div>
   
   <div class="Doc">
-          <div class="message">
-            Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
-          </div><!-- message -->
-          <div class="icon_crazy">
-          </div> <!-- icon-->
-  </div><!-- Doc -->  
+    <div class="icon_crazy"></div>
+      <div class="message"> Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created! </div>         
+  </div>  
+
   <div class="Marty">
-     <div class="icon">
-     </div> <!-- icon-->
-        <div class="message">
-            Sure Doc, take the lead!
-        </div><!-- message -->
-    </div><!-- Marty -->
+    <div class="icon"></div> 
+    <div class="message"> Sure Doc, take the lead! </div>
+  </div>
 </div>
 
-D: Fascinating! Marty, you are saying it is harder than you thought, how so?
-M: Yeah Doc, I dunno, sometimes I don't even know the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
-D: Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
-M: Sure Doc, take the lead!
 ~ Presentation of the dataset by Doc ~
 
 # Part 1: How are people performing in Wikispeedia?
 
 
-D: The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
+
+<div class="chat">
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message"> The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together! </div>
+  </div>  
+</div>
 
 
 First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
@@ -95,30 +70,24 @@ HERE:: more analysis?
 
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories that is completely arbitrary.
 
-<iframe src="/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
 Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
 
 Ok, now we are ready for some data analysis. Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
 
-<!---
-<div class="flourish-embed flourish-sankey" data-src="visualisation/20671114"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20671114/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
---->
 
-<iframe src="/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players. 
 
-<!---
-<div class="flourish-embed flourish-sankey" data-src="visualisation/20646616"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20646616/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
---->
 
-<iframe src="/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
-<iframe src="/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
 Both heatmaps look similar! But what does the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are independent. We choose a level of significance of $$\alpha=1$$%.
 What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts.
@@ -126,30 +95,6 @@ We did $$\chi^2$$-test between the start-to-target article categories distributi
 Well, our analysis of the categories does not explain why players lose!
 
 
-<!---
-For unfinished paths, the middle step corresponds to the category of the last article visited. In 28% of the cases, the player is already in the good category when he/she stops playing. But do we need to be in the same category as the target article to find it? It depends! For "People" category for example, less than 10% of players who succeeded were on an article in this category right before winning! However, in the case of "Science", the rate goes up to 81%!
---->
-
-<!---
-<div class="flourish-embed flourish-sankey" data-src="visualisation/20673754"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20673754/thumbnail" width="100%" alt="sankey visualization" /></noscript></div>
---->
-<!---
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
-
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2end.html" width="900px" height="600px" alt='categories_unfinished_paths_start2end'></iframe>
-
-
-<iframe src="/ada-outlier-datastory/assets/img/graph_complique.html" width="900px" height="600px" alt='graph_complique'></iframe>
-
-
-Analysis of other datas for finished/unfinished:
-
-![distrib_shortest_paths_duration](/ada-outlier-datastory/assets/img/distrib_shortest_path_duration.png)
-
-Further comparison between finished/unfinished:
-
-![distrib_paths_per_game](/ada-outlier-datastory/assets/img/distrib_paths_per_game.png)
---->
 
 
 Are there other factors that influence the success rate? Let's investigate that.
@@ -160,11 +105,11 @@ explain that we kicked out games where player didn't click at all. so shortest l
 
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 
-<iframe src="/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. The distributions look different! Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. Using the `ttest_ind_from_stats` function from scipy, we obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different! Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1.
 
-<iframe src="/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
 How can we now use these observations to predict player success? Let's do a logistic regression! We want to predict if a player will succeed for a given start and end article, depending on the shortest path and the number of links pointing to the target.
 
@@ -248,6 +193,7 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
 
 # Part 4: Are the players(LLMs) stronger in 2024 than in 2007 ?
 
+<!--
 **Marty** : Doc are the players today stronger than in 2007 ? 
 **Doc** : I don't know Marty, we don't have any data about the players in 2024.
 **Marty** : But we have the data from 2007, can't we compare the two years ?
@@ -259,12 +205,72 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
 **Marty** : Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.
 **Marty** : Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data ?
 **Doc** : I will use the games that at least 10 players have played and I will train the models with [Ollama](https://ollama.com/) and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.
+-->
+
+<div class="chat">
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Doc, are the players today stronger than in 2007?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">I don't know Marty, we don't have any data about the players in 2024.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">But we have the data from 2007, can't we compare the two years?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">We might be able to do that, let me think about it... we can use my favorite tool LLMs &lt 3 to compare the two years.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">LLMs? But, the results will differ from the ones we got from the players' data, right? Which model should we use?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">Yes, it might be different, but we can test different models and see which is the most similar to the players' data.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">That's a great idea Doc, let's do it! But how would we know if the model is similar to the players' data?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">First, we can verify that the model can finish a game, then we can compare the path length with the players, and eventually, we can measure if the model has chosen the same articles as the players.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">I will use the games that at least 10 players have played and I will train the models with <a href="https://ollama.com/">Ollama</a> and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.</div>
+  </div>
+</div>
+
+
 
 ![players_path_length](/assets/img/players_path_length.svg)
 
 ![llms_path_not_found](/assets/img/llms_path_not_found.svg)
 
-<iframe src="/assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
 
 ![llm_jacard](/assets/img/jacard.svg)
 

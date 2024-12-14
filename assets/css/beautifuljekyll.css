@@ -1174,7 +1174,9 @@ pre {
   width:80%;
   max-width:800px;
   margin:2em auto;
+  font-family: Arial, sans-serif;
 }
+
 .message{
   width:calc(100% - 200px);
   border-radius:15px;

@@ -7,7 +7,24 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
 # Introduction (mainly datastory)
 
+<div class="chat">
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message"> Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be. </div>
+  </div>
 
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div> 
+    <div class="message"> Ok, ok, hear me out:</div>
+  </div>
+</div>
+
+<!--
 <div class="chat">
    <div class="message-wrapper">
       <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
@@ -28,6 +45,7 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
       </div>
    </div>
 </div>
+-->
 
 ~ small presentation about Wikispeedia principle and how to play the game ~
 

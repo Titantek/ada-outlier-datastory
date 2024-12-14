@@ -1168,7 +1168,7 @@ pre {
   margin-left: 10px;
   margin-right: 0;
 }
-*/
+
 
 .chat{
   width:80%;
@@ -1220,7 +1220,7 @@ pre {
   background-position:center;
   background-size:cover;
 }
-/*
+
 .Marty .icon::after{
   content:' ';
   position:absolute;
@@ -1231,7 +1231,6 @@ pre {
   bottom:0;
   right:0;
 }
-*/
 
 .Doc{
   display:flex;
@@ -1244,7 +1243,7 @@ pre {
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
   background-position:center;
   background-size:cover;
-  /*left: calc(100% - var(--size));*/
+  /*left: calc(100% - var(--size));
 }
 
 
@@ -1268,5 +1267,64 @@ pre {
 .last{
   width:auto;
 }
+*/
 
+/* Eglantine's Custom styles for chat dialog */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
 
+.message-container {
+  display: flex;
+  align-items: center;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.Marty {
+  flex-direction: row;
+  background-color: #ededff;
+  align-self: flex-start;
+}
+
+.Doc {
+  flex-direction: row-reverse;
+  background-color: #edffff;
+  align-self: flex-end;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 0 10px;
+}
+
+.Doc .profile-pic {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align images and text properly */
+  gap: 10px; /* Space between image and bubble */
+}
+
+.message-wrapper .Marty {
+  flex-direction: row;
+}
+
+.message-wrapper .Doc {
+  flex-direction: row-reverse; /* Right-to-left layout for Doc's messages */
+}

@@ -143,7 +143,7 @@ As expected, there is much more links per pages **on average** in our 2024 datas
 
 <div class="chat">
   <div class="Marty">
-    <div class="icon">
+    <div class="icon_crazy">
     </div> <!-- icon-->
     <div class="message">
         Cool! So that's why the game is harder in 2007?
@@ -176,12 +176,37 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
       <div class="message">
         Let's now move to the **interesting** part : the network of the links...
       </div><!-- message -->
-      <div class="icon">
+      <div class="icon_crazy">
       </div> <!-- icon-->
   </div><!-- Doc -->
 </div>
 
 ## 2.2 Network differences 
+
+For now, we only have been looking at the repartitions of links on the pages with no interested to where those links would redirect to, even though this is probably our most crucial information to conclude wheter the structure of 2024 has really changed compared to 2007. In this part we look at how the pages are interconnected and compare it for the two different years. To do so we will use the Shortest Path metric. 
+
+<div class="chat">
+  <div class="Marty">
+        <div class="message">
+          Hey Doc... What is actually the shortest path ? 
+        </div><!-- message -->
+        <div class="icon">
+        </div> <!-- icon-->
+    </div><!-- Doc -->
+    <div class="Doc">
+      <div class="message">
+        Well Marty it's in the name ! The most direct path from one point to another in a network is the shortest path. We should look at how direct the connections between articles are in 2024 and see where it gets us.
+      </div><!-- message -->
+      <div class="icon_crazy">
+      </div> <!-- icon-->
+  </div><!-- Doc -->
+</div>
+
+{: .box-note}
+  **Shortest Path Algorithm** \ 
+  There exist different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path MAtrix as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
+
+
 
 ![heatmap_diff](/assets/img/heatmap_diff.png)
 

@@ -7,21 +7,26 @@ cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
 # Introduction (mainly datastory)
 
+
 <div class="chat">
-  <div class="Marty">
-    <div class="icon"></div>
-    <div class="message"> Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be. </div>
-  </div>
-  
-  <div class="Doc">
-    <div class="icon"></div> 
-    <div class="message"> What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.</div>
-  </div>
-  
-  <div class="Marty">
-    <div class="icon"></div> 
-    <div class="message"> Ok, ok, hear me out:</div>
-  </div>
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
+      </div>
+   </div>
+   <div class="message-wrapper">
+      <div class="message Doc">
+         What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
+      </div>
+      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+   </div>
+   <div class="message-wrapper">
+      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <div class="message Marty">
+         Ok, ok, hear me out:
+      </div>
+   </div>
 </div>
 
 ~ small presentation about Wikispeedia principle and how to play the game ~
@@ -157,36 +162,89 @@ M: Okay I know more about Wikispeedia and the general performance of players on 
 
 Let us now compare the differences between the old wikipedia from 2007 and our current wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
 
-> 2007 : 119882 links
-> 2024 : 225800 links
+{: .box-note}
+  **Basic Comparison:** \
+  2007 : 119882 links \
+  2024 : 225800 links
 
-![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
 
-As expected, there is much more links per pages in our 2024 dataset ! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
+## 2.1 Number of links per pages
+
+![distrib_links_per_article](/assets/img/distrib_links_per_article.png)
+
+As expected, there is much more links per pages **on average** in our 2024 dataset ! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
 
 <div class="chat">
   <div class="Marty">
-    <div class="icon"> </div>
-    <div class="message"> Cool! So that's why the game is harder in 2007? </div>
-  </div>
+    <div class="icon_crazy">
+    </div> <!-- icon-->
+    <div class="message">
+        Cool! So that's why the game is harder in 2007?
+    </div><!-- message -->
+  </div><!-- Marty -->
+  
   <div class="Doc">
-    <div class="icon"> </div>
-    <div class="message"> Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles: </div>
-  </div>
+      <div class="message">
+        Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles:
+      </div><!-- message -->
+      <div class="icon">
+      </div> <!-- icon-->
+  </div><!-- Doc -->
 </div>
 
-In this plot, we visualize every articles within our dataset of the 4604 selected articles from the Wikispeedia game on the x axis and compute the differences in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, orange, corresponds to less links in the page in 2024 than in 2007.
 
-![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
+In the plot below, we visualize every articles within our dataset of the 4604 selected articles from the Wikispeedia game on the x axis and compute the differences in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, orange, corresponds to less links in the page in 2024 than in 2007.
+
+![diff_links_per_article](/assets/img/diff_links_per_article.png)
+
+<div class="chat">
+  <div class="Doc">
+        <div class="message">
+          Overall we see that there is much more pages that gain new links than pages losing links in 2024 !
+        </div><!-- message -->
+        <div class="icon">
+        </div> <!-- icon-->
+    </div><!-- Doc -->
+    <div class="Doc">
+      <div class="message">
+        Let's now move to the **interesting** part : the network of the links...
+      </div><!-- message -->
+      <div class="icon_crazy">
+      </div> <!-- icon-->
+  </div><!-- Doc -->
+</div>
+
+## 2.2 Network differences 
+
+For now, we only have been looking at the repartitions of links on the pages with no interested to where those links would redirect to, even though this is probably our most crucial information to conclude wheter the structure of 2024 has really changed compared to 2007. In this part we look at how the pages are interconnected and compare it for the two different years. To do so we will use the Shortest Path metric. 
+
+<div class="chat">
+  <div class="Marty">
+        <div class="message">
+          Hey Doc... What is actually the shortest path ? 
+        </div><!-- message -->
+        <div class="icon">
+        </div> <!-- icon-->
+    </div><!-- Doc -->
+    <div class="Doc">
+      <div class="message">
+        Well Marty it's in the name ! The most direct path from one point to another in a network is the shortest path. We should look at how direct the connections between articles are in 2024 and see where it gets us.
+      </div><!-- message -->
+      <div class="icon_crazy">
+      </div> <!-- icon-->
+  </div><!-- Doc -->
+</div>
+
+{: .box-note}
+  **Shortest Path Algorithm** \ 
+  There exist different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path MAtrix as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
 
 
 
-network differences 
-
-![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png)
+![heatmap_diff](/assets/img/heatmap_diff.png)
 
 
-![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
+![reachable_nodes](/assets/img/reachable_nodes.png)
 
 
 # Part 3

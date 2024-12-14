@@ -164,7 +164,7 @@ We can then conclude that finding an article in Countries category is easier whe
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
 
 {: .box-note}
-  The **shortest path** between two articles is given by the minimum number of links you must click plus 1. For this reason, we will not take into account the games where the shortest path is 2, because it means that only 1 click is necessary. 
+  The **shortest path** between two articles is given by the minimum number of links you must click plus 1.
 
 This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 

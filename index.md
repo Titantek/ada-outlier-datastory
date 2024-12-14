@@ -112,7 +112,7 @@ To answer this question, we can investigate the categories of starting articles 
   </div>
   <div class="Doc">
     <div class="icon"></div> 
-    <div class="message">  We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can looks big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is the best option. </div>
+    <div class="message">  We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is the best option. </div>
   </div>  
 </div>
 
@@ -128,15 +128,27 @@ Let's dig through some details. A few major differences occur. First, there is 4
 
 We can then conclude that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
 
+<div class="chat">
+  <div class="Marty">
+     <div class="icon_crazy"></div> 
+      <div class="message">
+        Youhou! We found why the players lose!
+      </div>
+  </div>
+  <div class="Doc">
+    <div class="icon"></div> 
+    <div class="message">  Hold on a second Marty! I'm sure there might be other factors </div>
+  </div>  
+</div>
 
 
 
+One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
 
-Are there other factors that influence the success rate? Let's investigate that.
+{: .box-note}
+  The **shortest path** between two articles is given by the minimum number of links you must click plus 1. For this reason, we will not take into account the games where the shortest path is 2, because it means that only 1 click is necessary. 
 
-The shortest path between two articles is given by the minimum number of links you must click plus 1. For this reason, we will not take into account the games where the shortest path is 2, because it means that only 1 click is necessary. 
-
-One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
+This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 

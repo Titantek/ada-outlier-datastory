@@ -1169,7 +1169,7 @@ pre {
   margin-right: 0;
 }
 
-
+*/
 .chat{
   width:80%;
   max-width:800px;
@@ -1221,6 +1221,7 @@ pre {
   background-size:cover;
 }
 
+/*
 .Marty .icon::after{
   content:' ';
   position:absolute;
@@ -1231,6 +1232,7 @@ pre {
   bottom:0;
   right:0;
 }
+*/
 
 .Doc{
   display:flex;
@@ -1243,7 +1245,7 @@ pre {
   background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
   background-position:center;
   background-size:cover;
-  /*left: calc(100% - var(--size));
+  /*left: calc(100% - var(--size));*/
 }
 
 
@@ -1260,16 +1262,18 @@ pre {
   margin-left:100px;
   text-align:right;
 }
+
 .message svg{
   height:26px;
   vertical-align:middle;
 }
+
 .last{
   width:auto;
 }
-*/
 
 /* Eglantine's Custom styles for chat dialog */
+/* 
 .chat {
   display: flex;
   flex-direction: column;
@@ -1317,8 +1321,8 @@ pre {
 
 .message-wrapper {
   display: flex;
-  align-items: flex-start; /* Align images and text properly */
-  gap: 10px; /* Space between image and bubble */
+  align-items: flex-start; / * Align images and text properly * /
+  gap: 10px; / * Space between image and bubble * /
 }
 
 .message-wrapper .Marty {
@@ -1326,5 +1330,6 @@ pre {
 }
 
 .message-wrapper .Doc {
-  flex-direction: row-reverse; /* Right-to-left layout for Doc's messages */
+  flex-direction: row-reverse; / * Right-to-left layout for Doc's messages * /
 }
+*/

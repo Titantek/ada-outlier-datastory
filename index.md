@@ -165,6 +165,7 @@ network differences
 
 # Part 4: Are the players(LLMs) stronger in 2024 than in 2007 ?
 
+<!--
 **Marty** : Doc are the players today stronger than in 2007 ? 
 **Doc** : I don't know Marty, we don't have any data about the players in 2024.
 **Marty** : But we have the data from 2007, can't we compare the two years ?
@@ -176,12 +177,72 @@ network differences
 **Marty** : Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.
 **Marty** : Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data ?
 **Doc** : I will use the games that at least 10 players have played and I will train the models with [Ollama](https://ollama.com/) and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.
+-->
+
+<div class="chat">
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Doc, are the players today stronger than in 2007?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">I don't know Marty, we don't have any data about the players in 2024.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">But we have the data from 2007, can't we compare the two years?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">We might be able to do that, let me think about it... we can use my favorite tool LLMs &lt 3 to compare the two years.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">LLMs? But, the results will differ from the ones we got from the players' data, right? Which model should we use?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">Yes, it might be different, but we can test different models and see which is the most similar to the players' data.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">That's a great idea Doc, let's do it! But how would we know if the model is similar to the players' data?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">First, we can verify that the model can finish a game, then we can compare the path length with the players, and eventually, we can measure if the model has chosen the same articles as the players.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.</div>
+  </div>
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data?</div>
+  </div>
+
+  <div class="Doc">
+    <div class="icon"></div>
+    <div class="message">I will use the games that at least 10 players have played and I will train the models with <a href="https://ollama.com/">Ollama</a> and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.</div>
+  </div>
+</div>
+
+
 
 ![players_path_length](/assets/img/players_path_length.svg)
 
 ![llms_path_not_found](/assets/img/llms_path_not_found.svg)
 
-<iframe src="/assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
 
 ![llm_jacard](/assets/img/jacard.svg)
 

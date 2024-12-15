@@ -6,7 +6,7 @@ layout: null
 
 :root {
   /* config file CSS variables */
-  --page-col: {{ site.page-col | default: "#FFFFFF" }};
+  --page-col: {{ site.page-col | default: "#445588" }};
   --text-col: {{ site.text-col | default: "#404040" }};
   --link-col: {{ site.link-col | default: "#008AFF" }};
   --hover-col: {{ site.hover-col | default: "#0085A1" }};
@@ -1125,6 +1125,7 @@ pre {
 
 /* Custom styles for chat dialog */
 
+/* Container for all chat bubbles */
 .chat {
   display: flex;
   flex-direction: column;
@@ -1134,21 +1135,23 @@ pre {
   font-family: Arial, sans-serif;
 }
 
+/* Chat bubble container (common styles for both Marty and Doc) */
 .chat div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; /* Space between icon and message */
   max-width: 90%;
 }
 
+/* Message bubble styling */
 .message {
   padding: 10px 15px;
   border-radius: 15px;
-  max-width: calc(100% - 100px); /* Space for the icon */
+  max-width: calc(100% - 100px); /* Leave space for the icon */
   word-wrap: break-word;
 }
 
-/* Icon styles */
+/* Common icon styles */
 .icon {
   width: 80px;
   height: 80px;
@@ -1160,16 +1163,16 @@ pre {
 
 /* Marty's styles */
 .Marty, .Marty_crazy {
-  flex-direction: row; /* Icon on the left */
+  flex-direction: row; /* Icon on the left of the text */
   align-self: flex-start;
 }
 
 .Marty .icon {
-  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png");
+  background-image: url("/assets/img/Marty_and_Doc/marty1.png");
 }
 
 .Marty_crazy .icon {
-  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png");
+  background-image: url("/assets/img/Marty_and_Doc/marty_cool.png");
 }
 
 .Marty .message, .Marty_crazy .message {
@@ -1178,21 +1181,22 @@ pre {
 
 /* Doc's styles */
 .Doc, .Doc_crazy {
-  flex-direction: row-reverse; /* Icon on the right */
-  align-self: flex-end;
+  align-self: flex-end; /* Align Doc's bubble to the right */
 }
 
 .Doc .icon {
-  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png");
+  background-image: url("/assets/img/Marty_and_Doc/doc1.png");
 }
 
 .Doc_crazy .icon {
-  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png");
+  background-image: url("/assets/img/Marty_and_Doc/doc_crazy.png");
 }
 
 .Doc .message, .Doc_crazy .message {
   background-color: #edffff; /* Light cyan for Doc */
+  flex-direction: row-reverse; /* Icon on the right of the text */
 }
+
 
 
 /* Interactive plots */

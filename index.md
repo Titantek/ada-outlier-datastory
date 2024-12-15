@@ -3,7 +3,7 @@ layout: page
 title: Back to the Future 
 subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
-cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
+cover-img: "/ada-outlier-datastory/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
 # Introduction (mainly datastory)
 
@@ -39,7 +39,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 <div class="chat">
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
       </div>
@@ -49,11 +49,11 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
       <div class="message Doc">
          What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div>
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Ok, ok, hear me out:
       </div>
@@ -69,11 +69,11 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
       <div class="message Doc">
          Fascinating! Marty, you are saying it is harder that you thought, how so?
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div>
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
       </div>
@@ -83,11 +83,11 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
       <div class="message Doc">
          Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
    </div>
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Sure Doc, take the lead!
       </div>
@@ -107,11 +107,11 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
       <div class="message Doc">
          The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Well, tell me Doc, what do the categories look like?
       </div>
@@ -121,11 +121,11 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
       <div class="message Doc">
          Apparently, for most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          I see! We notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page.
       </div>
@@ -141,12 +141,12 @@ HERE:: more analysis?
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 -->
 
-<iframe src="assets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
+<iframe src="/ada-outlier-datastoryassets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
 
 <div class="chat">
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Wow! Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
       </div>
@@ -156,7 +156,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
       <div class="message Doc">
          You're right! Let's now look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
 </div>
@@ -168,13 +168,13 @@ Back in 2007, science articles represented almost 1/4 of the encyclopedia, where
 Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
 -->
 
-<iframe src="assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
 
 <div class="chat">
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Wow, lots of information on this plot! Help me there Doc!
       </div>
@@ -184,11 +184,11 @@ Let's first look at the links between the articles: from which to which categori
       <div class="message Doc">
          First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. 
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Ok I see! But then, do you think that there are categories of articles that are harder to guess?
       </div>
@@ -198,7 +198,7 @@ Let's first look at the links between the articles: from which to which categori
       <div class="message Doc">
          To answer this question Marty, we can investigate the categories of starting articles and target articles of the players! 
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
    </div> 
 
 </div>
@@ -212,7 +212,7 @@ To answer this question, we can investigate the categories of starting articles 
 <div class="chat">
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Hah! Leave it to me Doc…
       </div>
@@ -222,11 +222,11 @@ To answer this question, we can investigate the categories of starting articles 
       <div class="message Doc">
          Wait a second Marty! We have to clean a bit the data...
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          What do you mean? What's wrong with the data?
       </div>
@@ -236,11 +236,11 @@ To answer this question, we can investigate the categories of starting articles 
       <div class="message Doc">
          First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          But don't we introduce a bias in this way?
       </div>
@@ -250,7 +250,7 @@ To answer this question, we can investigate the categories of starting articles 
       <div class="message Doc">
          We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
    </div> 
 </div>
 
@@ -282,14 +282,14 @@ To answer this question, we can investigate the categories of starting articles 
 </div>
 -->
 
-<iframe src="assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
 
-<iframe src="assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
 <div class="chat">
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Both heatmaps look similar! Should we conclude that there is no difference between finished and unfinished paths categories?
       </div>
@@ -299,11 +299,11 @@ To answer this question, we can investigate the categories of starting articles 
       <div class="message Doc">
          We cannot conclude that quickly Marty. Let's perform a statistical test for that. In our case, we should use a chi2 contingency test: our null hypothesis is that both distributions are identical. What is meant by distribution is a vector of 15x15 that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of alpha=0.01.
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Ok, let me see… The results are the following: `pvalue=0.0, statistic=2953.30`. And, the test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
       </div>
@@ -313,18 +313,18 @@ To answer this question, we can investigate the categories of starting articles 
       <div class="message Doc">
          Great! We can thus safely reject the null hypothesis!
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
       <div class="message Doc">
          If we dig into the details, we see that a few major differences occur. First, there is 4 times less target from the Countries category in among the unfinished paths, whereas there is 2 times more target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          So apparently, finding an article in Countries category is easier than finding an article in Design_and_Technology or Everyday_Life for example.
       </div>
@@ -344,7 +344,7 @@ We can then conclude that finding an article in Countries category is easier whe
 <div class="chat">
 
    <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
          Hah! We found why the players lose! Wasn't that hard.
       </div>
@@ -354,7 +354,7 @@ We can then conclude that finding an article in Countries category is easier whe
       <div class="message Doc">
          Hold on a second Marty! There might be other interesting factors…
       </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
 </div>
@@ -368,11 +368,11 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 
-<iframe src="assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. The distributions look different! Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. Using the `ttest_ind_from_stats` function from scipy, we obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different! Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1.
 
-<iframe src="assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
 How can we now use these observations to predict player success? Let's do a logistic regression! We want to predict if a player will succeed for a given start and end article, depending on the shortest path and the number of links pointing to the target.
 
@@ -400,7 +400,7 @@ Let us now compare the differences between the old wikipedia from 2007 and our c
 
 ## 2.1 Number of links per pages
 
-![distrib_links_per_article](/assets/img/distrib_links_per_article.png)
+![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
 
 As expected, there is much more links per pages **on average** in our 2024 dataset ! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
 
@@ -425,7 +425,7 @@ As expected, there is much more links per pages **on average** in our 2024 datas
 
 In the plot below, we visualize every articles within our dataset of the 4604 selected articles from the Wikispeedia game on the x axis and compute the differences in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, orange, corresponds to less links in the page in 2024 than in 2007.
 
-![diff_links_per_article](/assets/img/diff_links_per_article.png)
+![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
 
 <div class="chat">
   <div class="Doc">
@@ -471,10 +471,10 @@ For now, we only have been looking at the repartitions of links on the pages wit
 
 
 
-![heatmap_diff](/assets/img/heatmap_diff.png)
+![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png)
 
 
-![reachable_nodes](/assets/img/reachable_nodes.png)
+![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
 
 
 # Part 3
@@ -554,15 +554,15 @@ For now, we only have been looking at the repartitions of links on the pages wit
 
 
 
-![players_path_length](/assets/img/players_path_length.svg)
+![players_path_length](/ada-outlier-datastory/assets/img/players_path_length.svg)
 
-![llms_path_not_found](/assets/img/llms_path_not_found.svg)
+![llms_path_not_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
 
 <iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
 
-![llm_jacard](/assets/img/jacard.svg)
+![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
 
-![llama3_2007_2024](/assets/img/llama3_2007_2024.svg)
+![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama3_2007_2024.svg)
 
 
 

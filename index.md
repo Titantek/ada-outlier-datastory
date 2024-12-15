@@ -14,85 +14,93 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 <div class="chat">
 
-   <div class="message-wrapper">
-      <img src="/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         message marty
-      </div>
+   <div class="Marty_crazy">
+      <div class="icon"></div>
+      <div class="message">Hey Doc! Did you see this?</div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         message doc
-      </div>
-      <img src="/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
+   <div class="Doc_crazy">
+      <div class="message">What are you talking about, Marty?</div>
+      <div class="icon"></div>
+   </div>
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">It's this awesome web game called Wikispeedia!</div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">Hmm, sounds interesting. Tell me more.</div>
+      <div class="icon"></div>
+   </div>
 
 </div>
+
 
 -->
 
-
-
-
-
 <div class="chat">
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Hey Doc! What's up? You know, this web game, Wikispeedia? I've been playin' it a few times and it's way harder that I thought it would be.
       </div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
+   <div class="Doc">
+      <div class="message">
+      What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
       </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <div class="icon"></div>
    </div>
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Ok, ok, hear me out:
+   <div class="Marty_crazy">
+      <div class="icon"></div>
+      <div class="message">
+      Ok, ok, hear me out:
       </div>
    </div>
 
 </div>
+
+
 
 ~ small presentation about Wikispeedia principle and how to play the game ~
 
+
 <div class="chat">
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         Fascinating! Marty, you are saying it is harder that you thought, how so?
+   <div class="Doc">
+      <div class="message">
+      Fascinating! Marty, you are saying it is harder that you thought, how so?
       </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
+      <div class="icon"></div>
    </div>
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
       </div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
+   <div class="Doc_crazy">
+      <div class="message">
+      Hmm I see… Well Marty, you just gave me a BRILLIANT idea! Let us inspect this game and see how people performed on it since it's been created!
       </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
+      <div class="icon"></div>
    </div>
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Sure Doc, take the lead!
+   <div class="Marty_crazy">
+      <div class="icon"></div>
+      <div class="message">
+      Sure Doc, take the lead!
       </div>
    </div>
+
 </div>
+
 
 ~ Presentation of the dataset by Doc ~
 

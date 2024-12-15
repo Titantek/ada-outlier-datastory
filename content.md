@@ -3,13 +3,8 @@ layout: page
 title: Back to the Future 
 subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
-cover-img: "/assets/img/Marty_and_Doc/dolo_normal.png"
+cover-img: "/ada-outlier-datastory/assets/img/Marty_and_Doc/dolo_flamme.png"
 ---
-
-# We are in 2024. Marty gets out of his last ADA lecture, during which he was quite distracted and spent two hours playing some game on his computer…
-
-
-# Button: enter Doc's house with him
 
 <!--
 TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:

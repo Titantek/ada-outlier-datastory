@@ -54,10 +54,10 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
    </div>
 
    <div class="Doc">
+      <div class="icon"></div>
       <div class="message">
       What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
       </div>
-      <div class="icon"></div>
    </div>
 
    <div class="Marty_crazy">

@@ -1168,11 +1168,11 @@ pre {
 }
 
 .Marty .icon {
-  background-image: url("/assets/img/Marty_and_Doc/marty1.png");
+  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png");
 }
 
 .Marty_crazy .icon {
-  background-image: url("/assets/img/Marty_and_Doc/marty_cool.png");
+  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png");
 }
 
 .Marty .message, .Marty_crazy .message {
@@ -1185,11 +1185,11 @@ pre {
 }
 
 .Doc .icon {
-  background-image: url("/assets/img/Marty_and_Doc/doc1.png");
+  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png");
 }
 
 .Doc_crazy .icon {
-  background-image: url("/assets/img/Marty_and_Doc/doc_crazy.png");
+  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png");
 }
 
 .Doc .message, .Doc_crazy .message {

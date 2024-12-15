@@ -148,7 +148,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 -->
 
 <iframe 
-    src="/assets/img/pie_cat.html" 
+    src="/ada-outlier-datastory/assets/img/pie_cat.html" 
     class="responsive-iframe" 
     title="Pie chart of the categories">
 </iframe>
@@ -550,7 +550,7 @@ For now, we only have been looking at the repartitions of links on the pages wit
 
 ![llms_path_not_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
 
-<iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
 
 ![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
 

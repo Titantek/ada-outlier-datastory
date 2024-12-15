@@ -383,7 +383,9 @@ Another parameter might be the number of links leading to the target: intuitivel
 In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
 \
 In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
-$$ f(X)=y=\frac{1}{1+\exp(-\beta^TX)}$$ \
+\begin{equation*}
+f(X)=y=\frac{1}{1+\exp(-\beta^TX)}
+\end{equation*} \
 where $$\beta$$ are the coefficients to fit.
 
 

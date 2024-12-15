@@ -952,11 +952,13 @@ pre {
   border: 1px solid #eee;
   border-left-width: 0.3125rem;
   border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
+  color: var(--text-col);
 }
 
 .box-note {
   background-color: #eee;
   border-left-color: #2980b9;
+  
 }
 
 .box-warning {

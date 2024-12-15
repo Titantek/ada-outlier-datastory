@@ -1216,3 +1216,37 @@ pre {
   height: 5%; 
   border: none; 
 }
+
+
+/* button to content */
+
+button {
+  margin-top: 20px;
+  margin-left: 60px;
+  padding: 10px 20px;
+  background-color: #0085A1; 
+  color: white;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #006b7c;
+}
+
+/* home-container: Flexbox to display image and button side by side */
+.home-container {
+  display: flex;
+  flex-direction: row; /* Icon on the left of the text */
+  align-self: flex-start;
+  align-items: center;  /* Vertically center the content */
+  gap: 20px;  /* Add space between the image and button */
+}
+
+.home-img {
+  width: 50%;  /* Adjust width of Marty image */
+  height: auto;  /* Keep aspect ratio */
+}

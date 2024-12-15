@@ -9,6 +9,6 @@ subtitle: "Time-Traveling through Wikispeedia"
 
 
 <div class="home-container">
-  <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/Marty_cool.png" alt="Marty" class="home-img">
+  <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="home-img">
   <button onclick="window.location.href='/content';">Follow Marty to Doc's house!</button>
 </div>

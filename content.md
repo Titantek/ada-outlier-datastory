@@ -361,13 +361,30 @@ Another parameter might be the number of links leading to the target: intuitivel
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
-How can we now use these observations to predict player success? Let's do a logistic regression! We want to predict if a player will succeed for a given start and end article, depending on the shortest path and the number of links pointing to the target.
+<div class="chat">
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+        Interesting... But how can we evaluate the influence of each factor?
+      </div>
+   </div>
 
-Log. regression:
-table with results?
+   <div class="Doc">
+      <div class="message">
+        Good question Marty! It's time for a good old logistic regression. 
+      </div>
+      <div class="icon"></div>
+   </div>
+</div>
 
 
-
+{: .box-note}
+**Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
+In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
+\
+In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
+$$ f(X)=y=\frac{1}{1+\exp(-\beta^TX)}$$ \
+where $$\beta$$ are the coefficients to fit.
 
 
 

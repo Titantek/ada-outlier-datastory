@@ -1177,6 +1177,7 @@ pre {
 
 .Marty .message, .Marty_crazy .message {
   background-color: #ededff; /* Light blue for Marty */
+  color: #161345;
 }
 
 /* Doc's styles */
@@ -1195,6 +1196,7 @@ pre {
 .Doc .message, .Doc_crazy .message {
   background-color: #edffff; /* Light cyan for Doc */
   flex-direction: row-reverse; /* Icon on the right of the text */
+  color: #161345;
 }
 
 

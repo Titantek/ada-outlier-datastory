@@ -389,6 +389,9 @@ f(X)=y=\frac{1}{1+\exp(-\beta^TX)}
 where $$\beta$$ are the coefficients to fit.
 
 
+We first prepare the data: we split it in training, validation and testing datasets using `sklearn.preprocessing.train_test_split` function. 60% of the samples goes in training, whereas validation and testing gather 20% of the samples each.
+We then standardize the column for the number of links to target and get dummies columns for the shortest path and categories columns. We also add a column with 1.0 everywhere to fit the intercept. We then use the `statsmodels.api.Logit`model and fit it with regularization on the training set.
+
 
 
 

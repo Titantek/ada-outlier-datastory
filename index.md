@@ -5,8 +5,11 @@ subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
 cover-img: "/ada-outlier-datastory/assets/img/Marty_and_Doc/dolo_normal.png"
 ---
-# Introduction (mainly datastory)
 
+# We are in 2024. Marty gets out of his last ADA lecture, during which he was quite distracted and spent two hours playing some game on his computer…
+
+
+# Button: enter Doc's house with him
 
 <!--
 TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
@@ -16,28 +19,35 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
    <div class="Marty_crazy">
       <div class="icon"></div>
-      <div class="message">Hey Doc! Did you see this?</div>
+      <div class="message">
+      text marty with crazy icon
+      </div>
    </div>
 
    <div class="Doc_crazy">
-      <div class="message">What are you talking about, Marty?</div>
+      <div class="message">
+      text doc with crzay icon
+      </div>
       <div class="icon"></div>
    </div>
 
    <div class="Marty">
       <div class="icon"></div>
-      <div class="message">It's this awesome web game called Wikispeedia!</div>
+      <div class="message">
+      text marty with normal icon
+      </div>
    </div>
 
    <div class="Doc">
-      <div class="message">Hmm, sounds interesting. Tell me more.</div>
+      <div class="message">
+      text doc with normal icon
+      </div>
       <div class="icon"></div>
    </div>
 
 </div>
-
-
 -->
+
 
 <div class="chat">
 
@@ -107,39 +117,27 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 # Part 1: How are people performing in Wikispeedia?
 
-
-
 <div class="chat">
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
+   <div class="Doc">
+      <div class="message">
+      The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
       </div>
-      <img src="/ada-outlier-datastory/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
-
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Well, tell me Doc, what do the categories look like?
-      </div>
+      <div class="icon"></div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         Apparently, for most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
-      </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
-
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         I see! We notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page.
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Well, tell me Doc, what do the categories look like?
       </div>
    </div>
 
 </div>
+
+For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
+
+Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 
 <!--
 First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
@@ -149,25 +147,31 @@ HERE:: more analysis?
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 -->
 
-<iframe src="/ada-outlier-datastoryassets/img/pie_cat.html" width="800px" height="400px" alt='Pie chart of the categories'></iframe>
+<iframe 
+    src="/assets/img/pie_cat.html" 
+    class="responsive-iframe" 
+    title="Pie chart of the categories">
+</iframe>
+
 
 <div class="chat">
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Wow! Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Wow! Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it.
       </div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         You're right! Let's now look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
+   <div class="Doc">
+      <div class="message">
+      You're right! Let's now look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
       </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
+      <div class="icon"></div>
+   </div>
 
 </div>
+
 
 <!--
 Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
@@ -178,117 +182,97 @@ Let's first look at the links between the articles: from which to which categori
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
-
-<div class="chat">
-
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Wow, lots of information on this plot! Help me there Doc!
-      </div>
-   </div>
-
-   <div class="message-wrapper">
-      <div class="message Doc">
-         First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. 
-      </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
-
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Ok I see! But then, do you think that there are categories of articles that are harder to guess?
-      </div>
-   </div>
-
-   <div class="message-wrapper">
-      <div class="message Doc">
-         To answer this question Marty, we can investigate the categories of starting articles and target articles of the players! 
-      </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
-   </div> 
-
-</div>
-
-<!--
+<!-- INITIAL TEXT:
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players.
+
+BUBBLES AND PLAIN TEXT:
 -->
 
 <div class="chat">
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         Hah! Leave it to me Doc…
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Wow, lots of information on this plot! Help me there Doc!
       </div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         Wait a second Marty! We have to clean a bit the data...
+   <div class="Doc_crazy">
+      <div class="message">
+      Don't worry Marty, we just need to break this into small steps. Here:
       </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
-
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         What do you mean? What's wrong with the data?
-      </div>
+      <div class="icon"></div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
-         First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
-      </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
-   </div> 
-
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
-         But don't we introduce a bias in this way?
-      </div>
-   </div>
-
-   <div class="message-wrapper">
-      <div class="message Doc">
-         We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
-      </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png" alt="Doc" class="profile-pic">
-   </div> 
 </div>
 
-<!--
-  <div class="Doc">
-    <div class="icon"></div> 
-    <div class="message"> Wait a second Marty! We have to clean a bit the data... </div>
-  </div>  
-  <div class="Marty">
-     <div class="icon"></div> 
+
+First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles.
+
+
+<div class="chat">
+
+   <div class="Marty">
+      <div class="icon"></div>
       <div class="message">
-        What do you mean? What's wrong with the data?
+      Ok I see! But then, does this mean that there are categories of articles that are harder to guess?
       </div>
-  </div>
-  <div class="Doc">
-    <div class="icon"></div> 
-    <div class="message"> First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths. </div>
-  </div>  
-  <div class="Marty">
-     <div class="icon"></div> 
+   </div>
+
+   <div class="Doc">
       <div class="message">
-        But don't we introduce a bias in this way?
+      To answer this question Marty, we can investigate the categories of starting articles and target articles of the players!
       </div>
-  </div>
-  <div class="Doc">
-    <div class="icon"></div> 
-    <div class="message">  We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is the best option. </div>
-  </div>  
+      <div class="icon"></div>
+   </div>
+
+   <div class="Marty_crazy">
+      <div class="icon"></div>
+      <div class="message">
+      Hah! Leave it to me Doc…
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+      Wait a second Marty! We have to clean a bit the data...
+      </div>
+      <div class="icon"></div>
+   </div>
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      What do you mean? What's wrong with the data?
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+      First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
+      </div>
+      <div class="icon"></div>
+   </div>
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      But don't we introduce a bias in this way?
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+      We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
+      </div>
+      <div class="icon"></div>
+   </div>
+
 </div>
--->
+
+
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
 

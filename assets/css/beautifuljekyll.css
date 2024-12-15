@@ -1125,166 +1125,6 @@ pre {
 
 /* Custom styles for chat dialog */
 
-/*
-.chat{
-  width:80%;
-  max-width:800px;
-  margin:2em auto;
-  font-family: Arial, sans-serif;
-}
-
-.message{
-  width:calc(100% - 200px);
-  border-radius:15px;
-  padding:1em;
-  margin-top:1em;
-}
-
-.icon{
-  --size:80px;
-  width:var(--size);
-  height:var(--size);
-  border-radius:100%;
-  margin-right:.8em;
-  position:relative;
-}
-
-
-.icon_crazy{
-  --size:80px;
-  width:var(--size);
-  height:var(--size);
-  border-radius:100%;
-  margin-right:.8em;
-  position:relative;
-}
-
-.Marty .message{
-  background: #ededff;
-}
-
-.Marty{
-  display:flex;
-  align-items:flex-end;
-}
-
-.Marty .icon{ 
-  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png);
-  background-position:center;
-  background-size:cover;
-}
-
-.Marty .icon_crazy{ 
-  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png);
-  background-position:center;
-  background-size:cover;
-}
-
-.Doc{
-  display:flex;
-  align-items:flex-end;
-  justify-content: flex-end;
-}
-
-.Doc .icon{
-  order: 2;
-  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png);
-  background-position:center;
-  background-size:cover;
-}
-
-
-.Doc .icon_crazy{ 
-  order: 2;
-  background:url(/ada-outlier-datastory/assets/img/Marty_and_Doc/doc_crazy.png);
-  background-position:center;
-  background-size:cover;
-}
-
-.Doc .message{
-  order:1;
-  background: #edffff;
-  margin-left:100px;
-  text-align:right;
-}
-
-.message svg{
-  height:26px;
-  vertical-align:middle;
-}
-
-.last{
-  width:auto;
-}
-
-
-
-
-
-
-
-.chat {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 800px;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
-}
-
-.message-container {
-  display: flex;
-  align-items: center;
-}
-
-.message {
-  padding: 10px 15px;
-  border-radius: 15px;
-  max-width: 90%;
-  word-wrap: break-word;
-}
-
-.Marty {
-  flex-direction: row;
-  background-color: #ededff;
-  align-self: flex-start;
-}
-
-.Doc {
-  flex-direction: row-reverse;
-  background-color: #edffff;
-  align-self: flex-end;
-}
-
-.profile-pic {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin-right: 0 10px;
-}
-
-.Doc .profile-pic {
-  margin-left: 10px;
-  margin-right: 0;
-}
-
-.message-wrapper {
-  display: flex;
-  align-items: flex-start; 
-  gap: 10px; 
-}
-
-.message-wrapper .Marty {
-  flex-direction: row;
-}
-
-.message-wrapper .Doc {
-  flex-direction: row-reverse; 
-}
-*/
-
-
-/* General chat styles */
 .chat {
   display: flex;
   flex-direction: column;
@@ -1352,4 +1192,21 @@ pre {
 
 .Doc .message, .Doc_crazy .message {
   background-color: #edffff; /* Light cyan for Doc */
+}
+
+
+/* Interactive plots */
+
+
+.iframe-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+}
+
+.responsive-iframe {
+  width: 80%; 
+  height: 5%; 
+  border: none; 
 }

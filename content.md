@@ -333,14 +333,14 @@ We can then conclude that finding an article in Countries category is easier whe
 <div class="chat">
 
    <div class="Marty">
-      <div class='icon_crazy'> </div>
+      <div class="icon_crazy"></div>
       <div class="message">
          Hah! We found why the players lose! Wasn't that hard.
       </div>
    </div>
 
    <div class="Doc">
-      <div class='icon'> </div>
+      <div class="icon"></div>
       <div class="message">
          Hold on a second Marty! There might be other interesting factors…
       </div>
@@ -353,7 +353,7 @@ We can then conclude that finding an article in Countries category is easier whe
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
 
 {: .box-note}
-  The **shortest path** between two articles is given by the minimum number of links you must click plus 1.
+  The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article plus 1.
 
 This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 
@@ -415,7 +415,7 @@ We then standardize the column for the number of links to target and get dummies
    In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \ The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
 
 We will focus on the coefficients that have a p-value below the significance threshold, i.e. below 0.01. As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also to find another article starting from this same category!
-The longer the shortest path, the smaller the probability of success is: it decreases the odds by 55%. As expected, the opposite effect happen for the number of links to target: it increases the odds by 171%.
+The longer the shortest path, the smaller the probability of success is: it decreases the odds by 55%. It coincides well with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: it increases the odds by 171%. 
 Surprisingly, the Everyday_life category does not present a significant change, even though the p-value is very close to the threshold (0.014).
 
 
@@ -440,20 +440,18 @@ As expected, there is much more links per pages **on average** in our 2024 datas
 
 <div class="chat">
   <div class="Marty">
-    <div class="icon_crazy">
-    </div> <!-- icon-->
+    <div class="icon_crazy"></div>
     <div class="message">
         Cool! So that's why the game is harder in 2007?
-    </div><!-- message -->
-  </div><!-- Marty -->
+    </div>
+  </div>
   
   <div class="Doc">
       <div class="message">
         Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles:
-      </div><!-- message -->
-      <div class="icon">
-      </div> <!-- icon-->
-  </div><!-- Doc -->
+      </div>
+      <div class="icon"></div>
+  </div>
 </div>
 
 
@@ -465,17 +463,15 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
   <div class="Doc">
         <div class="message">
           Overall we see that there is much more pages that gain new links than pages losing links in 2024 !
-        </div><!-- message -->
-        <div class="icon">
-        </div> <!-- icon-->
-    </div><!-- Doc -->
+        </div>
+        <div class="icon"></div>
+    </div>
     <div class="Doc">
       <div class="message">
         Let's now move to the **interesting** part : the network of the links...
-      </div><!-- message -->
-      <div class="icon_crazy">
-      </div> <!-- icon-->
-  </div><!-- Doc -->
+      </div>
+      <div class="icon_crazy"></div>
+  </div>
 </div>
 
 ## 2.2 Network differences 
@@ -486,17 +482,15 @@ For now, we only have been looking at the repartitions of links on the pages wit
   <div class="Marty">
         <div class="message">
           Hey Doc... What is actually the shortest path ? 
-        </div><!-- message -->
-        <div class="icon">
-        </div> <!-- icon-->
-    </div><!-- Doc -->
+        </div>
+        <div class="icon"></div>
+    </div>
     <div class="Doc">
       <div class="message">
         Well Marty it's in the name ! The most direct path from one point to another in a network is the shortest path. We should look at how direct the connections between articles are in 2024 and see where it gets us.
-      </div><!-- message -->
-      <div class="icon_crazy">
-      </div> <!-- icon-->
-  </div><!-- Doc -->
+      </div>
+      <div class="icon_crazy"></div>
+  </div>
 </div>
 
 {: .box-note}

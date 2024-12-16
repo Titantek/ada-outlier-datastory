@@ -513,7 +513,7 @@ We see that it **is** significantly shorter in 2024 than in 2007, which is a goo
 To see more in details how this plays out, we create the following heatmap where we plot the SPM from 2007 minus the SPM from 2024 : 
 
 <iframe 
-    src="/ada-outlier-datastory/assets/img/heatmap_diff.html" 
+    src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
     class="responsive-iframe" 
     title=" ">
 </iframe>

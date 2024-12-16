@@ -833,7 +833,7 @@ table {
 }
 table tr {
   border-top: 1px solid #cccccc;
-  background-color: var(--page-col);
+  background-color: transparent !important;
   margin: 0;
   padding: 0;
 }

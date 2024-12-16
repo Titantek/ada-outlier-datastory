@@ -419,7 +419,8 @@ We then standardize the column for the number of links to target and get dummies
 </div>
 
 {: .box-note}
-   In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \ The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
+   In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \
+   The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
 
 We will focus on the coefficients that have a p-value below the significance threshold, i.e. below 0.01. As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also to find another article starting from this same category!
 The longer the shortest path, the smaller the probability of success is: it decreases the odds by 55%. It coincides well with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: it increases the odds by 171%. 

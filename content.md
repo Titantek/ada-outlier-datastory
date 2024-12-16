@@ -273,6 +273,7 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
+<!--
 <div class="chat">
 
    <div class="message-wrapper">
@@ -319,29 +320,30 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 
 </div>
 
-<!--
+-->
+
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are identical. 
 What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
 
 Let's dig through some details. A few major differences occur. First, there is 4 times less target from the Countries category in among the unfinished paths, whereas there is 2 times more target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
 
 We can then conclude that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
--->
+
 
 <div class="chat">
 
-   <div class="message-wrapper">
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty_cool.png" alt="Marty" class="profile-pic">
-      <div class="message Marty">
+   <div class="Marty">
+      <div class='icon'> </div>
+      <div class="message">
          Hah! We found why the players lose! Wasn't that hard.
       </div>
    </div>
 
-   <div class="message-wrapper">
-      <div class="message Doc">
+   <div class="Doc">
+      <div class='icon'> </div>
+      <div class="message">
          Hold on a second Marty! There might be other interesting factors…
       </div>
-      <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
 
 </div>
@@ -390,8 +392,31 @@ where $$\beta$$ are the coefficients to fit.
 
 
 We first prepare the data: we split it in training, validation and testing datasets using `sklearn.preprocessing.train_test_split` function. 60% of the samples goes in training, whereas validation and testing gather 20% of the samples each.
-We then standardize the column for the number of links to target and get dummies columns for the shortest path and categories columns. We also add a column with 1.0 everywhere to fit the intercept. We then use the `statsmodels.api.Logit`model and fit it with regularization on the training set.
+We then standardize the column for the number of links to target and get dummies columns for the shortest path and categories columns. We also add a column with 1.0 everywhere to fit the intercept. We then use the `statsmodels.api.Logit`model and fit it with regularization on the training set. We fix the level of significance at 0.05. Here are the results:
+<iframe src="/ada-outlier-datastory/assets/img/results_log_reg.html" width="900px" height="600px" alt='results_log_reg'></iframe>
 
+<div class="chat">
+   <div class="Marty">
+      <div class="icon_crazy"></div>
+      <div class="message">
+        Oh wow! It looks like you were right Doc! But how do we interpret all of this?
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+        It looks nice indeed! Let's have a closer look.
+      </div>
+      <div class="icon"></div>
+   </div>
+</div>
+
+{:. box-note}
+In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \ The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
+
+We will focus on the coefficients that have a p-value below the significance threshold, i.e. below 0.01. As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also to find another article starting from this same category!
+The longer the shortest path, the smaller the probability of success is: it decreases the odds by 55%. As expected, the opposite effect happen for the number of links to target: it increases the odds by 171%.
+Surprisingly, the Everyday_life category does not present a significant change, even though the p-value is very close to the threshold (0.014).
 
 
 

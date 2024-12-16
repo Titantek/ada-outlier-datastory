@@ -332,8 +332,8 @@ We can then conclude that finding an article in Countries category is easier whe
 
 <div class="chat">
 
-   <div class="Marty">
-      <div class="icon_crazy"></div>
+   <div class="Marty_crazy">
+      <div class="icon"></div>
       <div class="message">
          Hah! We found why the players lose! Wasn't that hard.
       </div>
@@ -396,8 +396,8 @@ We then standardize the column for the number of links to target and get dummies
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg.html" width="900px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">
-   <div class="Marty">
-      <div class="icon_crazy"></div>
+   <div class="Marty_crazy">
+      <div class="icon"></div>
       <div class="message">
         Oh wow! It looks like you were right Doc! But how do we interpret all of this?
       </div>
@@ -439,8 +439,8 @@ Let us now compare the differences between the old wikipedia from 2007 and our c
 As expected, there is much more links per pages **on average** in our 2024 dataset ! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
 
 <div class="chat">
-  <div class="Marty">
-    <div class="icon_crazy"></div>
+  <div class="Marty_crazy">
+    <div class="icon"></div>
     <div class="message">
         Cool! So that's why the game is harder in 2007?
     </div>
@@ -466,11 +466,11 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
         </div>
         <div class="icon"></div>
     </div>
-    <div class="Doc">
+    <div class="Doc_crazy">
       <div class="message">
         Let's now move to the **interesting** part : the network of the links...
       </div>
-      <div class="icon_crazy"></div>
+      <div class="icon"></div>
   </div>
 </div>
 
@@ -485,11 +485,11 @@ For now, we only have been looking at the repartitions of links on the pages wit
         </div>
         <div class="icon"></div>
     </div>
-    <div class="Doc">
+    <div class="Doc_crazy">
       <div class="message">
         Well Marty it's in the name ! The most direct path from one point to another in a network is the shortest path. We should look at how direct the connections between articles are in 2024 and see where it gets us.
       </div>
-      <div class="icon_crazy"></div>
+      <div class="icon"></div>
   </div>
 </div>
 

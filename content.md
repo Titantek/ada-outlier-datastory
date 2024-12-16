@@ -333,7 +333,7 @@ We can then conclude that finding an article in Countries category is easier whe
 <div class="chat">
 
    <div class="Marty">
-      <div class='icon'> </div>
+      <div class='icon_crazy'> </div>
       <div class="message">
          Hah! We found why the players lose! Wasn't that hard.
       </div>
@@ -381,14 +381,14 @@ Another parameter might be the number of links leading to the target: intuitivel
 
 
 {: .box-note}
-**Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
-In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
-\
-In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
-$$\begin{equation*}
-f(X)=y=\frac{1}{1+\exp(-\beta^TX)}
-\end{equation*}$$ \
-where $$\beta$$ are the coefficients to fit.
+   **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
+   In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
+   \
+   In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
+   $$\begin{equation*}
+   f(X)=y=\frac{1}{1+\exp(-\beta^TX)}
+   \end{equation*}$$ \
+   where $$\beta$$ are the coefficients to fit.
 
 
 We first prepare the data: we split it in training, validation and testing datasets using `sklearn.preprocessing.train_test_split` function. 60% of the samples goes in training, whereas validation and testing gather 20% of the samples each.
@@ -411,8 +411,8 @@ We then standardize the column for the number of links to target and get dummies
    </div>
 </div>
 
-{:. box-note}
-In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \ The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
+{: .box-note}
+   In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \ The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
 
 We will focus on the coefficients that have a p-value below the significance threshold, i.e. below 0.01. As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also to find another article starting from this same category!
 The longer the shortest path, the smaller the probability of success is: it decreases the odds by 55%. As expected, the opposite effect happen for the number of links to target: it increases the odds by 171%.

@@ -455,8 +455,6 @@ We can now select a threshold and test the model on the test set!
 
 # Part 2: How did Wikipedia's structure evolve since 2007?
 
-M: Okay I know more about Wikispeedia and the general performance of players on the game. I wonder 
-
 Let us now compare the differences between the old wikipedia from 2007 and our current wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
 
 {: .box-note}
@@ -509,7 +507,7 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
 
 ## 2.2 Network differences 
 
-For now, we only have been looking at the repartitions of links on the pages with no interested to where those links would redirect to, even though this is probably our most crucial information to conclude wheter the structure of 2024 has really changed compared to 2007. In this part we look at how the pages are interconnected and compare it for the two different years. To do so we will use the Shortest Path metric. 
+For now, we only have been looking at the repartitions of links on the pages with no interest to where those links would redirect to, even though this is probably our most crucial information to conclude wheter the structure of 2024 has really changed compared to 2007. In this part we look at how the pages are interconnected and compare it for the two different years. To do so we will use the Shortest Path metric. 
 
 <div class="chat">
   <div class="Marty">
@@ -527,12 +525,73 @@ For now, we only have been looking at the repartitions of links on the pages wit
 </div>
 
 {: .box-note}
-  **Shortest Path Algorithm** \ 
-  There exist different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path MAtrix as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
+   **Shortest Path Algorithm** \
+  There exist different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path Matrix (*SPM*) as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
+
+First let's compare the average shortest path !
+|   | in 2007 | in 2024 | P value |
+| :------ |:--- | :--- | :--- |
+| Average Shortest Path | 2.808365 | 2.452919 | ~0.0 |
+
+We see that it **is** significantly shorter in 2024 than in 2007, which is a good sign for Marty!
+To see more in details how this plays out, we create the following heatmap where we plot the SPM from 2007 minus the SPM from 2024 :
+
+<iframe 
+    src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
+    class="responsive-iframe" 
+    title=" ">
+</iframe>
+
+In this plot, positive values represent when the shortest path is smaller in 2024 than in 2007, and inversely negative values correspond to when the shortest path is longer in 2024 than in 2007. 
+Apart for some big red or blue lines, that mean that the specific article is more (or less) connected to the whole database in 2024 than in 2007, it is difficult to get a general feeling for how the shortest path has changed between the two as the heatmap appears mostly white. We will need to look at other indicators then. 
+Let's now look at the Strongly Connected Components for each graph. 
+
+{: .box-note}
+   **Strongly Connected Components (SCCs)** \
+   SCCs are subparts of a graph where every node can be reached from every node in the SCCs. In our case, as we face directed graphs, this information is particularly useful : it is harder for the graph to form SCCs than for an undirected graph, as node A and B are in the same SCCs if and only if the path from A to B exist **and** the path from B to A exists too. To compare the structures of our networks we can look at the SCCs. 
+
+The two networks share a globally similar SCCs structure : only 1 big SCC that contains most of the articles, a few SCCs of only 2 articles and the rest of the articles that are not part of any real SCCs. The proportions of each structure do however vary between the two years :
+
+| SCCs  | in 2007 | in 2024 | 
+| :------ |:--- | :--- | 
+| Number of articles within the big SCC  | 4051 | 3910 |
+| Number of articles outside any SCC | 512 | 683 |
+| Number of SCCs of size 2 | 18 | 5 | 
+| Overall Average Shortest Path Across SCCs | 0.039 | 0.011 |
+
+<div class="chat">
+  <div class="Marty">
+        <div class="message">
+          So what's your verdict Doc ? 
+        </div>
+        <div class="icon"></div>
+    </div>
+    <div class="Doc_crazy">
+      <div class="message">
+        Hmm... Still hard to conclude anything Marty! Both Networks contain similarly sized SCCs but they still differ in the content of articles and different links... We should look at what articles are the most important in the networks too!
+      </div>
+      <div class="icon"></div>
+  </div>
+</div>
+
+How can we investigate the 'importance' of an article in the network ? Different methods exist but we selected here the PageRank Centrality as our measurement of a page's importance. 
+
+{: .box-note}
+   **PageRank Centrality** 
+
+<iframe 
+    src="/ada-outlier-datastory/assets/img/pagerank2007.html" 
+    class="responsive-iframe" 
+    title=" ">
+</iframe>
+<iframe 
+    src="/ada-outlier-datastory/assets/img/pagerank2024.html" 
+    class="responsive-iframe" 
+    title=" ">
+</iframe>
 
 
-
-![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png)
+<!-- ![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
 
 
 ![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)

@@ -529,6 +529,7 @@ For now, we only have been looking at the repartitions of links on the pages wit
   There exist different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path Matrix (*SPM*) as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
 
 First let's compare the average shortest path !
+
 |   | in 2007 | in 2024 | P value |
 | :------ |:--- | :--- | :--- |
 | Average Shortest Path | 2.808365 | 2.452919 | ~0.0 |

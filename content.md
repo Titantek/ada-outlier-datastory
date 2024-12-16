@@ -268,12 +268,12 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 </div>
 
 {: .box-note}
-   **Some statistics:**
-   - number of games before cleaning: 76 048
-   - success rate before cleaning: 67.4%
-   - number of games after cleaning:70 842
-   - success rate after cleaning: 72.3%
-   - percentage of loss: 6.8%
+   **Some statistics:**\
+   - number of games before cleaning: 76 048\
+   - success rate before cleaning: 67.4%\
+   - number of games after cleaning:70 842\
+   - success rate after cleaning: 72.3%\
+   - percentage of games discarded: 6.8%\
 
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>

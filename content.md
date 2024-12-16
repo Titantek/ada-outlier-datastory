@@ -260,13 +260,20 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 
    <div class="Doc">
       <div class="message">
-      We get rid of only 0.13% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
+      We get rid of only 0.16% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
       </div>
       <div class="icon"></div>
    </div>
 
 </div>
 
+{: .box-note}
+   **Some statistics:**
+   - number of games before cleaning: 76 048
+   - success rate before cleaning: 67.4%
+   - number of games after cleaning:70 842
+   - success rate after cleaning: 72.3%
+   - percentage of loss: 6.8%
 
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
@@ -355,7 +362,7 @@ One can assume that the shorter the shortest path, the more likely it is to find
 {: .box-note}
   The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article plus 1.
 
-This is well illustrated in the following plot. The longer the shortest path is, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 17.37% of the game collected are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
+This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 23.20% of the paths considered are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 

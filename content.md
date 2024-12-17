@@ -579,6 +579,10 @@ How can we investigate the 'importance' of an article in the network ? Different
 
 {: .box-note}
    **PageRank Centrality** 
+   This measure represents how 'important' a node is by how many inlinks redirect to it from other central nodes. The more a node has links redirecting to it the more it is central, and the more central nodes redirect to a node, the more central this node gets. It is often used to rank web pages as we are doing now. 
+   The pagerank centrality $x_i$ can thus be computed as follows : 
+   $$ x_i = \sum_j a_{ji} \frac{x_j}{\sum_{j} a_{ji}} $$
+   with $a_{ji}$ entry (j,i) of adjacency matrix $A$
 
 <iframe 
     src="/ada-outlier-datastory/assets/img/pagerank2007.html" 

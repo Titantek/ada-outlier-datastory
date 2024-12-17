@@ -682,6 +682,7 @@ footer .footer-custom-content {
 
 
 .intro-header.big-img {
+  margin-top: 3.1875rem; /* The small navbar is 50px tall + 1px border */
   background: no-repeat center center;
   background-size: contain; /* Ensures the image fits entirely inside the block */
   -webkit-background-size: contain;

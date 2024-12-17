@@ -708,6 +708,8 @@ ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pv
     <div class="message">LLMs? But, the results will differ from the ones we got from the players's data, right? And which model should we use? Can you explain me how you are going to do it?
 </div>
   </div>
+</div>
+
 
  We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data. The design of the prompts is inspired by the group Human vs Ia (TODO link).
 

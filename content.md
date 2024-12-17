@@ -608,12 +608,64 @@ We decide to plot the nodes that have pagerank values in the top 0.5% for better
 </iframe>
 
 
-Looking at those graphs, we can compare the articles the most 'central' in the pagerank sense to the two networks. What we see is that in 2007 one article really dominates the whole network and is the most connected to the others : 'United_States', with a pagerank centrality of 0.0096. In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 
+Looking at those graphs, we can compare the articles the most 'central' in the pagerank sense in the two networks. What we see is that in 2007, one article really dominates the whole network and is the most connected to the others : 'United_States', with a pagerank centrality of 0.0096. 
+In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 
 
 <!-- ![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
+<div class="chat">
+  <div class="Marty">
+        <div class="message">
+          And so what do you conclude Doc ? 
+        </div>
+        <div class="icon"></div>
+    </div>
+    <div class="Doc_crazy">
+      <div class="message">
+        It's difficult Marty... Hard to say how those differences in the networks would impact the players. Let's just look at the Hop Distance Distribution plot before finishing up !
+      </div>
+      <div class="icon"></div>
+  </div>
+</div>
 
+{: .box-note}
+   **Hop Distance Distribution Plot**
+   Another interesting characteristic of networks can be visualized through what is called an Hop Distance Distribution Plot (or a Reachability Plot). We are plotting the average number of reachable nodes versus the number of hops needed to reach them, meaning how many links we have to click to reach a certain number of articles. This kind of plot can provide information on : 
+   • The network diameter 
+   • Presence of Hubs
+   • Efficiency of Routing in the network
+
+On this plot, we can compare the reachability of the two networks : 
 
 ![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
+
+We can observe a few things : first, the 2024 curve does not plateau at the same value as the 2007 one. This can be explained by a few factors : in our 2024 dataset, some articles from 2007 have been deleted and thus will never be reachable in 2024. There are also some articles that may have lost all their inlinks in 2024 because the links structure got completely changed and more specialized thus no links from the selected 4604 could redirect to them as there were not close enough. 
+Secondly, we see that both curves follow the same pattern, with a very sharp increase, almost exponential, and then reaching a plateau. This is a typical behaviour of internet networks and reflects a good connectivity and efficiency of routing. With each link clicked, the increase in average reachable nodes is extremely big. The biggest increase in both curves occurs between hop 2 and 3. This reveals the presence of central hubs that allow redirection to many other nodes when reached. This information is also reflected by the very small average shortest paths that we have observed earlier on.
+Finally, we observe that the plateau is reached sooner in the case of 2024 : after only 5 hops versus 6 in 2007. Again this shows that the network in 2024 is probably easier to naviguate than in 2007 : in 5 hops you can reach the maximum average number of reachable nodes. 
+
+### 2.4 Conclusions 
+
+As we saw, many differences exist between the 2 networks, but it is hard to conclude wheter this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per pages is bigger in 2024. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we studied could impact the paths played in 2007.
+
+<div class="chat">
+  <div class="Marty">
+        <div class="message">
+          I think I get it this time, Doc! We cannot really know for sure that the game would be easier in 2024 because, well, we haven't tried it yet !
+        </div>
+        <div class="icon"></div>
+    </div>
+   <div class="Doc">
+      <div class="message">
+        Precisely Marty ! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other ? 
+      </div>
+      <div class="icon"></div>
+  </div>
+  <div class="Doc_crazy">
+        <div class="message">
+          I know what we can do, let's look at how our new wikipedia structure of 2024 could impact the games played in 2007!
+        </div>
+        <div class="icon"></div>
+    </div>
+</div>
 
 
 ## Part 3 : What are the possible consequences of Wikipedia’s changes in player’s performances ?

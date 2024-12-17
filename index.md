@@ -2,6 +2,7 @@
 layout: page
 title: "Back to the Future"
 subtitle: "Time-Traveling through Wikispeedia"
+cover-img: "/assets/img/Marty_and_Doc/titre.png"
 ---
 
 # We are in 2024. 

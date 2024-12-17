@@ -1,7 +1,5 @@
 ---
 layout: page
-title: Back to the Future 
-subtitle: Back to the Future - Time-Traveling through Wikispeedia
 mathjax: true
 cover-img: "/assets/img/Marty_and_Doc/coverimg.png"
 ---

@@ -631,14 +631,20 @@ Looking at those graphs, we can compare the articles the most 'central' in the p
 
 
 - path unfinished
+First, we will analyze the unfinished paths by the players. To do so we will first preprocess the unfinished paths to detect if the target can be encountered by the player during his path. We will then compare the number of clicks saved by the players in 2007 and 2024.
+
 
 ![Player's path](/ada-outlier-datastory/assets/img/player_path_unfinished.png)
 
 - path finished
 
+We repeate the same process as above but for the finished paths.
+
 ![Player's path](/ada-outlier-datastory/assets/img/player_path_finished.png)
 
 [CONCLUSION] (2024 shortened more paths, but the number of clicks saved by 2007 is greater.)
+
+We can observe that the structure of the wikipedia in 2024 allows the players to find the target page earlier than in 2007. But if we look at the number of clicks saved by the players, we see that the players saved more clicks in 2007 than in 2024.
 
 ### 3.2 Structural comparison
 

@@ -326,12 +326,12 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 
 -->
 
-Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test with `scipy.stats.chi2_contingency` function: our null hypothesis is that the distributions are identical. 
-What is meant by distribution is a vector of $$15\times15$$ that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
+Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test: our null hypothesis is that the distributions are identical. 
+What is meant by distribution is the vector of $$15\times15$$ that contains the count of links from a start category to an end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
 
-Let's dig through some details. A few major differences occur. First, there is 4 times less target from the Countries category in among the unfinished paths, whereas there is 2 times more target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
+Let's dig through some details. A few major differences occur. First, there is 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
 
-We can then conclude that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
+We can then hypothesize that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
 
 
 <div class="chat">
@@ -359,11 +359,11 @@ One can assume that the shorter the shortest path, the more likely it is to find
 {: .box-note}
   The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article plus 1.
 
-This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. Only 23.20% of the paths considered are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. 
+This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. In this case, only 23.20% of the paths considered are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
-Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. The distributions look different! Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. Using the `ttest_ind_from_stats` function from scipy, we obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different! Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1.
+Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different. Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
@@ -375,7 +375,7 @@ Another parameter might be the number of links leading to the target: intuitivel
       </div>
    </div>
 
-   <div class="Doc">
+   <div class="Doc_crazy">
       <div class="message">
         Good question Marty! It's time for a good old logistic regression. 
       </div>
@@ -389,14 +389,13 @@ Another parameter might be the number of links leading to the target: intuitivel
    In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
    \
    In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
-   $$\begin{equation*}
+   $$\centering\begin{equation*}
    f(X)=y=\frac{1}{1+\exp(-\beta^TX)}
    \end{equation*}$$ \
    where $$\beta$$ are the coefficients to fit.
 
 
-We first prepare the data: we split it in training, validation and testing datasets using `sklearn.preprocessing.train_test_split` function. 60% of the samples goes in training, whereas validation and testing gather 20% of the samples each.
-We then standardize the column for the number of links to target and get dummies columns for the shortest path and categories columns. We also add a column with 1.0 everywhere to fit the intercept. We then use the `statsmodels.api.Logit`model and fit it with regularization on the training set. We fix the level of significance at 0.05. Here are the results:
+We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the results:
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" width="900px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">
@@ -441,12 +440,24 @@ Surprisingly, the Everyday_life category does not present a significant change, 
       <div class="icon"></div>
    </div>
 </div>
-The model gives us a probability of success. To asses the model quality, we then have to choose what is threshold above which probability a game will be classified as a success. For this, we try different thresholds on the validation and select the one that gives the better F1-score. It turns that for our model, the best F1-score is 84.0 for 0.367.
+
+
+For each game data, the model gives us a probability of success. To asses the model quality, we then have to choose what is threshold above which probability a game will be classified as a success. For this, we try different thresholds on the validation and select the one that gives the better macro-averaged F1-score. It turns that for our model, the best macro-averaged F1-score is 83.9 for 0.388. 
 
 
 
 
-We can now select a threshold and test the model on the test set!
+We can now select a threshold and evaluate the model performance on the test set!
+
+
+{: .box-note}
+   **How to evaluate the model quality 101** \
+   • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \
+   • Confusion matrix: a table showing the number of samples correctly classified as a success, correctly classified as a failure, wrongly classified as a success and wrongly classified as a failure. It contains all the necessary data to compute the following metrics. \
+   • Accuracy: how often the model makes a good prediction \
+   • Precision: proportion of samples classified as positive being correctly classified \
+   • Recall: proportion of samples positive being correctly classified as positive \
+   • F1-score: harmonic mean of recall and precision. In a nutshell: combine recall and precision in a unique metric to find the best tradeoff.
 
 
 

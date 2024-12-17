@@ -128,6 +128,10 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 </div>
 
+
+## Categories
+
+### Article categories and destination of the links
 For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
 <!--
@@ -146,6 +150,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 </iframe>
 
 
+<!--
 <div class="chat">
 
    <div class="Marty">
@@ -163,14 +168,14 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
    </div>
 
 </div>
+-->
 
 
-<!--
 Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
 Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
--->
+
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
 
@@ -219,7 +224,10 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
       </div>
       <div class="icon"></div>
    </div>
+</div>
 
+### Success and categories
+<div class="chat">
    <div class="Marty_crazy">
       <div class="icon"></div>
       <div class="message">
@@ -354,7 +362,9 @@ We can then hypothesize that finding an article in Countries category is easier 
 </div>
 
 
+## Other factors of success
 
+### Shortest path
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
 
 {: .box-note}
@@ -364,6 +374,8 @@ This is well illustrated in the following plot. The longer the shortest path, th
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
+
+### Number of links to the target
 Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different. Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
@@ -384,7 +396,7 @@ Another parameter might be the number of links leading to the target: intuitivel
    </div>
 </div>
 
-
+## Logisitic regression
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
    In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
@@ -452,12 +464,36 @@ We can now select a threshold and evaluate the model performance on the test set
 
 {: .box-note}
    **How to evaluate the model quality 101** \
-   • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \
-   • Confusion matrix: a table showing the number of samples correctly classified as a success, correctly classified as a failure, wrongly classified as a success and wrongly classified as a failure. It contains all the necessary data to compute the following metrics. \
-   • Accuracy: how often the model makes a good prediction \
-   • Precision: proportion of samples classified as positive being correctly classified \
-   • Recall: proportion of samples positive being correctly classified as positive \
+   • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \ <!--   • Confusion matrix: a table showing the number of samples correctly classified as a success, correctly classified as a failure, wrongly classified as a success and wrongly classified as a failure. It contains all the necessary data to compute the following metrics. \ -->
+   • Accuracy: proportion of correct predictions \
+   • Precision: proportion of real wins among samples classified as win \
+   • Recall: proportion of reals wins classified correctly \
    • F1-score: harmonic mean of recall and precision. In a nutshell: combine recall and precision in a unique metric to find the best tradeoff.
+
+
+<div class="chat">
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+        Wait a minute... you were talking about macro-averaged F1-score above. What do you hide me?
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+        Well, this one is a bit trickier than usual! These metrics are optimized even if the model predicts always a win! This is due to the unbalance of the data: we have much more wins than defeats... But trust me, we'll sort it out!
+      </div>
+      <div class="icon"></div>
+   </div>
+</div>
+
+{: .box-note}
+   **How to evaluate the model quality 102** \
+   The metrics previously presented do not assess how good the model can predict negative sample. Here are some metrics to address the problem. \
+   • Specifity: like the recall but for the defeats, i.e. proportion of real defeats classified correctly. \
+   • Balanced accuracy: average of recall and specificity \
+   • Macro-average F1-score: average of F1-score for wins and F1-score for defeats 
+
 
 
 

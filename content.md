@@ -329,13 +329,14 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test: our null hypothesis is that the distributions are identical. 
 What is meant by distribution is the vector of $$15\times15$$ that contains the count of links from a start category to an end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
 
-Let's dig through some details. A few major differences occur. First, there is 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also an increase of 66% of target articles in Everyday_life category.
+Let's dig through some details. A few major differences occur. First, there is in proportion 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also proportionally 66% of target articles more in Everyday_life and Language_and_literature categories for the unfinished paths. it also happens for Music and Business_Studies categories, with proportionally 33% target articles more. 
 
-We can then hypothesize that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder.
+If we are looking to the source article category, there exist less disparities. We can however note 66% source articles more from Design_and_Technology and 43% more for the Music category.
+
+We can then hypothesize that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder. In addition, it might be harder to start from Design_and_Technology or Music.
 
 
 <div class="chat">
-
    <div class="Marty_crazy">
       <div class="icon"></div>
       <div class="message">
@@ -395,7 +396,7 @@ Another parameter might be the number of links leading to the target: intuitivel
    where $$\beta$$ are the coefficients to fit.
 
 
-We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the results:
+We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" width="900px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">
@@ -418,10 +419,9 @@ We first prepare the data: we split it in training, validation and testing datas
    In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \
    The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
 
-We will focus on the coefficients that have a p-value below the significance threshold, i.e. below 0.01. As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also to find another article starting from this same category!
-The longer the shortest path, the smaller the probability of success is: it decreases the odds by 55%. It coincides well with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: it increases the odds by 171%. 
-Surprisingly, the Everyday_life category does not present a significant change, even though the p-value is very close to the threshold (0.014).
 
+As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also harder to win starting from this same category! 
+The longer the shortest path, the smaller the probability of success is: it decreases the odds of 7%. It coincides with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: it multiplies the odds by 2.35.
 
 
 

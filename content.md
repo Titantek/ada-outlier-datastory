@@ -677,20 +677,6 @@ ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pv
 
 # Part 4: Are the players(LLMs) stronger in 2024 than in 2007 ?
 
-<!--
-**Marty** : Doc are the players today stronger than in 2007 ? 
-**Doc** : I don't know Marty, we don't have any data about the players in 2024.
-**Marty** : But we have the data from 2007, can't we compare the two years ?
-**Doc** : We might be able to do that, let me think about it... we can use my favorite tool LLMs <3 to compare the two years.
-**Marty** : LLMs ? But, the results will differ from the ones we got from the players's data, right ? Which model should we use ?
-**Doc** : Yes, it might be different, but we can test different models and see which is the most similar to the players' data.
-**Marty** : That's a great idea Doc, let's do it ! but how would we know if the model is similar to the players' data ?
-**Doc** : First, we can verify that the model can finish a game, then we can compare the path length with the players, and eventually, we can measure if the model has chosen the same articles as the players.
-**Marty** : Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.
-**Marty** : Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data ?
-**Doc** : I will use the games that at least 10 players have played and I will train the models with [Ollama](https://ollama.com/) and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.
--->
-
 <div class="chat">
   <div class="Marty">
     <div class="icon"></div>
@@ -714,43 +700,45 @@ ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pv
 
   <div class="Marty">
     <div class="icon"></div>
-    <div class="message">LLMs? But, the results will differ from the ones we got from the players' data, right? Which model should we use?</div>
-  </div>
-
-  <div class="Doc">
-    <div class="icon"></div>
-    <div class="message">Yes, it might be different, but we can test different models and see which is the most similar to the players' data.</div>
-  </div>
-
-  <div class="Marty">
-    <div class="icon"></div>
-    <div class="message">That's a great idea Doc, let's do it! But how would we know if the model is similar to the players' data?</div>
-  </div>
-
-  <div class="Doc">
-    <div class="icon"></div>
-    <div class="message">First, we can verify that the model can finish a game, then we can compare the path length with the players, and eventually, we can measure if the model has chosen the same articles as the players.</div>
-  </div>
-
-  <div class="Marty">
-    <div class="icon"></div>
-    <div class="message">Wow, that's a great plan Doc, and once we have the model, we can compare the two years and see if the LLM model is better at the game in 2024 than in 2007.</div>
-  </div>
-
-  <div class="Marty">
-    <div class="icon"></div>
-    <div class="message">Heeu Doc, I know you are a genius, but how will you train the models on the 2007 data?</div>
-  </div>
-
-  <div class="Doc">
-    <div class="icon"></div>
-    <div class="message">I will use the games that at least 10 players have played and I will train the models with <a href="https://ollama.com/">Ollama</a> and based on the path length distribution of the players that we can see below(**INSERT**). I will limit the number of prompts to 50.</div>
-  </div>
+    <div class="message">LLMs? But, the results will differ from the ones we got from the players's data, right? And which model should we use? Can you explain me how you are going to do it?
 </div>
+  </div>
+
+ We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data. The design of the prompts is inspired by the group Human vs Ia (TODO link).
+
+ First we give the context of the game Wikispeedia to the model
+
+ >*We now play the following game:*
+
+>*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
 
 
+>*you need to follow the same format as the example below: 
+Target word: George_Washington*
+
+>*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
+
+>*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
+
+Then we give the llm the target word and the list of options:
+
+>*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
+
+>*Target word: [{target}]*
+
+>*Available options: [{links}]*
+
+>*RESPECT THIS FORMAT WHEN ANSWERING:*
+
+>*Reasoning: [REASONING]*
+
+>*Answer: Hence the choice is: '[ANSWER]'*
+
+We will repeat this prompt with the new available options until the llm finds the target word or the prompt reaches 50 iterations. The number of prompt if define with the path length distribution of the players that we can see below
 
 ![players_path_length](/ada-outlier-datastory/assets/img/players_path_length.svg)
+
+
 
 ![llms_path_not_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
 

@@ -679,6 +679,8 @@ First let's see the structural and content-based similarity between articles in 
 
 [Conclusion on the results obtained]
 
+The visualization shows an improvement in the similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia has evolved to be more coherent and organized.
+
 Now the similarity combined :
 
 ![similarity_graph](/ada-outlier-datastory/assets/img/similarity.png)
@@ -752,18 +754,30 @@ We will repeat this prompt with the new available options until the llm finds th
 
 ![players_path_length](assets/img/players_path_length.svg)
 
-
+First, we want to see if the models are able to find a path between the source and the target articles.
 
 ![llms_path_not_found](assets/img/llms_path_not_found.svg)
 
-<iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe>
+llama3 seems to find more paths than mistral.
+
+Then, we want also compare the performance of the models with the players. See if the path length is similar between the players and the models.
+
+<!-- <iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe> -->
+
+llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases.
+
+But, does the model find the same path as the players? We can compute the Jaccard similarity between the paths of the players and the models to determine if the path contains the same articles.
+
 
 ![llm_jacard](assets/img/jacard.svg)
 
+The Jaccard similarity shows that neither llama3 nor mistral use the same path as the players. They both shows similar results.
+
+Finally, based on the result we can says that boths models don't act like a players. But llama3 find more paths than mistral and falls in the confidence interval of the players in 78.5% of the cases.
+
+## LLMs performance between 2007 and 2024
+
 ![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
-
-
-
 
 
 # References

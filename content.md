@@ -456,13 +456,15 @@ We can now select a threshold and test the model on the test set!
 
 Let us now compare the differences between the old wikipedia from 2007 and our current wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
 
+
+## 2.1 Number of links 
+
 {: .box-note}
   **Basic Comparison:** \
   2007 : 119882 links \
   2024 : 225800 links
 
-
-## 2.1 Number of links per pages
+As a first analysis, let's just compare basic statistics on the two different wikipedias, such as the number of links per article on average and its distribution : 
 
 ![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
 
@@ -583,6 +585,8 @@ How can we investigate the 'importance' of an article in the network ? Different
    $$ x_i = \sum_j a_{ji} \frac{x_j}{\sum_{j} a_{ji}} $$
    with $a_{ji}$ entry (j,i) of adjacency matrix $A$
 
+We decide to plot the nodes that have pagerank values in the top 0.5% for better visualization here. The size and colors of the nodes are linked to the nodes pagerank scores and allow us to visualize the centrality measurement on the following plots : 
+
 <iframe 
     src="/ada-outlier-datastory/assets/img/pagerank2007.html" 
     class="responsive-iframe" 
@@ -594,6 +598,8 @@ How can we investigate the 'importance' of an article in the network ? Different
     title=" ">
 </iframe>
 
+
+Looking at those graphs, we can compare the articles the most 'central' in the pagerank sense to the two networks. What we see is that in 2007 one article really dominates the whole network and is the most connected to the others : 'United_States', with a pagerank centrality of 0.0096. In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 
 
 <!-- ![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
 

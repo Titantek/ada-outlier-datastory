@@ -276,9 +276,9 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
    - percentage of games discarded: 6.8% \
 
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target.html" width="900px" height="600px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="750px" alt='categories_finished_paths_start2target'></iframe>
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target.html" width="900px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" width="800px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
 <!--
 <div class="chat">

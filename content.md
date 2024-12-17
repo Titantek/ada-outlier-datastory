@@ -129,9 +129,9 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 </div>
 
 
-## Categories
+## 1.A. Categories
 
-### Article categories and destination of the links
+### 1.A.1. Article categories and destination of the links
 For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
 <!--
@@ -226,7 +226,8 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
    </div>
 </div>
 
-### Success and categories
+### 1.A.2) Success and categories
+
 <div class="chat">
    <div class="Marty_crazy">
       <div class="icon"></div>
@@ -274,13 +275,11 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 
 {: .box-note}
    **Some statistics:** \
-   <p style="text-indent: 25px;">
-      • number of games before cleaning: 76 048 <br>
-      • success rate before cleaning: 67.4% <br>
-      • number of games after cleaning:70 842 <br>
-      • success rate after cleaning: 72.3% <br>
+      • number of games before cleaning: 76 048 \
+      • success rate before cleaning: 67.4% \
+      • number of games after cleaning:70 842 \
+      • success rate after cleaning: 72.3% \
       • percentage of games discarded: 6.8%
-</p>
 
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="750px" alt='categories_finished_paths_start2target'></iframe>
@@ -364,9 +363,9 @@ We can then hypothesize that finding an article in Countries category is easier 
 </div>
 
 
-## Other factors of success
+## 1.B. Other factors of success
 
-### Shortest path
+### 1.B.1) Shortest path
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
 
 {: .box-note}
@@ -377,7 +376,7 @@ This is well illustrated in the following plot. The longer the shortest path, th
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 
-### Number of links to the target
+### 1.B.2) Number of links to the target
 Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different. Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
@@ -398,7 +397,7 @@ Another parameter might be the number of links leading to the target: intuitivel
    </div>
 </div>
 
-## Logisitic regression
+## 1.C. Logisitic regression
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
    In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \

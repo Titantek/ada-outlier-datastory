@@ -602,7 +602,78 @@ How can we investigate the 'importance' of an article in the network ? Different
 ![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
 
 
-# Part 3
+## Part 3 : What are the possible consequences of Wikipedia’s changes in player’s performances ?
+
+### 3.1 Player's path analysis
+
+<div class="chat">
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Doc we see that there are several change in the wikipedia structure, but what are the possible consequences of these changes on the player's performances ?
+      </div>
+   </div>
+
+   <div class="Doc_crazy">
+      <div class="message">
+      I don't know, let's see the data and analyze it. One way to do this is to analyze the player's path, and see if during their path they were able to directly find the target page or not and see if the target can appear before in 2024 than now!
+      </div>
+      <div class="icon"></div>
+   </div>
+
+</div>
+
+
+- path unfinished
+
+![Player's path](/ada-outlier-datastory/assets/img/player_path_unfinished.png)
+
+- path finished
+
+![Player's path](/ada-outlier-datastory/assets/img/player_path_finished.png)
+
+[CONCLUSION] (2024 shortened more paths, but the number of clicks saved by 2007 is greater.)
+
+### 3.2 Structural comparison
+
+<div class="chat">
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      Hmmmm, we see that the player's path is different, but how can we compare the structure of the wikipedia in 2024 and now ?
+      </div>
+   </div>
+
+   <div class="Doc_crazy">
+      <div class="message">
+      Don't worry let me show you how to dot it!
+      </div>
+      <div class="icon"></div>
+   </div>
+
+</div>
+
+{: .box-note}
+   To compare Wikipedia's structure between 2007 and 2024, we calculate how similar articles are to those they link to. Each article is represented as a vector using two methods: Node2Vec, which captures the graph structure, and Sentence-BERT, which analyzes textual content. The similarity between two articles is the average of these two methods.
+
+   An article's similarity score is the average similarity with all the articles it links to. This approach combines structural and content-based perspectives, offering insights into how the organization and coherence of Wikipedia's network have evolved over time.
+
+
+First let's see the structural and content-based similarity between articles in 2007 and 2024.
+
+![sbert_n2v_graph](/ada-outlier-datastory/assets/img/node2vec_and_sbert.png)
+
+[Conclusion on the results obtained]
+
+Now the similarity combined :
+
+![similarity_graph](/ada-outlier-datastory/assets/img/similarity.png)
+
+ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pvalue=2.5912803590429797e-13, df=9162.0)
+
+[CONCLUSION]
 
 # Part 4: Are the players(LLMs) stronger in 2024 than in 2007 ?
 

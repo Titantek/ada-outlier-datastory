@@ -135,7 +135,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Well, tell me Doc, what do the categories look like?
+      Tell me Doc, what do the categories look like?
       </div>
    </div>
 
@@ -145,7 +145,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 ## 1.A. Categories
 
 ### 1.A.1. Article categories and destination of the links
-For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
+For most articles, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
 <!--
 
@@ -184,10 +184,10 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 -->
 
 
-Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it. 
+Back in 2007, science articles represented almost 25% of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
-Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
+Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
 
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" width="900px" height="600px" alt='links_categories'></iframe>
@@ -219,7 +219,7 @@ BUBBLES AND PLAIN TEXT:
 </div>
 
 
-First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles.
+First, the diagonal that represents links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from Science, Geography and Countries. It means that a higher proportion of links lead to those categories. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles from the Countries category: 23% of the links lead to it! It seems logical as for many articles, a location is mentioned (place of discovery or birth, where an event took place, etc), including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles.
 
 
 <div class="chat">
@@ -349,7 +349,7 @@ First, the diagonal, i.e. links staying in the same category has bigger values c
 -->
 
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test: our null hypothesis is that the distributions are identical. 
-What is meant by distribution is the vector of $$15\times15$$ that contains the count of links from a start category to an end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).
+What is meant by distribution is the frequency of links from a start category to an end category. Here we simply take the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! *The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).*
 
 Let's dig through some details. A few major differences occur. First, there is in proportion 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also proportionally 66% of target articles more in Everyday_life and Language_and_literature categories for the unfinished paths. it also happens for Music and Business_Studies categories, with proportionally 33% target articles more. 
 
@@ -380,19 +380,19 @@ We can then hypothesize that finding an article in Countries category is easier 
 
 ### 1.B.1) Shortest path
 
-One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
+One can assume that the shorter the shortest path, the more likely it is to find a path, because navigating between the two articles requires less clicks. 
 
 {: .box-note}
-  The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article plus 1.
+  The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article.
 
-This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The biggest shortest path for which we have finished paths is 7. In this case, only 23.20% of the paths considered are victories. We also notice that two-thirds of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the bigger success rate occurs with a shortest path of 3 and decreases monotonically while the shortest path increases. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
+This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7. In this case, only 23.20% of the paths considered are victories and half of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases monotonically while the shortest path increases. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 
 ### 1.B.2) Number of links to the target
 
-Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different. Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
+Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. *Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different.* Let's try a t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
@@ -416,11 +416,11 @@ Another parameter might be the number of links leading to the target: intuitivel
 
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
-   In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
+   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$B$$ the fit coefficients obtained. \
    \
    In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
    $$\begin{equation*}
-   f(X)=y=\frac{1}{1+\exp(-\beta^TX)}
+   f(x)=y_\text{pred}=\frac{1}{1+\exp(-\beta^Tx)}
    \end{equation*}$$ \
    where $$\beta$$ are the coefficients to fit.
 
@@ -724,9 +724,9 @@ In 2024, there is no such node really 'dominating' the rest. The top node become
 
 {: .box-note}
    **Hop Distance Distribution Plot** \
-   Another interesting characteristic of networks can be visualized through what is called an Hop Distance Distribution Plot (or a Reachability Plot). We are plotting the average number of reachable nodes versus the number of hops needed to reach them. This plot represent how many articles we can reach on average after a certain number of clicks. This kind of plot can provide information on : 
-   • The network diameter 
-   • The Presence of Hubs
+   Another interesting characteristic of networks can be visualized through what is called an Hop Distance Distribution Plot (or a Reachability Plot). We are plotting the average number of reachable nodes versus the number of hops needed to reach them. This plot represent how many articles we can reach on average after a certain number of clicks. This kind of plot can provide information on : \
+   • The network diameter \ 
+   • The Presence of Hubs \
    • The Efficiency of Routing in the network
 
 On this plot, we can compare the reachability of the two networks: 

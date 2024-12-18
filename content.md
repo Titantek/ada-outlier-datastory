@@ -663,7 +663,7 @@ The two networks share a globally similar SCCs structure : only 1 big SCC that c
 | Number of articles within the big SCC  | 4051 | 3910 |
 | Number of articles outside any SCC | 512 | 683 |
 | Number of SCCs of size 2 | 18 | 5 | 
-| Overall Average Shortest Path Across SCCs | 1.1148 | 0.011 |
+| Overall Average Shortest Path Across SCCs | 1.1148 | 1.3110 |
 
 <div class="chat">
   <div class="Marty">

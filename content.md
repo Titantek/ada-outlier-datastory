@@ -790,18 +790,19 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
 {: .box-note}
    To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024. and then combine them to get the similarity score of each article.
 
-   The similarity is calculated as follows:
+The similarity is calculated as follows:
 
-    $$ \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i) $$
+$$\text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)$$
+where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.
 
-   where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.
-
-   The content of the article used for the content-based similarity is the first paragraph (summary) of the article.
+The content of the article used for the content-based similarity is the first paragraph (summary) of the article.
 
 
 First let's see the structural and content-based similarity between articles in 2007 and 2024.
 
 ![sbert_n2v_graph](/ada-outlier-datastory/assets/img/node2vec_and_sbert.png)
+
+We can observe a slight improvement in the similarity for both structural and content-based similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia has evolved to be more coherent and organized.
 
 [Conclusion on the results obtained]
 

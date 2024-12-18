@@ -516,9 +516,9 @@ We can now select a threshold and evaluate the model performance on the test set
 
 Now we are prepare to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
 | 7085 samples in the test set | Predicted as win (4962) | Predicted as defeat (2123) |
-|:----------------------------:|:-----------------------:|:--------------------------:|
-|        Real win (5197)       |           3943          |            1254            |
-|      Real defeat (1888)      |           1019          |             869            |
+|:---:|:---:|:---:|
+| Real win (5197) | 3943 | 1254 |
+| Real defeat (1888) | 1019 | 869 |
 
 First, the ROC AUC gives us a value of 0.67, showing sensibly better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and a balanced accuracy of 0.68. The main reason between this reserved performance is the difficulty that has the model to identify defeats. Indeed, the specificity is only 0.46! So if we have a game lost, the model classifies as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classify a game as a win, there is 4 chances over 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct in only 41% of the time! This is due to the unbalance between the number of wins and defeats among the samples as mentioned previously.
 

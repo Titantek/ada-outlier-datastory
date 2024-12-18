@@ -416,13 +416,14 @@ Another parameter might be the number of links leading to the target: intuitivel
 
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
-   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$B$$ the fit coefficients obtained. \
+   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$b$$ the fitting coefficients . \
    \
    In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
    $$\begin{equation*}
    f(x)=y_\text{pred}=\frac{1}{1+\exp(-\beta^Tx)}
    \end{equation*}$$ \
    where $$\beta$$ are the coefficients to fit.
+   The odds are defined are $$p/(1-p)$$ for a given probability $$p$$. 
 
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
@@ -445,12 +446,12 @@ We first prepare the data: we split it in training, validation and testing datas
 </div>
 
 {: .box-note}
-   In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ is the binary predictor takes a value of 1. \
+   In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ if the binary predictor takes a value of 1. \
    The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
 
 
 As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also harder to win starting from this same category! 
-The longer the shortest path, the smaller the probability of success is: it decreases the odds of 7%. It coincides with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: it multiplies the odds by 2.35.
+The longer the shortest path, the smaller the probability of success is: it decreases the odds of 7%. It coincides with the success rate observed previously, that decreases the longer the shortest path. *As expected, the opposite effect happen for the number of links to target: it multiplies the odds by 2.35.*
 
 
 
@@ -471,18 +472,18 @@ The longer the shortest path, the smaller the probability of success is: it decr
 </div>
 
 
-For each game data, the model gives us a probability of success. To asses the model quality, we then have to choose what is threshold above which probability a game will be classified as a success. For this, we try different thresholds on the validation and select the one that gives the better macro-averaged F1-score. It turns that for our model, the best macro-averaged F1-score is 83.9 for 0.388. 
+For each game data, the model gives us a probability of success. To asses the model quality, we then have to choose what is threshold above which probability a game will be classified as a success. For this, we try different thresholds on the validation and select the one that gives the better macro-averaged F1-score. It turns that for our model, the best macro-averaged F1-score is 0.61 for a threshold of 0.4242. We thus choose the latter for the following. 
 
 
 
 
-We can now select a threshold and evaluate the model performance on the test set!
+We can now evaluate the model performance on the test set!
 
 
 {: .box-note}
    **How to evaluate the model quality 101** \
    • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \
-   • Confusion matrix: a table showing the number of samples correctly or wrongly classified as a success or a failure. It contains all the necessary data to compute the following metrics.
+   • Confusion matrix: a table showing the number of samples correctly or wrongly classified as a success or a failure. It contains all the necessary data to compute the following metrics. \
    • Accuracy: proportion of correct predictions \
    • Precision: proportion of real wins among samples classified as win \
    • Recall: proportion of reals wins classified correctly \
@@ -499,7 +500,7 @@ We can now select a threshold and evaluate the model performance on the test set
 
    <div class="Doc">
       <div class="message">
-        Well, this one is a bit trickier than usual! These metrics are optimized even if the model predicts always a win! This is due to the unbalance of the data: we have much more wins than defeats... But trust me, we'll sort it out!
+        Well, this one is a bit trickier than usual! These metrics can give very high value even if the model predicts always a win! This is due to the unbalance of the data: we have much more wins than defeats... But trust me, we'll sort it out!
       </div>
       <div class="icon"></div>
    </div>
@@ -514,14 +515,14 @@ We can now select a threshold and evaluate the model performance on the test set
 
 
 
-Now we are prepare to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
+Now we are ready to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
 
 | 7085 samples in the test set | Predicted as win (4962) | Predicted as defeat (2123) |
 | :-----: | :---: | :---: |
 | **Real win (5197)** | 3943 | 1254 |
 | **Real defeat (1888)** | 1019 | 869 |
 
-First, the ROC AUC gives us a value of 0.67, showing sensibly better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and a balanced accuracy of 0.68. The main reason between this reserved performance is the difficulty that has the model to identify defeats. Indeed, the specificity is only 0.46! So if we have a game lost, the model classifies as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classify a game as a win, there is 4 chances over 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct in only 41% of the time! This is due to the unbalance between the number of wins and defeats among the samples as mentioned previously.
+First, the ROC AUC gives us a value of 0.67, showing sensibly better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and the balanced accuracy is 0.68. The main reason between this reserved performance is the difficulty that has the model to identify defeats. Indeed, the specificity is only 0.46! So if we have a game lost, the model classifies as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classify a game as a win, there is 4 chances over 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct only 41% of the time! This is due to the unbalance between the number of wins and defeats among the samples as mentioned previously.
 
 <div class="chat">
    <div class="Marty">

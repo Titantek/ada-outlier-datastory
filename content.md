@@ -418,12 +418,11 @@ Another parameter might be the number of links leading to the target: intuitivel
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
    In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$b$$ the fitting coefficients . \
    \
-   In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
+   In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. The odds are defined are $$p/(1-p)$$ for a given probability $$p$$.  Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
    $$\begin{equation*}
    f(x)=y_\text{pred}=\frac{1}{1+\exp(-\beta^Tx)}
    \end{equation*}$$ \
-   where $$\beta$$ are the coefficients to fit.
-   The odds are defined are $$p/(1-p)$$ for a given probability $$p$$. 
+   where $$\beta\in\mathbb{R}^r$$ are the coefficients to fit.
 
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:

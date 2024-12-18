@@ -515,8 +515,9 @@ We can now select a threshold and evaluate the model performance on the test set
 
 
 Now we are prepare to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
+
 | 7085 samples in the test set | Predicted as win (4962) | Predicted as defeat (2123) |
-|:---:|:---:|:---:|
+| :-----: | :---: | :---: |
 | Real win (5197) | 3943 | 1254 |
 | Real defeat (1888) | 1019 | 869 |
 

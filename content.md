@@ -512,7 +512,8 @@ We can now select a threshold and evaluate the model performance on the test set
    • Macro-average F1-score: average of F1-score for wins and F1-score for defeats 
 
 
-
+<h2 id="section1">Section 1</h2>
+<p>Content for section 1...</p>
 
 # Part 2: How did Wikipedia's structure evolve since 2007?
 

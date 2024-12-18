@@ -761,7 +761,8 @@ To analyze the player's path, we will analyze the case where the player's path i
 
 [CONCLUSION] (2024 shortened more paths, but the number of clicks saved by 2007 is greater.)
 
-We observe on both unfinished and finished graphs that the structure of wikipedia in 2024 allows to shortened more paths than in 2007. And the number of clicks saved is greater in 2024 than in 2007. Based on this results, we can conclude that the structure of wikipedia in 2024 allows to reach the target page in less clicks than in 2007.
+We observe on both unfinished and finished paths graphs above that the structure of wikipedia in 2024 allows to shortened more paths than in 2007 and the number of clicks saved is greater in 2024 than in 2007. 
+Based on this results, we can conclude that the structure of wikipedia in 2024 would allow to players to reach the target page in less clicks than in 2007.
 
 ### 3.2 Structural comparison
 
@@ -776,7 +777,7 @@ We observe on both unfinished and finished graphs that the structure of wikipedi
 
    <div class="Doc_crazy">
       <div class="message">
-      Don't worry let me show you how to dot it!
+      Don't worry let me show you how we can compare the efficiency of Wikipedia's structure in 2007 and 2024!
       </div>
       <div class="icon"></div>
    </div>
@@ -787,6 +788,10 @@ We observe on both unfinished and finished graphs that the structure of wikipedi
    To compare Wikipedia's structure between 2007 and 2024, we calculate how similar articles are to those they link to. Each article is represented as a vector using two methods: Node2Vec, which captures the graph structure, and Sentence-BERT, which analyzes textual content. The similarity between two articles is the average of these two methods.
 
    An article's similarity score is the average similarity with all the articles it links to. This approach combines structural and content-based perspectives, offering insights into how the organization and coherence of Wikipedia's network have evolved over time.
+   $$ \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i) $$
+
+   where $$n$$ is the number of outgoing links of the article, and $article_i$ is the $i$-th article linked to by the article.
+   
 
 
 First let's see the structural and content-based similarity between articles in 2007 and 2024.

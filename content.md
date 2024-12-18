@@ -561,7 +561,7 @@ First, the ROC AUC gives us a value of 0.67, showing sensibly better performance
 Let us now compare the differences between the old Wikipedia from 2007 and our current Wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
 
 
-## A) Number of links 
+## 2.A. Number of links 
 
 {: .box-note}
   **Basic Comparison:** \
@@ -610,7 +610,7 @@ In the plot below, we visualize every article within our dataset of the 4604 sel
   </div>
 </div>
 
-## B) Network differences 
+## 2.B. Network differences 
 
 For now, we only have been looking at the repartitions of links on the pages with no interest to where those links would redirect to, even though this is probably our most crucial information to conclude wheter the structure of 2024 has really changed compared to 2007. In this part we look at how the pages are interconnected and compare it for the two different years. To do so we will use the Shortest Path metric. 
 
@@ -748,7 +748,7 @@ If we look at the clustering coefficients of the graphs we observe the following
 
 Again, the clustering seems to be higher in 2024 than in 2007 ! This should also improve the connectivity of the network. 
 
-## C) Conclusions on the structural differences observed
+## 2.C. Conclusions on the structural differences observed
 
 As we saw, many differences exist between the 2 networks, but it is hard to conclude wheter this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per page is bigger in 2024. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we have studied could impact the paths played in 2007.
 
@@ -777,7 +777,7 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 
 ## Part 3 : What are the possible consequences of Wikipedia’s changes in player’s performances ?
 
-### 3.1 Player's path analysis
+### 3.A. Player's path analysis
 
 <div class="chat">
 
@@ -808,7 +808,7 @@ To analyze the player's path, we will analyze the case where the player's path i
 We observe on both unfinished and finished paths graphs above that the structure of wikipedia in 2024 allows to shortened more paths than in 2007 and the number of clicks saved is greater in 2024 than in 2007. 
 Based on this results, we can conclude that the structure of wikipedia in 2024 would allow to players to reach the target page in less clicks than in 2007.
 
-### 3.2 Structural comparison
+### 3.B. Structural comparison
 
 <div class="chat">
 

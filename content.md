@@ -290,7 +290,7 @@ First, the diagonal that represents links staying in the same category has bigge
    **Some statistics:** \
       • number of games before cleaning: 76 048 \
       • success rate before cleaning: 67.4% \
-      • number of games after cleaning:70 842 \
+      • number of games after cleaning: 70 842 \
       • success rate after cleaning: 72.3% \
       • percentage of games discarded: 6.8%
 

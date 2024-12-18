@@ -848,31 +848,31 @@ ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pv
 
  First we give the context of the game Wikispeedia to the model
 
- *We now play the following game:*
+>*We now play the following game:*
 
-*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
+>*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
 
 
-*you need to follow the same format as the example below: 
+>*you need to follow the same format as the example below: 
 Target word: George_Washington*
 
-*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
+>*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
 
-*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
+>*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
 
 Then we give the llm the target word and the list of options:
 
-*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
+>*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
 
-*Target word: [{target}]*
+>*Target word: [{target}]*
 
-*Available options: [{links}]*
+>*Available options: [{links}]*
 
-*RESPECT THIS FORMAT WHEN ANSWERING:*
+>*RESPECT THIS FORMAT WHEN ANSWERING:*
 
-*Reasoning: [REASONING]*
+>*Reasoning: [REASONING]*
 
-*Answer: Hence the choice is: '[ANSWER]'*
+>*Answer: Hence the choice is: '[ANSWER]'*
 
 We will repeat this prompt with the new available options until the llm finds the target word or the prompt reaches 50 iterations. The number of prompt if define with the path length distribution of the players that we can see below
 

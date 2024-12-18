@@ -769,9 +769,6 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
     </div>
 </div>
 
-
-
-
 ## Part 3 : What are the possible consequences of Wikipedia’s changes in player’s performances ?
 
 ### 3.1 Player's path analysis
@@ -826,9 +823,6 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
 </div>
 
 {: .box-note}
-   To compare Wikipedia's structure between 2007 and 2024, we calculate how similar articles are to those they link to. Each article is represented as a vector using two methods: Node2Vec, which captures the graph structure, and Sentence-BERT, which analyzes textual content. The similarity between two articles is the average of these two methods.
-
-{: .box-note}
    To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
@@ -849,15 +843,13 @@ First let's see the structural and content-based similarity between articles in 
 
 We can observe a slight improvement in the similarity for both structural and content-based similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia has evolved to be more coherent and organized.
 
-[Conclusion on the results obtained]
 
 The combined similarity score of each article is calculated by taking the average of the structural and content-based similarity scores. The combined similarity score is then used to compare the structure of Wikipedia in 2007 and 2024.
 
 ![similarity_graph](/ada-outlier-datastory/assets/img/similarity.png)
 
-ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pvalue=2.5912803590429797e-13, df=9162.0)
+Again, we observe that the distribution of the combined similarity scores of articles in 2024 is slightly higher than in 2007. But is this difference significant? Let's perform a t-test to compare the two distributions. We choose a significance level of $$\alpha=5$$% and we obtain a `p-value` = $$2.59 \times 10^{-13}$$ and a `statistic` of $$-7.32$$. Thus, we reject the null hypothesis and conclude that there is a significant difference between the two groups.
 
-[CONCLUSION]
 
 The evolution of Wikipedia's structure from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.s
 
@@ -867,7 +859,7 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 <div class="chat">
   <div class="Marty">
     <div class="icon"></div>
-    <div class="message">Doc, are the players today stronger than in 2007?</div>
+    <div class="message">Doc, we have seen that the structure of Wikipedia has evolved since 2007. But are the players stronger in 2024 than in 2007?</div>
   </div>
 
   <div class="Doc">

@@ -1270,3 +1270,32 @@ button:hover {
   width: 50%;  /* Adjust width of Marty image */
   height: auto;  /* Keep aspect ratio */
 }
+
+#sidebar {
+  position: fixed; /* Keeps it fixed while scrolling */
+  top: 100px; /* Adjust based on your header */
+  right: 20px; /* Adjust for spacing */
+  width: 250px; /* Adjust width as needed */
+  background-color: #f8f9fa; /* Optional: Light background */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar ul li {
+  margin: 5px 0;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #007bff; /* Link color */
+}
+
+#sidebar ul li a:hover {
+  text-decoration: underline;
+}

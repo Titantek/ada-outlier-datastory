@@ -41,6 +41,19 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 </div>
 -->
 
+<!-- 
+# TEMPLATE TO CREATE SUMMARY HEADINGS ON THE SIDE
+<h2 id="section1">Section 1</h2>
+<p>Content for section 1...</p>
+
+<h2 id="section2">Section 2</h2>
+<p>Content for section 2...</p>
+
+<h2 id="section3">Section 3</h2>
+<p>Content for section 3...</p> 
+-->
+
+
 
 <div class="chat">
 
@@ -366,6 +379,7 @@ We can then hypothesize that finding an article in Countries category is easier 
 ## 1.B. Other factors of success
 
 ### 1.B.1) Shortest path
+
 One can assume that the shorter the shortest path, the more likely it is to find a path, because both articles are closely connected by links. 
 
 {: .box-note}
@@ -377,6 +391,7 @@ This is well illustrated in the following plot. The longer the shortest path, th
 
 
 ### 1.B.2) Number of links to the target
+
 Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different. Let's try a t-test of independence to confirm our intuition. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
@@ -398,6 +413,7 @@ Another parameter might be the number of links leading to the target: intuitivel
 </div>
 
 ## 1.C. Logisitic regression
+
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
    In a **linear regression**, we have the **features** in a matrix X, made out of N rows and r columns, with N and r respectively the numbers of samples and features. We train the model with X and a vector y (with N elements) that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(X)=y_\text{pred}$$. \
@@ -503,7 +519,7 @@ We can now select a threshold and evaluate the model performance on the test set
 Let us now compare the differences between the old wikipedia from 2007 and our current wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
 
 
-## 2.1 Number of links 
+## A) Number of links 
 
 {: .box-note}
   **Basic Comparison:** \
@@ -552,7 +568,7 @@ In the plot below, we visualize every articles within our dataset of the 4604 se
   </div>
 </div>
 
-## 2.2 Network differences 
+## B) Network differences 
 
 For now, we only have been looking at the repartitions of links on the pages with no interest to where those links would redirect to, even though this is probably our most crucial information to conclude wheter the structure of 2024 has really changed compared to 2007. In this part we look at how the pages are interconnected and compare it for the two different years. To do so we will use the Shortest Path metric. 
 
@@ -679,7 +695,14 @@ We can observe a few things : first, the 2024 curve does not plateau at the same
 Secondly, we see that both curves follow the same pattern, with a very sharp increase, almost exponential, and then reaching a plateau. This is a typical behaviour of internet networks and reflects a good connectivity and efficiency of routing. With each link clicked, the increase in average reachable nodes is extremely big. The biggest increase in both curves occurs between hop 2 and 3. This reveals the presence of central hubs that allow redirection to many other nodes when reached. This information is also reflected by the very small average shortest paths that we have observed earlier on.
 Finally, we observe that the plateau is reached sooner in the case of 2024 : after only 5 hops versus 6 in 2007. Again this shows that the network in 2024 is probably easier to naviguate than in 2007 : in 5 hops you can reach the maximum average number of reachable nodes. 
 
-### 2.4 Conclusions 
+If we look at the clustering coefficients of the graphs we observe the following values : 
+
+|   | 2007 | 2024 |
+| Average clustering coefficient | 0.19 | 0.26 |
+
+Again, the clustering seems to be higher in 2024 than in 2007 ! This should also improve the connectivity of the network. 
+
+### C) Conclusions 
 
 As we saw, many differences exist between the 2 networks, but it is hard to conclude wheter this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per pages is bigger in 2024. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we studied could impact the paths played in 2007.
 
@@ -703,6 +726,8 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
         <div class="icon"></div>
     </div>
 </div>
+
+
 
 
 ## Part 3 : What are the possible consequences of Wikipedia’s changes in player’s performances ?

@@ -481,7 +481,8 @@ We can now select a threshold and evaluate the model performance on the test set
 
 {: .box-note}
    **How to evaluate the model quality 101** \
-   • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \ <!--   • Confusion matrix: a table showing the number of samples correctly classified as a success, correctly classified as a failure, wrongly classified as a success and wrongly classified as a failure. It contains all the necessary data to compute the following metrics. \ -->
+   • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \
+   • Confusion matrix: a table showing the number of samples correctly or wrongly classified as a success or a failure. It contains all the necessary data to compute the following metrics.
    • Accuracy: proportion of correct predictions \
    • Precision: proportion of real wins among samples classified as win \
    • Recall: proportion of reals wins classified correctly \
@@ -509,8 +510,47 @@ We can now select a threshold and evaluate the model performance on the test set
    The metrics previously presented do not assess how good the model can predict negative sample. Here are some metrics to address the problem. \
    • Specifity: like the recall but for the defeats, i.e. proportion of real defeats classified correctly. \
    • Balanced accuracy: average of recall and specificity \
-   • Macro-average F1-score: average of F1-score for wins and F1-score for defeats 
+   • Macro-averaged F1-score: average of F1-score for wins and F1-score for defeats 
 
+
+
+Now we are prepare to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
+| 7085 samples in the test set | Predicted as win (4962) | Predicted as defeat (2123) |
+|:----------------------------:|:-----------------------:|:--------------------------:|
+|        Real win (5197)       |           3943          |            1254            |
+|      Real defeat (1888)      |           1019          |             869            |
+
+First, the ROC AUC gives us a value of 0.67, showing sensibly better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and a balanced accuracy of 0.68. The main reason between this reserved performance is the difficulty that has the model to identify defeats. Indeed, the specificity is only 0.46! So if we have a game lost, the model classifies as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classify a game as a win, there is 4 chances over 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct in only 41% of the time! This is due to the unbalance between the number of wins and defeats among the samples as mentioned previously.
+
+<div class="chat">
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+        I'm a bit disappointed Doc... 
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+        I understand you Marty. We might lack of data on players to developp a better model, for example their age, their origin, their education level. But the model still identify quite well the games that will be won!
+      </div>
+      <div class="icon"></div>
+   </div>
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+        And now? What can we do with this? 
+      </div>
+   </div>
+
+   <div class="Doc_crazy">
+      <div class="message">
+        Come with me, we still have a lot to discover! I think it's time for a small trip in the future...
+      </div>
+      <div class="icon"></div>
+   </div>
+</div>
 
 <h2 id="section1">Section 1</h2>
 <p>Content for section 1...</p>

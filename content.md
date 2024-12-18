@@ -416,7 +416,7 @@ Another parameter might be the number of links leading to the target: intuitivel
 
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
-   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$b$$ the fitting coefficients . \
+   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$b$$ the fitting coefficients. \
    \
    In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. The odds are defined are $$p/(1-p)$$ for a given probability $$p$$.  Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
    $$\begin{equation*}

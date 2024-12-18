@@ -311,7 +311,7 @@ First, the diagonal that represents links staying in the same category has bigge
 
    <div class="message-wrapper">
       <div class="message Doc">
-         We cannot conclude that quickly Marty. Let's perform a statistical test for that. In our case, we should use a chi2 contingency test: our null hypothesis is that both distributions are identical. What is meant by distribution is a vector of 15x15 that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of alpha=0.01.
+         We cannot conclude that quickly Marty. Let's perform a statistical test for that. In our case, we should use a chi2 contingency test: our null hypothesis is that both distributions are identical. What is meant by distribution is a vector of 15x15 that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of alpha=0.05.
       </div>
       <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
@@ -340,7 +340,7 @@ First, the diagonal that represents links staying in the same category has bigge
    <div class="message-wrapper">
       <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/marty1.png" alt="Marty" class="profile-pic">
       <div class="message Marty">
-         So apparently, finding an article in Countries category is easier than finding an article in Design_and_Technology or Everyday_Life for example.
+         So apparently, finding an article in Countries category is easier than finding an article in Design_and_Technology or Everyday_life for example.
       </div>
    </div>
 
@@ -349,13 +349,15 @@ First, the diagonal that represents links staying in the same category has bigge
 -->
 
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test: our null hypothesis is that the distributions are identical. 
-What is meant by distribution is the frequency of links from a start category to an end category. Here we simply take the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! *The test gives the same results while comparing the distribution of link counts towards one target category (`statistic=207557.76`) or from one source category (`statistic=39997.79`).*
+What is meant by distribution is the frequency of links from a start category to an end category. Here we simply take the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis!
 
-Let's dig through some details. A few major differences occur. First, there is in proportion 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also proportionally 66% of target articles more in Everyday_life and Language_and_literature categories for the unfinished paths. it also happens for Music and Business_Studies categories, with proportionally 33% target articles more. 
+We can also look at it in a more general way and compute the distribution of the start categories without looking at the target (indicated as `category → *` in the heatmap), and vice-versa (indicated as `* → category`), for both finished and unfinished paths. Reproducing the t-test for those distributions, we obtain the same pvalue of 0.0. We can thus also conclude that the distribution of the categories of the start and target articles are different between the finished and unfinished path datasets.
+
+Let's dig through some details. A few major differences occur. First, there is in proportion 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also proportionally 66% of target articles more in Everyday_life and Language_and_literature categories for the unfinished paths and and portion of Geography articles is divided by 1.6. it also happens for Music and Business_Studies categories, with proportionally 33% target articles more. 
 
 If we are looking to the source article category, there exist less disparities. We can however note 66% source articles more from Design_and_Technology and 43% more for the Music category.
 
-We can then hypothesize that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_Life seems harder. In addition, it might be harder to start from Design_and_Technology or Music.
+We can then hypothesize that finding an article in Countries category is easier whereas finding an article in Design_and_Technology or Everyday_life seems harder. In addition, it might be harder to start from Design_and_Technology or Music.
 
 
 <div class="chat">
@@ -385,14 +387,14 @@ One can assume that the shorter the shortest path, the more likely it is to find
 {: .box-note}
   The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article.
 
-This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7. In this case, only 23.20% of the paths considered are victories and half of the players did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases monotonically while the shortest path increases. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
+This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the porportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases, except for a shortest path of 4 that where the success rate is slightly higher than for 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 
 ### 1.B.2) Number of links to the target
 
-Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. *Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1: they look rather different.* Let's try a t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
+Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="600px" alt='distrib_links_to_target'></iframe>
 
@@ -425,7 +427,7 @@ Another parameter might be the number of links leading to the target: intuitivel
    where $$\beta\in\mathbb{R}^r$$ are the coefficients to fit.
 
 
-We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
+We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.05. Here are the coefficients with pvalue below the significance threshold:
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" width="900px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">
@@ -449,8 +451,10 @@ We first prepare the data: we split it in training, validation and testing datas
    The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
 
 
-As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology catgeory, but also harder to win starting from this same category! 
-The longer the shortest path, the smaller the probability of success is: it decreases the odds of 7%. It coincides with the success rate observed previously, that decreases the longer the shortest path. *As expected, the opposite effect happen for the number of links to target: it multiplies the odds by 2.35.*
+As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology category or Language_and_literature: the odds are decreased of 41%! It is also true for target articles  in the Everyday_life category that decrease the odds by 36%. The only source category that has a significant impact is again Design_and_Technology. It matches quite well our previous observations.
+
+
+The longer the shortest path, the smaller the probability of success is: it decreases the odds of 8% for an increase of 1 of the shortest path. It coincides with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: having 93 more links pointing to an article multiplies the odds of finding it by 2.36. It also agrees with our previous hypotheses.
 
 
 

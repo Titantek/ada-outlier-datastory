@@ -740,36 +740,28 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Doc we see that there are several change in the wikipedia structure, but what are the possible consequences of these changes on the player's performances ?
+      We saw that there are several changes in the structure of wikipedia, but what are the possible consequences of these changes on the player's performances ?
       </div>
    </div>
 
    <div class="Doc_crazy">
       <div class="message">
-      I don't know, let's see the data and analyze it. One way to do this is to analyze the player's path, and see if during their path they were able to directly find the target page or not and see if the target can appear before in 2024 than now!
+      I don't know Marty, but we can analyze the player's path to see if he could reach in theory the target page in less clicks in 2024 than in 2007.
       </div>
       <div class="icon"></div>
    </div>
-
 </div>
 
-
-- path unfinished
-  
-First, we will analyze the unfinished paths by the players. To do so we will first preprocess the unfinished paths to detect if the target article is encountered by the player during his game. Then, we will count the number of paths that have been shortened and compare the number of clicks saved by the players in 2007 and 2024 based on the current path of the player.
-
+To analyze the player's path, we will analyze the case where the player's path is unfinished and finished. First, we will process the player's path to detect if the target was encountered by the player during his game. Then, we will count the number of paths that could have been shortened and compare the number of clicks that could be saved by the players in the structure of wikipedia in 2007 and 2024 based on the current path choosen by the player.
 
 ![Player's path](/ada-outlier-datastory/assets/img/player_path_unfinished.png)
 
-- path finished
-
-The same process as above will be applied to the finished paths. We will count the number of paths that have been shortened in 2007 and 2024. And then we will compare the number of clicks saved in 2007 and 2024 based on the current path of the player.
 
 ![Player's path](/ada-outlier-datastory/assets/img/player_path_finished.png)
 
 [CONCLUSION] (2024 shortened more paths, but the number of clicks saved by 2007 is greater.)
 
-Based on both graphs above, we can observe that the structure of wikipedia in 2024 allows to shortened more paths than in 2007. And moreover, in 2024 the number of clicks saved is greater than in 2007.
+We observe on both unfinished and finished graphs that the structure of wikipedia in 2024 allows to shortened more paths than in 2007. And the number of clicks saved is greater in 2024 than in 2007. Based on this results, we can conclude that the structure of wikipedia in 2024 allows to reach the target page in less clicks than in 2007.
 
 ### 3.2 Structural comparison
 
@@ -778,7 +770,7 @@ Based on both graphs above, we can observe that the structure of wikipedia in 20
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Hmmmm, we see that the player's path is different, but how can we compare the structure of the wikipedia in 2024 and now ?
+      Hmmmm, we just saw that the player's path is different, but how can we compare the structure of the wikipedia in 2024 and now ?
       </div>
    </div>
 
@@ -844,35 +836,35 @@ ttest between the 2 distributions : TtestResult(statistic=-7.324981664513337, pv
 </div>
 
 
- We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data. The design of the prompts is inspired by the group Human vs Ia (TODO link).
+We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data. The design of the prompts is inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
 
- First we give the context of the game Wikispeedia to the model
+First we give the context of the game Wikispeedia to the model
 
->*We now play the following game:*
+*We now play the following game:*
 
->*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
+*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
 
 
->*you need to follow the same format as the example below: 
+*you need to follow the same format as the example below: 
 Target word: George_Washington*
 
->*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
+*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
 
->*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
+*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
 
 Then we give the llm the target word and the list of options:
 
->*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
+*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
 
->*Target word: [{target}]*
+*Target word: [{target}]*
 
->*Available options: [{links}]*
+*Available options: [{links}]*
 
->*RESPECT THIS FORMAT WHEN ANSWERING:*
+*RESPECT THIS FORMAT WHEN ANSWERING:*
 
->*Reasoning: [REASONING]*
+*Reasoning: [REASONING]*
 
->*Answer: Hence the choice is: '[ANSWER]'*
+*Answer: Hence the choice is: '[ANSWER]'*
 
 We will repeat this prompt with the new available options until the llm finds the target word or the prompt reaches 50 iterations. The number of prompt if define with the path length distribution of the players that we can see below
 

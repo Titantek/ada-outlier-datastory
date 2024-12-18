@@ -311,7 +311,7 @@ First, the diagonal that represents links staying in the same category has bigge
 
    <div class="message-wrapper">
       <div class="message Doc">
-         We cannot conclude that quickly Marty. Let's perform a statistical test for that. In our case, we should use a chi2 contingency test: our null hypothesis is that both distributions are identical. What is meant by distribution is a vector of 15x15 that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of alpha=0.05.
+         We cannot conclude that quickly Marty. Let's perform a statistical test for that. In our case, we should use a chi2 contingency test: our null hypothesis is that both distributions are identical. What is meant by distribution is a vector of 15x15 that contains the count of links from the start category to the end category. It's simply the data from the heatmap, in the form of counts. We choose a level of significance of alpha=0.01.
       </div>
       <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/doc1.png" alt="Doc" class="profile-pic">
    </div> 
@@ -427,7 +427,7 @@ Another parameter might be the number of links leading to the target: intuitivel
    where $$\beta\in\mathbb{R}^r$$ are the coefficients to fit.
 
 
-We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.05. Here are the coefficients with pvalue below the significance threshold:
+We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" width="900px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">

@@ -1029,9 +1029,7 @@ To observe the performance of llama3 between 2007 and 2024, we will compare the 
 
 ![llama3_2007_2024](assets/img/llama_path_not_found.svg)
 
-We observe that llama3 in 2024 finds 4% more paths than in 2007. 
-
-
+We observe that llama3 in 2024 finds 4% more paths than in 2007. But, does llama3 in 2024 have a better path length distribution than in 2007?
 
 ![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
 

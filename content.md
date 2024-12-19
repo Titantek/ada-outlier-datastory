@@ -80,9 +80,11 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 </div>
 
+{: .box-warning}
+   **Wikispeedia** \
+   Wikispeedia is a game where you start from one Wikipedia article and try to reach another article only by navigating through the links you can find on the pages. The goal of the game is to be as fast as possible but there is no restriction in time ! 
 
-
-~ small presentation about Wikispeedia principle and how to play the game ~
+[Play Wikispeedia here !](https://dlab.epfl.ch/wikispeedia/play/)
 
 
 <div class="chat">

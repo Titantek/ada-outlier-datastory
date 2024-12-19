@@ -160,7 +160,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
     src="/ada-outlier-datastory/assets/img/pie_cat.html" 
     class="responsive-iframe" 
     title="Pie chart of the categories"
-    width="900px" height="500px">
+    width="900px" height="200px">
 </iframe>
 
 
@@ -192,7 +192,8 @@ Let's first look at the links between the articles: from which to which categori
 
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
-width="900px" height="900px" alt='links_categories'></iframe>
+   class= "responsive-iframe"
+   width="900px" height="900px" alt='links_categories'></iframe>
 
 <!-- INITIAL TEXT:
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?

@@ -159,8 +159,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 <iframe 
     src="/ada-outlier-datastory/assets/img/pie_cat.html" 
     class="responsive-iframe" 
-    title="Pie chart of the categories"
-    width="900px" height="200px">
+    title="Pie chart of the categories">
 </iframe>
 
 
@@ -298,9 +297,10 @@ First, the diagonal that represents links staying in the same category has bigge
       • percentage of games discarded: 6.8%
 
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="750px" alt='categories_finished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="750px" 
+class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" width="800px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" class="responsive-iframe" width="800px" height="600px" alt='categories_unfinished_paths_start2target'></iframe>
 
 <!--
 <div class="chat">
@@ -392,7 +392,8 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the porportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases, except for a shortest path of 4 that where the success rate is slightly higher than for 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
-<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" 
+class="responsive-iframe" width="900px" height="600px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 
 
 ### 1.B.2) Number of links to the target
@@ -431,7 +432,8 @@ Another parameter might be the number of links leading to the target: intuitivel
 
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
-<iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" width="900px" height="600px" alt='results_log_reg'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
+class="responsive-iframe" width="900px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">
    <div class="Marty_crazy">

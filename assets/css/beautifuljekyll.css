@@ -1227,15 +1227,13 @@ pre {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto; /* Adjust height based on content */
-  padding: 10px; /* Optional: Add padding for spacing */
+  height: 100vh; /* Use full viewport height */
+  margin: 0; /* Remove any default margins */
 }
 
 .responsive-iframe {
-  width: 100%; /* Maintain 80% width */
-  max-width: 1200px;
-  height: calc(100vw * 0.75); /* Dynamically set height based on width (4:3 ratio) */
-  max-height: 800px;
+  width: 80%;
+  height: 80%; /* Fill 80% of container height */
   border: none;
 }
 

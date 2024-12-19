@@ -92,6 +92,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
       <div class="icon"></div>
       <div class="message">
       You can play Wikispeedia<a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here!</a>
+      </div>
    </div>
 
    <div class="Doc">

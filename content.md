@@ -1033,7 +1033,7 @@ We observe that llama3 in 2024 finds 4% more paths than in 2007. But, does llama
 
 ![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
 
-We observe that llama3 in 2024 has a better path length distribution than in 2007. Let's confirm this by doing a t-test. We choose a significance level of $$\alpha=5$$% and we obtain a `p-value` = $$0.047$$ and a `statistic` = $$1.99$$. Thus, we reject the null hypothesis and conclude that llama3 in 2024 has a better path length distribution than in 2007.
+We observe that llama3 in 2024 has a better path length distribution than in 2007. Let's confirm this by doing a t-test. We choose a significance level of $$\alpha=5$$% and we obtain a `p-value` = $$0.047$$ and a `statistic` = $$-1.99$$. Thus, we reject the null hypothesis and conclude that llama3 in 2024 has a better path length distribution than in 2007.
 
 Finally, we can conclude that the performance of llama3 has improved between 2007 and 2024. And so, the players playing in 2024 should be able to reach the target page in less clicks than in 2007.
 

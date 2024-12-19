@@ -1234,7 +1234,8 @@ pre {
 .responsive-iframe {
   width: 100%; /* Maintain 80% width */
   max-width: 1200px;
-  height: auto;
+  height: calc(100vw * 0.75); /* Dynamically set height based on width (4:3 ratio) */
+  max-height: 800px;
   border: none;
 }
 

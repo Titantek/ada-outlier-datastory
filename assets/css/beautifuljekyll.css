@@ -1223,20 +1223,19 @@ pre {
 
 /* Interactive plots */
 
-
 .iframe-container {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust height based on content */
+  padding: 20px; /* Optional: Add padding for spacing */
 }
 
 .responsive-iframe {
-  width: 80%; 
-  height: 5%; 
-  border: none; 
+  width: 80%; /* Maintain 80% width */
+  aspect-ratio: 16 / 9; /* Automatically calculate height for common video aspect ratio */
+  border: none;
 }
-
 
 /* button to content */
 

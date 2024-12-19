@@ -820,12 +820,11 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 
 To analyze the player's path, we will analyze the case where the player's path is unfinished and finished. First, we will process the player's path to detect if the target was encountered by the player during his game. Then, we will count the number of paths that could have been shortened and compare the number of clicks that could be saved by the players in the structure of wikipedia in 2007 and 2024 based on the current path choosen by the player.
 
-![Player's path](/ada-outlier-datastory/assets/img/player_path_unfinished.png)
+![Player's path](/ada-outlier-datastory/assets/img/unfinished_shortened_path.svg)
 
 
-![Player's path](/ada-outlier-datastory/assets/img/player_path_finished.png)
+![Player's path](/ada-outlier-datastory/assets/img/finished_shortened_path.svg)
 
-[CONCLUSION] (2024 shortened more paths, but the number of clicks saved by 2007 is greater.)
 
 We observe on both unfinished and finished paths graphs above that the structure of wikipedia in 2024 allows to shortened more paths than in 2007 and the number of clicks saved is greater in 2024 than in 2007. 
 Based on this results, we can conclude that the structure of wikipedia in 2024 would allow to players to reach the target page in less clicks than in 2007.
@@ -851,7 +850,7 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
 </div>
 
 {: .box-note}
-   To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
+   To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
    The similarity is calculated as follows: $$ \begin{equation}

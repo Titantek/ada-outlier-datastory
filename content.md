@@ -409,7 +409,7 @@ class="responsive-iframe" width="900px" height="550px" alt='distrib_path_lengths
 
 ### 1.B.2) Number of links to the target
 
-Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the links to the target number depending on whether the player found the target. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 45.50. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
+Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="550px" alt='distrib_links_to_target'
 class='responsive-iframe'></iframe>

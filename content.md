@@ -886,7 +886,8 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 <div class="chat">
   <div class="Marty">
     <div class="icon"></div>
-    <div class="message">Doc, we have seen that the structure of Wikipedia has evolved since 2007. But are the players stronger in 2024 than in 2007?</div>
+    <div class="message">Doc, we have seen that the structure of Wikipedia has evolved since 2007. And theoretically, the players should be able to reach the target page in less clicks in 2024 than in 2007. But is that really the case?
+   </div>
   </div>
 
   <div class="Doc">
@@ -901,7 +902,7 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 
   <div class="Doc">
     <div class="icon"></div>
-    <div class="message">We might be able to do that, let me think about it... we can use my favorite tool LLMs &lt 3 to compare the two years.</div>
+    <div class="message">We might be able to do that, let me think about it... we can use my favorite tool LLMs &hearts; to compare the two years.</div>
   </div>
 
   <div class="Marty">
@@ -911,36 +912,39 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
   </div>
 </div>
 
-
-We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data. The design of the prompts is inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
+{: .box-note}
+   We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data using [Ollama](https://ollama.com/). The design of the prompts was inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
 
 First we give the context of the game Wikispeedia to the model
 
-*We now play the following game:*
+{: .box-code}
+*We now play the following game:\
+\
+I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:\
+\
+you need to follow the same format as the example below: 
+Target word: George_Washington\
+\
+Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]\
+\
+Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
 
-*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
-
-
-*you need to follow the same format as the example below: 
-Target word: George_Washington*
-
-*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
-
-*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
 
 Then we give the llm the target word and the list of options:
 
-*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
+{: .box-code}
+*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it\
+\
+Target word: [{target}]\
+\
+Available options: [{links}]\
+\
+RESPECT THIS FORMAT WHEN ANSWERING:\
+\
+Reasoning: [REASONING]\
+\
+Answer: Hence the choice is: '[ANSWER]'*
 
-*Target word: [{target}]*
-
-*Available options: [{links}]*
-
-*RESPECT THIS FORMAT WHEN ANSWERING:*
-
-*Reasoning: [REASONING]*
-
-*Answer: Hence the choice is: '[ANSWER]'*
 
 We will repeat this prompt with the new available options until the llm finds the target word or the prompt reaches 50 iterations. The number of prompt if define with the path length distribution of the players that we can see below
 

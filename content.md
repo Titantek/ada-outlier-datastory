@@ -159,7 +159,8 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 <iframe 
     src="/ada-outlier-datastory/assets/img/pie_cat.html" 
     class="responsive-iframe" 
-    title="Pie chart of the categories">
+    title="Pie chart of the categories"
+    width="900px" height="600px">
 </iframe>
 
 

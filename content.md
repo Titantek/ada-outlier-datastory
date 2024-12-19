@@ -820,12 +820,11 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 
 To analyze the player's path, we will analyze the case where the player's path is unfinished and finished. First, we will process the player's path to detect if the target was encountered by the player during his game. Then, we will count the number of paths that could have been shortened and compare the number of clicks that could be saved by the players in the structure of wikipedia in 2007 and 2024 based on the current path choosen by the player.
 
-![Player's path](/ada-outlier-datastory/assets/img/player_path_unfinished.png)
+![Player's path](/ada-outlier-datastory/assets/img/unfinished_shortened_path.svg)
 
 
-![Player's path](/ada-outlier-datastory/assets/img/player_path_finished.png)
+![Player's path](/ada-outlier-datastory/assets/img/finished_shortened_path.svg)
 
-[CONCLUSION] (2024 shortened more paths, but the number of clicks saved by 2007 is greater.)
 
 We observe on both unfinished and finished paths graphs above that the structure of wikipedia in 2024 allows to shortened more paths than in 2007 and the number of clicks saved is greater in 2024 than in 2007. 
 Based on this results, we can conclude that the structure of wikipedia in 2024 would allow to players to reach the target page in less clicks than in 2007.
@@ -851,7 +850,7 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
 </div>
 
 {: .box-note}
-   To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
+   To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
    The similarity is calculated as follows: $$ \begin{equation}
@@ -887,7 +886,8 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 <div class="chat">
   <div class="Marty">
     <div class="icon"></div>
-    <div class="message">Doc, we have seen that the structure of Wikipedia has evolved since 2007. But are the players stronger in 2024 than in 2007?</div>
+    <div class="message">Doc, we have seen that the structure of Wikipedia has evolved since 2007. And theoretically, the players should be able to reach the target page in less clicks in 2024 than in 2007. But is that really the case?
+   </div>
   </div>
 
   <div class="Doc">
@@ -902,7 +902,7 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 
   <div class="Doc">
     <div class="icon"></div>
-    <div class="message">We might be able to do that, let me think about it... we can use my favorite tool LLMs &lt 3 to compare the two years.</div>
+    <div class="message">We might be able to do that, let me think about it... we can use my favorite tool LLMs &hearts; to compare the two years.</div>
   </div>
 
   <div class="Marty">
@@ -912,50 +912,86 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
   </div>
 </div>
 
-
-We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data. The design of the prompts is inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
-
-First we give the context of the game Wikispeedia to the model
-
-*We now play the following game:*
-
-*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:*
+## Prompt design for the LLMs and games selection to compare the models with the players
 
 
-*you need to follow the same format as the example below: 
-Target word: George_Washington*
+{: .box-note}
+   We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data using [Ollama](https://ollama.com/). The design of the prompts was inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
 
-*Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]*
+We will use the following prompt to the llm so it understands how to play wikispeedia:
 
-*Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
+{: .box-code}
+*We now play the following game:\
+\
+I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:\
+\
+you need to follow the same format as the example below: 
+Target word: George_Washington\
+\
+Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, France, French_language, George_W._Bush, Hungary, September_11,_2001_attacks, United_States]\
+\
+Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
 
-Then we give the llm the target word and the list of options:
 
-*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it* 
+Then we give the model the target word and the list of options.
 
-*Target word: [{target}]*
+{: .box-code}
+*I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it\
+\
+Target word: [{target}]\
+\
+Available options: [{links}]\
+\
+RESPECT THIS FORMAT WHEN ANSWERING:\
+\
+Reasoning: [REASONING]\
+\
+Answer: Hence the choice is: '[ANSWER]'*
 
-*Available options: [{links}]*
 
-*RESPECT THIS FORMAT WHEN ANSWERING:*
+We will select the games that the model will play based on the number of time the games was attempted by the players. To visualize the number of attempts per game, we will use a CCDF plot. And we will use the players's path length to distribution to select the maximum number of prompts we will give to the model per game based on the end of the distribution.
 
-*Reasoning: [REASONING]*
+![players_path_length](assets/img/llm_parameter.svg)
 
-*Answer: Hence the choice is: '[ANSWER]'*
+We observe on the CCDF that the number of attempts stop deacreasing after 10 attempts. so we will select the games that have been attempted more than 10 times by the players. And the tail of the path length distribution stops around 50 clicks, so the maximum number of prompts we will give to the model per game will be 50.
 
-We will repeat this prompt with the new available options until the llm finds the target word or the prompt reaches 50 iterations. The number of prompt if define with the path length distribution of the players that we can see below
+## Comparison of the models with the players
 
-![players_path_length](assets/img/players_path_length.svg)
 
-First, we want to see if the models are able to find a path between the source and the target articles.
+<div class="chat">
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Hmmm Doc, generating path with llms are going to take a lot of time, right? </div>
+  </div>
+
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message"> Yes Marty, generating path with llms are going to take a lot of time.</div>
+   </div>
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">But, can we generate the data before the lightning struck the clock tower?</div>
+   </div>
+
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data. To see which model perfom the most like the players. And once we have the results, we will generate the data for 2024 with the selected model.</div>
+   </div>
+
+</div>
+
+
+First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths not found by llama3 and mistral.
 
 ![llms_path_not_found](assets/img/llms_path_not_found.svg)
 
-llama3 seems to find more paths than mistral.
+We observe that llama3 finds 2% more paths than mistral.
 
-Then, we want also compare the performance of the models with the players. See if the path length is similar between the players and the models.
+But does any of the models the same path length distribution as the players? We can compare the path length distribution of the players with the path length distribution of the models.
 
-<!-- <iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe> -->
+![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
 
 llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases.
 

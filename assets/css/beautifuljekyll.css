@@ -1232,8 +1232,9 @@ pre {
 }
 
 .responsive-iframe {
-  width: 80%; /* Maintain 80% width */
-  aspect-ratio: 16 / 9; /* Automatically calculate height for common video aspect ratio */
+  width: 100%; /* Maintain 80% width */
+  max-width: 1200px;
+  aspect-ratio: 1 / 1; /* Automatically calculate height for common video aspect ratio */
   border: none;
 }
 

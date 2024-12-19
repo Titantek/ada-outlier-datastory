@@ -915,7 +915,7 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 {: .box-note}
    We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data using [Ollama](https://ollama.com/). The design of the prompts was inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
 
-First we give the context of the game Wikispeedia to the model
+We will use the following prompt to the llm so it understands how to play wikispeedia:
 
 {: .box-code}
 *We now play the following game:\
@@ -930,7 +930,7 @@ Available options: [Able_Archer_83, Afghanistan, , Estonia, Europe, Finland, Fra
 Reasoning: I need to find something inside the list related to the target: 'George_Washington'. George Washington was the first president of United States and he lived in United States.*
 
 
-Then we give the llm the target word and the list of options:
+Then we give the model the target word and the list of options.
 
 {: .box-code}
 *I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it\
@@ -946,9 +946,12 @@ Reasoning: [REASONING]\
 Answer: Hence the choice is: '[ANSWER]'*
 
 
-We will repeat this prompt with the new available options until the llm finds the target word or the prompt reaches 50 iterations. The number of prompt if define with the path length distribution of the players that we can see below
+We will select the games that the model will play based on the number of time the games was attempted by the players. To visualize the number of attempts per game, we will use a CCDF plot. And we will use the players's path length to distribution to select the maximum number of prompts we will give to the model per game based on the end of the distribution.
 
-![players_path_length](assets/img/players_path_length.svg)
+![players_path_length](assets/img/llm_parameter.svg)
+
+We observe on the CCDF that the number of attempts stop deacreasing after 10 attempts. so we will select the games that have been attempted more than 10 times by the players. And the tail of the path length distribution stops around 50 clicks, so the maximum number of prompts we will give to the model per game will be 50.
+
 
 First, we want to see if the models are able to find a path between the source and the target articles.
 

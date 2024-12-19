@@ -53,7 +53,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 <p>Content for section 3...</p> 
 -->
 
-<b> Welcome to our ADA project ! Follow Marty and Doc through their adventures exploring ✨the Wikispeedia Dataset✨</b>
+**Welcome to our ADA project ! Follow Marty and Doc through their adventures exploring ✨the Wikispeedia Dataset✨**
 
 
 <div class="chat">
@@ -128,7 +128,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 </div>
 
-In this project we use the data that players create by playing Wikispeedia. 
+In this project we use the data that players create by playing Wikispeedia. This data was collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/)
 
 ~ Presentation of the dataset by Doc ~
 

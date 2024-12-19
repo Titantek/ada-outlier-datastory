@@ -1238,8 +1238,10 @@ pre {
 }
 
 /* button to content */
-
 button {
+  display: flex; /* Enables flexbox for combining text and image */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
   margin-top: 20px;
   margin-left: 60px;
   padding: 10px 20px;
@@ -1250,6 +1252,13 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-family: Arial, sans-serif;
+  text-decoration: none; /* Ensures no underline if used with an <a> tag */
+}
+
+button img {
+  width: 25px; /* Adjust image size */
+  height: 25px; 
+  margin-right: 10px; /* Spacing between image and text */
 }
 
 button:hover {

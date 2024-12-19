@@ -991,7 +991,7 @@ We observe that llama3 finds 2% more paths than mistral.
 
 But does any of the models the same path length distribution as the players? We can compare the path length distribution of the players with the path length distribution of the models.
 
-[llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
+![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
 
 llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases.
 

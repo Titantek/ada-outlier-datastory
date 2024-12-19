@@ -198,7 +198,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 Back in 2007, science articles represented almost 25% of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
-Let's first look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
+Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
 
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
@@ -218,7 +218,7 @@ BUBBLES AND PLAIN TEXT:
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Wow, lots of information on this plot! Help me there Doc!
+      Wow, lots of information in this plot! Help me there Doc!
       </div>
    </div>
 
@@ -232,7 +232,7 @@ BUBBLES AND PLAIN TEXT:
 </div>
 
 
-First, the diagonal that represents links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from Science, Geography and Countries. It means that a higher proportion of links lead to those categories. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles from the Countries category: 23% of the links lead to it! It seems logical as for many articles, a location is mentioned (place of discovery or birth, where an event took place, etc), including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles.
+First, the diagonal that represents links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from Science, Geography and Countries. It means that a higher proportion of links lead to those categories. For Science and Geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles from the Countries category: 23% of the links lead to it! It seems logical as for many articles, a location is mentioned (place of discovery or birth, where an event took place, etc.), including the country. Science articles are the ones linking to other categories the least, with only 41% of links going elsewhere than to science articles.
 
 
 <div class="chat">
@@ -278,7 +278,7 @@ First, the diagonal that represents links staying in the same category has bigge
 
    <div class="Doc">
       <div class="message">
-      First, there are some articles that doesn't appears in `categories.tsv`... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
+      First, there are some articles that don't appear in our categories file... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
       </div>
       <div class="icon"></div>
    </div>
@@ -292,7 +292,7 @@ First, the diagonal that represents links staying in the same category has bigge
 
    <div class="Doc">
       <div class="message">
-      We get rid of only 0.16% of the finished paths and 21.18% of the unfinished paths. 21.18% can look big but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
+      We get rid of only 0.16% of the finished paths and 21.18% of the unfinished paths. 21.18% might seem a lot but most of the discarded paths have a length of 1, and the player didn't take any action! These paths are not exploitable, discarding them is our best option.
       </div>
       <div class="icon"></div>
    </div>
@@ -362,10 +362,10 @@ class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>
 
 -->
 
-Both heatmaps look similar! But what do the statistics tell us? Let's perform a chi2 contingency test: our null hypothesis is that the distributions are identical. 
-What is meant by distribution is the frequency of links from a start category to an end category. Here we simply take the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis! We should however stay precautionous at the moment with this result, as the $$\chi^2$$-test presents some limitations on the number of samples that we will not detail here.
+Both heatmaps look similar! But what do the statistics tell us? Let's perform a $$\chi^2$$ contingency test: our null hypothesis is that the distributions are identical. 
+What is meant by distribution is the frequency of links from a start category to an end category. Here we simply take the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis!
 
-We can also look at it in a more general way and compute the distribution of the start categories without looking at the target (indicated as `category → *` in the heatmap), and vice-versa (indicated as `* → category`), for both finished and unfinished paths. Reproducing the t-test for those distributions, we obtain the same pvalue of 0.0. We can thus also conclude that the distribution of the categories of the start and target articles are different between the finished and unfinished path datasets.
+We can also look at it in a more general way and compute the distribution of the start categories without looking at the target (indicated as `category → *` in the heatmap), and vice-versa (indicated as `* → category`), for both finished and unfinished paths. Reproducing the t-test for those distributions, we obtain the same p-value of 0.0. We can thus also conclude that the distribution of the categories of the start and target articles are different between the finished and unfinished path datasets.
 
 Let's dig through some details. A few major differences occur. First, there is in proportion 4 times less target articles from the Countries category among the unfinished paths, whereas there is 2 times more article target from Design_and_Technology. There are also proportionally 66% of target articles more in Everyday_life and Language_and_literature categories for the unfinished paths and and portion of Geography articles is divided by 1.6. it also happens for Music and Business_Studies categories, with proportionally 33% target articles more. 
 
@@ -401,7 +401,7 @@ One can assume that the shorter the shortest path, the more likely it is to find
 {: .box-note}
   The **shortest path** between two articles is given by the minimum number of links you must click to reach the desired article.
 
-This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the porportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases, except for a shortest path of 4 that where the success rate is slightly higher than for 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
+This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the proportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases. We find an exception for a shortest path of length 4, where the success rate is slightly higher than for a length of 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" 
 class="responsive-iframe" width="900px" height="550px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
@@ -409,7 +409,7 @@ class="responsive-iframe" width="900px" height="550px" alt='distrib_path_lengths
 
 ### 1.B.2) Number of links to the target
 
-Another parameter might be the number of links leading to the target: intuitively, the more there are the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
+Another parameter that influence for success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
 
 <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="550px" alt='distrib_links_to_target'
 class='responsive-iframe'></iframe>
@@ -434,16 +434,16 @@ class='responsive-iframe'></iframe>
 
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
-   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred}$$ with $$A$$ and $$b$$ the fitting coefficients. \
+   In a **linear regression**, we have the **features** in a matrix $$X$$, made out of $$N$$ rows and $$r$$ columns, with $$N$$ and $$r$$ are respectively the numbers of samples $$x\in\mathbb{R}^r$$ and features. We train the model with the matrix $$X$$ and a vector $$Y\in\mathbb{R}^N$$ that contains the ground truth. Then, our model is ready to predict the result for new samples: it computes $$f(x)=Ax+b=y_\text{pred},$$ where $$A$$ and $$b$$ are the fitting coefficients. \
    \
    In the case of logistic regression, we want to predict the probability of the outcome to be 0 or 1. The problem is that the linear regression can give us any number, not necessarily between 0 and 1 as a probability should be. To fix this issue, we will train the model to deal with log odds that range from $$-\infty$$ to $$\infty$$. The odds are defined are $$p/(1-p)$$ for a given probability $$p$$.  Thus, a logistic regression is the equivalent of a linear regression modelling the log odds, with \
    $$\begin{equation*}
-   f(x)=y_\text{pred}=\frac{1}{1+\exp(-\beta^Tx)}
+   f(x)=y_\text{pred}=\frac{1}{1+\exp(-\beta^Tx)},
    \end{equation*}$$ \
    where $$\beta\in\mathbb{R}^r$$ are the coefficients to fit.
 
 
-We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
+We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in the training set, whereas validation and testing sets gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite imbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with p-value below the significance threshold:
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
 class="responsive-iframe" width="1500px" height="600px" alt='results_log_reg'></iframe>
 
@@ -464,14 +464,14 @@ class="responsive-iframe" width="1500px" height="600px" alt='results_log_reg'></
 </div>
 
 {: .box-note}
-   In the case of a continuous predictor, a positive (resp. negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (resp. decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (resp. decrease) by $$\beta$$ if the binary predictor takes a value of 1. \
-   The change in probabilities follows the trend of the log odds one but depends on the initial value of the probability.
+   In the case of a continuous predictor, a positive (respectively negative) coefficient $$\beta$$ means that the log odds of the outcome are increased (respectively decreased) by $$\beta$$ per standard-deviation increase of the corresponding predictor. For a binary predictor taking values 0 or 1, it represents an increase (respectively decrease) by $$\beta$$ if the binary predictor takes a value of 1. \
+   The change in probabilities follows the trend of the log odds but depends on the initial value of the probability.
 
 
-As we were stating it previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology category or Language_and_literature: the odds are decreased of 41%! It is also true for target articles  in the Everyday_life category that decrease the odds by 36%. The only source category that has a significant impact is again Design_and_Technology. It matches quite well our previous observations.
+As we were stating previously, the probability of finding an article is increased when the article belongs to the Geography or Countries category! It is also true for Mathematics. On the other hand, it is harder to reach an article in the Design_and_Technology category or Language_and_literature: the odds are decreased by 41%! It happens as well for target articles in the Everyday_life category: the odds decrease by 36%. The only source category that has a significant impact is Design_and_Technology. It matches quite well our previous observations.
 
 
-The longer the shortest path, the smaller the probability of success is: it decreases the odds of 8% for an increase of 1 of the shortest path. It coincides with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happen for the number of links to target: having 93 more links pointing to an article multiplies the odds of finding it by 2.36. It also agrees with our previous hypotheses.
+The longer the shortest path, the smaller the probability of success. For an increase of 1 in the shortest path, the odds decrease by 8%. It coincides with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happens for the number of links to the target article: having 93 more links pointing to an article multiplies the odds of finding it by 2.36. It also agrees with our previous hypotheses.
 
 
 
@@ -492,7 +492,7 @@ The longer the shortest path, the smaller the probability of success is: it decr
 </div>
 
 
-For each game data, the model gives us a probability of success. To asses the model quality, we then have to choose what is threshold above which probability a game will be classified as a success. For this, we try different thresholds on the validation and select the one that gives the better macro-averaged F1-score. It turns that for our model, the best macro-averaged F1-score is 0.61 for a threshold of 0.4242. We thus choose the latter for the following. 
+For each game data, the model gives us a probability of success. To assess the quality of the model, we have to choose for which threshold probability a game is classified as a success. For this, we try different thresholds on the validation set and select the one that gives the best macro-averaged F1-score. It turns that for our model, the best macro-averaged F1-score is 0.61 for a threshold of 0.43. We thus choose the latter. 
 
 
 
@@ -504,23 +504,23 @@ We can now evaluate the model performance on the test set!
    **How to evaluate the model quality 101** \
    • ROC AUC: it represents the area under the curve of the receive operator curve. To keep it simple, a value 0.5 means that the model is as good as a random classifier, i.e. that predicts one half as success and the other one as failure. The maximum value of 1 means perfect predictions. The closer the value to 1, the better is the model. \
    • Confusion matrix: a table showing the number of samples correctly or wrongly classified as a success or a failure. It contains all the necessary data to compute the following metrics. \
-   • Accuracy: proportion of correct predictions \
-   • Precision: proportion of real wins among samples classified as win \
-   • Recall: proportion of reals wins classified correctly \
-   • F1-score: harmonic mean of recall and precision. In a nutshell: combine recall and precision in a unique metric to find the best tradeoff.
+      • Accuracy: proportion of correct predictions \
+      • Precision: proportion of real wins among samples classified as wins \
+      • Recall: proportion of real wins classified correctly \
+      • F1-score: harmonic mean of recall and precision. In a nutshell: combine recall and precision in a unique metric to find the best tradeoff.
 
 
 <div class="chat">
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-        Wait a minute... you were talking about macro-averaged F1-score above. What do you hide me?
+        Wait a minute... you were talking about macro-averaged F1-score above. What are hiding from me?
       </div>
    </div>
 
    <div class="Doc">
       <div class="message">
-        Well, this one is a bit trickier than usual! These metrics can give very high value even if the model predicts always a win! This is due to the unbalance of the data: we have much more wins than defeats... But trust me, we'll sort it out!
+        Well, this one is a bit trickier than usual! These metrics can give very high values even if the model predicts always a win! This is due to the imbalance of the data: we have much more wins than defeats... But trust me, we'll sort it out!
       </div>
       <div class="icon"></div>
    </div>
@@ -528,8 +528,8 @@ We can now evaluate the model performance on the test set!
 
 {: .box-note}
    **How to evaluate the model quality 102** \
-   The metrics previously presented do not assess how good the model can predict negative sample. Here are some metrics to address the problem. \
-   • Specifity: like the recall but for the defeats, i.e. proportion of real defeats classified correctly. \
+   The metrics previously presented do not assess how good the model can predict negative samples. Here are some metrics to address the problem. \
+   • Specifity: like the recall but for the defeats, i.e. proportion of real defeats classified correctly \
    • Balanced accuracy: average of recall and specificity \
    • Macro-averaged F1-score: average of F1-score for wins and F1-score for defeats 
 
@@ -542,7 +542,7 @@ Now we are ready to assess the model quality on the test set. Here is the confus
 | **Real win (5197)** | 3943 | 1254 |
 | **Real defeat (1888)** | 1019 | 869 |
 
-First, the ROC AUC gives us a value of 0.67, showing sensibly better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and the balanced accuracy is 0.68. The main reason between this reserved performance is the difficulty that has the model to identify defeats. Indeed, the specificity is only 0.46! So if we have a game lost, the model classifies as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classify a game as a win, there is 4 chances over 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct only 41% of the time! This is due to the unbalance between the number of wins and defeats among the samples as mentioned previously.
+First, the ROC AUC gives us a value of 0.67, showing reasonable better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and the balanced accuracy is 0.68. The main reason for this reserved performance is the difficulty that the model has to identify defeats. Indeed, the specificity is only 0.46! So if we have a lost game, the model classifies it as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classifies a game as a win, there is 4 chances out of 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct only 41% of the time! This is due to the imbalance between the number of wins and defeats among the samples as mentioned previously.
 
 <div class="chat">
    <div class="Marty">
@@ -554,7 +554,7 @@ First, the ROC AUC gives us a value of 0.67, showing sensibly better performance
 
    <div class="Doc">
       <div class="message">
-        I understand you Marty. We might lack of data on players to developp a better model, for example their age, their origin, their education level. But the model still identify quite well the games that will be won!
+        I understand you Marty. We might lack data on players to develop a better model, for example their age, their origin, their education level, .. But the model still identifies quite well the games that will be won!
       </div>
       <div class="icon"></div>
    </div>
@@ -568,7 +568,7 @@ First, the ROC AUC gives us a value of 0.67, showing sensibly better performance
 
    <div class="Doc_crazy">
       <div class="message">
-        Come with me, we still have a lot to discover! I think it's time for a small trip in the future...
+        Come with me, we still have a lot to discover! I think it's time for a small trip to the future...
       </div>
       <div class="icon"></div>
    </div>

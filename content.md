@@ -989,11 +989,17 @@ First, we are interested if LLMs models are able to find a path to the target ar
 
 We observe that llama3 finds 2% more paths than mistral.
 
-But does any of the models the same path length distribution as the players? We can compare the path length distribution of the players with the path length distribution of the models.
+Now, we are interested in the path length distribution of the models. We will compare the path length distribution of the players with the path length distribution of the models.
 
 ![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
 
-llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases.
+LLama3 seems to be slightly better than mistral in terms of path length distribution. Let's confirm this by doing a t-test. We choose a significance level of $$\alpha=5$$% and we obtain for llama3 a `p-value` = $$0.52$$ and a `statistic` of $$0.647$$ and for mistral a `p-value` = $$0.0006$$ and a `statistic` of $$3.428$$. Thus, we reject the null hypothesis for mistral and we can't reject the null hypothesis for llama3. We can conclude that llama3 is better than mistral in terms of path length distribution.
+
+Finally, we are interested if the models fall in the confidence interval of the players (in the standard deviation of the players). We will compare the confidence interval of llama3 and mistral.
+
+![llms_confidence_interval](assets/img/CI_player_model.svg)
+
+llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases. This strengthens the idea that llama3 is better than mistral.
 
 But, does the model find the same path as the players? We can compute the Jaccard similarity between the paths of the players and the models to determine if the path contains the same articles.
 

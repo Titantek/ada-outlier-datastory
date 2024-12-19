@@ -2,6 +2,7 @@
 layout: page
 mathjax: true
 cover-img: "/assets/img/Marty_and_Doc/coverimg.png"
+show_toc: true
 ---
 
 <!--

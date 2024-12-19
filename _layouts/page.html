@@ -30,3 +30,36 @@ layout: base
     </div>
   </div>
 </main>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <!-- Your site header -->
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <nav class="toc">
+        <h2>Table of Contents</h2>
+        <!-- TOC will be rendered here -->
+        {{ content | toc }}
+      </nav>
+    </aside>
+
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
+
+  <footer>
+    <!-- Your site footer -->
+  </footer>
+</body>
+</html>

@@ -912,6 +912,9 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
   </div>
 </div>
 
+## Prompt design for the LLMs and games selection to compare the models with the players
+
+
 {: .box-note}
    We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data using [Ollama](https://ollama.com/). The design of the prompts was inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
 
@@ -952,16 +955,43 @@ We will select the games that the model will play based on the number of time th
 
 We observe on the CCDF that the number of attempts stop deacreasing after 10 attempts. so we will select the games that have been attempted more than 10 times by the players. And the tail of the path length distribution stops around 50 clicks, so the maximum number of prompts we will give to the model per game will be 50.
 
+## Comparison of the models with the players
 
-First, we want to see if the models are able to find a path between the source and the target articles.
+
+<div class="chat">
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Hmmm Doc, generating path with llms are going to take a lot of time, right? </div>
+  </div>
+
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message"> Yes Marty, generating path with llms are going to take a lot of time.</div>
+   </div>
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">But, can we generate the data before the lightning struck the clock tower?</div>
+   </div>
+
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data. To see which model perfom the most like the players. And once we have the results, we will generate the data for 2024 with the selected model.</div>
+   </div>
+
+</div>
+
+
+First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths not found by llama3 and mistral.
 
 ![llms_path_not_found](assets/img/llms_path_not_found.svg)
 
-llama3 seems to find more paths than mistral.
+We observe that llama3 finds 2% more paths than mistral.
 
-Then, we want also compare the performance of the models with the players. See if the path length is similar between the players and the models.
+But does any of the models the same path length distribution as the players? We can compare the path length distribution of the players with the path length distribution of the models.
 
-<!-- <iframe src="assets/img/performance_scatter.html" width="100%" alt='models_performance' frameBorder="0"></iframe> -->
+[llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
 
 llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases.
 

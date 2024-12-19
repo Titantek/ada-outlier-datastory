@@ -81,11 +81,19 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 </div>
 
 {: .box-warning}
-   **Wikispeedia** \
+   **🎮Wikispeedia🎮** \
    Wikispeedia is a game where you start from one Wikipedia article and try to reach another article only by navigating through the links you can find on the pages. The goal of the game is to be as fast as possible but there is no restriction in time ! 
 
 [Play Wikispeedia here !](https://dlab.epfl.ch/wikispeedia/play/)
 
+<div class="chat">
+
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+      You can play Wikispeedia [here!](https://dlab.epfl.ch/wikispeedia/play/)
+      </div>
+   </div>
 
 <div class="chat">
 
@@ -99,7 +107,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Yeah Doc, I dunno, sometimes I don't even now the target so I try but I just fail… Or sometimes I just keep going back and forth between articles because they just don't look like how I expected them to be, like at all! It seems like they are not nowadays Wikipedia articles and do not contain the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
+      Yeah Doc, sometimes I don't even now the target so I try but I just fail… Or I just keep going back and forth between articles because they just don't look like how I expected them to be, at all! It seems like they are not the Wikipedia articles that I know and they don't have the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
       </div>
    </div>
 
@@ -119,6 +127,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 </div>
 
+In this project we use the data that players create by playing Wikispeedia. 
 
 ~ Presentation of the dataset by Doc ~
 

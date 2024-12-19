@@ -85,18 +85,14 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
    **🎮 Wikispeedia 🎮** \
    Wikispeedia is a game where you start from one Wikipedia article and try to reach another article only by navigating through the links you can find on the pages. The goal of the game is to be as fast as possible but there is no restriction in time ! 
 
-[Play Wikispeedia here !](https://dlab.epfl.ch/wikispeedia/play/)
 
 <div class="chat">
 
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      You can play Wikispeedia <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here!</a>
-      </div>
+      You can play Wikispeedia<a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here!</a>
    </div>
-
-<div class="chat">
 
    <div class="Doc">
       <div class="message">
@@ -129,6 +125,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 </div>
 
 In this project we use the data that players create by playing Wikispeedia. This data was collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/)
+
 
 ~ Presentation of the dataset by Doc ~
 

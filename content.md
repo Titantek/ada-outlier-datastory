@@ -160,7 +160,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
     src="/ada-outlier-datastory/assets/img/pie_cat.html" 
     class="responsive-iframe" 
     title="Pie chart of the categories"
-    height="500px">
+    height="550px">
 </iframe>
 
 
@@ -193,7 +193,7 @@ Let's first look at the links between the articles: from which to which categori
 
 <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
    class= "responsive-iframe"
-   width="900px" height="800px" alt='links_categories'></iframe>
+   width="900px" height="850px" alt='links_categories'></iframe>
 
 <!-- INITIAL TEXT:
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
@@ -298,10 +298,10 @@ First, the diagonal that represents links staying in the same category has bigge
       • percentage of games discarded: 6.8%
 
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="800px" 
+<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="850px" 
 class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" class="responsive-iframe" width="800px" height="800px" alt='categories_unfinished_paths_start2target'></iframe>
+<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" class="responsive-iframe" width="850px" height="800px" alt='categories_unfinished_paths_start2target'></iframe>
 
 <!--
 <div class="chat">
@@ -420,7 +420,7 @@ class='responsive-iframe'></iframe>
    </div>
 </div>
 
-## 1.C. Logisitic regression
+## 1.C. Logistic regression
 
 {: .box-note}
    **Logistic regression** is a supervised machine learning technique that allows to predict a binary outcome.
@@ -435,7 +435,7 @@ class='responsive-iframe'></iframe>
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in training, whereas validation and testing gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite unbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with pvalue below the significance threshold:
 <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
-class="responsive-iframe" width="1000px" height="600px" alt='results_log_reg'></iframe>
+class="responsive-iframe" width="1200px" height="600px" alt='results_log_reg'></iframe>
 
 <div class="chat">
    <div class="Marty_crazy">
@@ -656,7 +656,7 @@ To see more in details how this plays out, we create the following heatmap where
 <iframe 
     src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
     class="responsive-iframe" 
-    height="600px"
+    height="650px"
     title=" ">
 </iframe>
 

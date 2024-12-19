@@ -53,6 +53,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 <p>Content for section 3...</p> 
 -->
 
+<b> Welcome to our ADA project ! Follow Marty and Doc through their adventures exploring ✨the Wikispeedia Dataset✨</b>
 
 
 <div class="chat">
@@ -81,7 +82,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 </div>
 
 {: .box-warning}
-   **🎮Wikispeedia🎮** \
+   **🎮 Wikispeedia 🎮** \
    Wikispeedia is a game where you start from one Wikipedia article and try to reach another article only by navigating through the links you can find on the pages. The goal of the game is to be as fast as possible but there is no restriction in time ! 
 
 [Play Wikispeedia here !](https://dlab.epfl.ch/wikispeedia/play/)
@@ -91,7 +92,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      You can play Wikispeedia [here!](https://dlab.epfl.ch/wikispeedia/play/)
+      You can play Wikispeedia <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here!</a>
       </div>
    </div>
 

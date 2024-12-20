@@ -480,7 +480,9 @@ Let us now compare the differences between the old Wikipedia from 2007 and our c
 
 As a first analysis, let's just compare basic statistics on the two different Wikipedias, such as the number of links per article on average and its distribution: 
 
-![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/distrib_links_per_article.png" alt="distrib_links_per_article" style="max-width: 70%; height: auto;">
+</div>
 
 As expected, there is much more links per page **on average** in our 2024 dataset! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
 
@@ -503,7 +505,9 @@ As expected, there is much more links per page **on average** in our 2024 datase
 
 In the plot below, we visualize on the x axis every article within our dataset of the 4604 selected articles from the Wikispeedia game and compute the difference in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, in orange, corresponds to less links on the page in 2024 than in 2007.
 
-![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/diff_links_per_article.png" alt="diff_links_per_article" style="max-width: 70%; height: auto;">
+</div>
 
 <div class="chat">
   <div class="Doc">
@@ -650,7 +654,10 @@ In 2024, there is no such node really 'dominating' the rest. The top node become
 
 On this plot, we can compare the reachability of the two networks: 
 
-![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/reachable_nodes.png" alt="reachable_nodes" style="max-width: 70%; height: auto;">
+</div>
 
 We can observe a few things: first, the 2024 curve does not plateau at the same value as the 2007 one. This can be explained by a few factors: in our 2024 dataset, some articles from 2007 have been deleted and thus will never be reachable in 2024. There are also some articles that may have lost all their incoming links in 2024 because the link structure got completely changed and more specialized. Thus no link from the selected 4604 articles could redirect to them as there were not close enough. 
 Secondly, we see that both curves follow the same pattern, with a very sharp increase, and then reaching a plateau. This is a typical behaviour of internet networks and reflects a good connectivity and efficiency of routing. With each link clicked, the increase in average reachable nodes is extremely big. The biggest increase in both curves occurs between hop 2 and 3. This reveals the presence of central hubs that allow redirection to many other nodes when reached. This information is also reflected by the very small average shortest paths that we have observed earlier on.
@@ -875,9 +882,10 @@ We will select the games for the model to play based on how many times each game
 {: .box-note}
 **CCDF** is the complementary cumulative distribution function (CCDF) of a probability distribution. It is used to visualize the tail of the distribution. The CCDF is defined as: $$ CCDF(x) = 1 - CDF(x) $$
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/llm_parameter.svg" alt="players_path_length" style="max-width: 70%; height: auto;">
+</div>
 
-
-![players_path_length](/ada-outlier-datastory/assets/img/llm_parameter.svg)
 
 From the CCDF, we observe that the number of attempts stops decreasing after 10, so we will focus on games that players have attempted more than 10 times. On the path length CCDF graph, the distribution seems to taper off around 30 clicks. However, we set the maximum number of clicks for the model to 50 to allow additional room for evaluation, particularly in cases where the model may perform less effectively and require more steps to complete the task.
 
@@ -911,19 +919,27 @@ From the CCDF, we observe that the number of attempts stops decreasing after 10,
 
 First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths found by llama3 and mistral.
 
-![llms_path_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/llms_path_not_found.svg" alt="llms_path_found" style="max-width: 70%; height: auto;">
+</div>
 
 We observe that llama3 finds 3% more paths than mistral.
 
 We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 
-![llms_player_path_length_distribution](/ada-outlier-datastory/assets/img/model_player_distribution.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/model_player_distribution.svg" alt="llms_player_path_length_distribution" style="max-width: 70%; height: auto;">
+</div>
+
 
 Llama3's path length distribution visually aligns more closely with the players' distribution compared to Mistral. To confirm this observation, we conducted a t-test with a significance level of $$\alpha = 5\%$$. The results for Llama3 show a `p-value` of $$0.52$$ and a `statistic` of $$0.647$$, while for Mistral, the `p-value` is $$0.0006$$ and the `statistic` is $$3.428$$. Based on these findings, we fail to reject the null hypothesis for Llama3 but reject it for Mistral. This leads us to conclude that Llama3 better matches the players' path length distribution than Mistral.
 
 Finally, we will check whether the models' average path length falls within the range defined by the players' average path length plus or minus their standard deviation. For this, we will compare the path length averages of Llama3 and Mistral against the players' range.
 
-![llms_confidence_interval](/ada-outlier-datastory/assets/img/CI_player_model.svg)
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/CI_player_model.svg" alt="llms_confidence_interval" style="max-width: 70%; height: auto;">
+</div>
 
 Llama3 falls within the players' confidence interval in 78.5% of cases, compared to 69.1% for Mistral. This further supports the conclusion that Llama3 performs better than Mistral.
 
@@ -943,8 +959,9 @@ Where: \
 A Jaccard similarity of 1 means the paths contain exactly the same articles, while a value closer to 0 indicates very little overlap.
 
 
-
-![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/jacard.svg" alt="llm_jacard" style="max-width: 70%; height: auto;">
+</div>
 
 The Jaccard similarity reveals that both Llama3 and Mistral achieve slightly over 30% similarity with the players' paths. This suggests that while their paths overlap with the players' to some extent, most of the articles differ. Additionally, the similarity scores for the two models are so close that we cannot distinguish between their performances in this aspect.
 
@@ -967,11 +984,16 @@ Finally, based on the results, we can conclude that neither model behaves like t
 
 To assess Llama3's performance from 2007 to 2024, we will analyze and compare the number of paths it discovers as well as its path length distribution across these years.
 
-![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama_path_not_found.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/llama_path_not_found.svg" alt="llama3_2007_2024_path_found" style="max-width: 70%; height: auto;">
+</div>
 
 We observe that in 2024, Llama3 discovers 4% more paths compared to 2007. However, does Llama3 in 2024 exhibit a better path length distribution than it did in 2007?
 
-![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama3_2007_2024.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="ada-outlier-datastory/assets/img/llama3_2007_2024.svg" alt="llama3_2007_2024" style="max-width: 70%; height: auto;">
+</div>
+
 
 We observe that Llama3 in 2024 exhibits a better path length distribution compared to 2007. To validate this observation, we performed a t-test with an alternative hypothesis that the path length distribution in 2024 is less than in 2007 (2024 < 2007). Using a significance level of $$alpha = 5$$%, the test yielded a `p-value` of $$0.023$$ and a `statistic` of $$-1.99$$. Since the p-value is below the significance level, we reject the null hypothesis and conclude that Llama3 in 2024 has a better path length distribution than in 2007.
 

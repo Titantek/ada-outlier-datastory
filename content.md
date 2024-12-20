@@ -1097,7 +1097,8 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <h3 class="name">Gabrielle Blouvac</h3>
         <div class="line"></div>
         <div class="logo-container">
-            <a href="https://github.com/Gabrielle-Blouvac" target="_blank" class="github"></a>
+            <a href="https://github.com/Gabrielle-Blouvac" target="_blank" >
+                        <img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1105,7 +1106,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <h3 class="name">Anasse El Boudiri</h3>
         <div class="line"></div>
         <div class="logo-container">
-            <a href="https://github.com/anassee15" target="_blank" class="github"></a>
+            <a href="https://github.com/anassee15" target="_blank" >            <img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1113,7 +1114,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <h3 class="name">Julia Guignon</h3>
         <div class="line"></div>
         <div class="logo-container">
-            <a href="https://github.com/julia-guignon" target="_blank" class="github"></a>
+            <a href="https://github.com/julia-guignon" target="_blank" ><img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1121,7 +1122,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <h3 class="name">Jan Steiner</h3>
         <div class="line"></div>
         <div class="logo-container">
-            <a href="https://github.com/Titantek" target="_blank" class="github"></a>
+            <a href="https://github.com/Titantek" target="_blank" ><img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1129,7 +1130,8 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <h3 class="name">Eglantine Vialaneix</h3>
         <div class="line"></div>
         <div class="logo-container">
-            <a href="https://github.com/eglantine-vialaneix" target="_blank" class="github"></a>
+            <a href="https://github.com/eglantine-vialaneix" target="_blank">
+            <img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
         </div>
     </div>
 </div>

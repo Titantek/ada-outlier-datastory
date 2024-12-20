@@ -129,10 +129,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 # 1. How are people performing in Wikispeedia?
 
-
-
 <div class="chat">
-
    <div class="Doc">
       <div class="message">
       The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
@@ -155,41 +152,14 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 ### 1.A.1) Article categories and destination of the links
 For most articles, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
-<!--
-
-First, what do the categories look like? For most of them, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here. HERE::\<insert image of Einstein the dog\>
-
-HERE:: more analysis?
-
-Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
--->
-<div class="iframe-container" style="aspect-ratio: 4 / 3;">
-   <iframe 
-      src="/ada-outlier-datastory/assets/img/bar_cat.html" 
-      title="Bar plot of the categories">
-   </iframe>
-</div>
-
-<!--
-<div class="chat">
-
-   <div class="Marty">
-      <div class="icon"></div>
-      <div class="message">
-      Wow! Back in 2007, science articles represented almost 1/4 of the encyclopedia, whereas art articles comprised less than 1% of it.
-      </div>
+<div style="display: flex; justify-content: center;">
+   <div class="iframe-container" style="aspect-ratio: 4 / 3;">
+      <iframe 
+         src="/ada-outlier-datastory/assets/img/bar_cat.html" 
+         title="Bar plot of the categories">
+      </iframe>
    </div>
-
-   <div class="Doc">
-      <div class="message">
-      You're right! Let's now look at the links between the articles: from which to which categories go the links? Do they lead to an article from the same category or to another? Is it easy to navigate to another category?
-      </div>
-      <div class="icon"></div>
-   </div>
-
 </div>
--->
-
 
 Back in 2007, science articles represented almost 25% of the encyclopedia, whereas art articles comprised less than 1% of it. 
 

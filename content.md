@@ -978,7 +978,7 @@ From the CCDF, we observe that the number of attempts no longer decreases after 
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data to see which model perfom the most like the players. Once we have the results, we will generate the data for 2024 with the selected model.</div>
+      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data, to see which model perfom the most like the players. Once we have the results, we will generate the data for 2024 with the selected model.</div>
    </div>
 
 </div>
@@ -1036,7 +1036,7 @@ Finally, based on the results, we can conclude that neither model behaves like t
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Yes, we can generate the data for 2024 with llama3 and compare the performance of llama3 between 2007 and 2024.</div>
+      <div class="message">Yes, let's dive into it Marty!</div>
    </div>
 </div>
 

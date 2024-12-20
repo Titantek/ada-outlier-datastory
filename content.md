@@ -38,7 +38,7 @@ toc: true
    Wikispeedia is a game where starting from a given Wikipedia page you you need to reach a given target Wikipedia article only by navigating through the links to other articles you can find on each page. The goal of the game is to reach the target article but clicking on the least ammount of links possible! 
    Let's take the example of a game starting from Electric Field and leading to Fractal. We can click on Physics, Mathematics, Geometry, Symmetry and on this page we can find Fractal! 
    There are so many links and pages in Wikipedia that it is very rare that two pages are not linked at all. 
-   Try one game of Wikispeedia yourself <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here</a>!
+   Try a game of Wikispeedia yourself <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here</a>!
 
 <div class="chat">
 
@@ -86,20 +86,20 @@ toc: true
 </div>
 
 # 1. How are people performing in Wikispeedia?
-
+The first step of this trip is to understand what impacts the players' performance in 2007. Marty noticed something interesting...
 <div class="chat">
-   <div class="Doc">
-      <div class="message">
-      The articles present in the Wikispeedia dataset have categories. Do these categories influence your success, Marty? Let's explore that together!
-      </div>
-      <div class="icon"></div>
-   </div>
-
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Tell me Doc, what do the categories look like?
+         Doc, the articles present in the Wikispeedia dataset have categories. Do you think that these categories can influence my success?
       </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+         Good question Marty! What do the categories look like? Let's explore that together!
+      </div>
+      <div class="icon"></div>
    </div>
 
 </div>

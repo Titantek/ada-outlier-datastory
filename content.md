@@ -198,11 +198,11 @@ Back in 2007, science articles represented almost 25% of the encyclopedia, where
 
 Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
 
-
-<iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
-   class= "responsive-iframe"
-   width="900px" height="840px" alt='links_categories'></iframe>
-
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
+      class= "responsive-iframe"
+      width="900px" height="840px" alt='links_categories'></iframe>
+</div>
 <!-- INITIAL TEXT:
 Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
@@ -303,10 +303,12 @@ The data is now cleaned. Here are some statistics before and after cleaning.
 
 We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="850px" 
-class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="850px" 
+   class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>
 
-<iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" class="responsive-iframe" width="850px" height="850px" alt='categories_unfinished_paths_start2target'></iframe>
+   <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" class="responsive-iframe" width="850px" height="850px" alt='categories_unfinished_paths_start2target'></iframe>
+</div>
 
 <!--
 <div class="chat">
@@ -398,16 +400,18 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the proportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases. We find an exception for a shortest path of length 4, where the success rate is slightly higher than for a length of 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
-<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" 
-class="responsive-iframe" width="900px" height="550px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
-
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" class="responsive-iframe" width="900px" height="550px" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+</div>
 
 ### 1.B.2) Number of links to the target
 
-Another parameter that influence for success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence. Our null hypothesis is that the two distributions are identical. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely reject our null hypothesis and conclude that the two distributions are indeed different!
+Another parameter that influence the success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence to check if the finished paths distribution has a greater mean than the unfinished paths distribution. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely conclude that the distribution for finished paths has a greater mean!
 
-<iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="550px" alt='distrib_links_to_target'
-class='responsive-iframe'></iframe>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" width="900px" height="550px" alt='distrib_links_to_target'
+   class='responsive-iframe'></iframe>
+</div>
 
 <div class="chat">
    <div class="Marty">
@@ -439,8 +443,10 @@ class='responsive-iframe'></iframe>
 
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in the training set, whereas validation and testing sets gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite imbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with p-value below the significance threshold:
-<iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
-class="responsive-iframe" width="1500px" height="600px" alt='results_log_reg'></iframe>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
+   class="responsive-iframe" width="1500px" height="600px" alt='results_log_reg'></iframe>
+</div>
 
 <div class="chat">
    <div class="Marty_crazy">
@@ -468,6 +474,7 @@ As we were stating previously, the probability of finding an article is increase
 
 The longer the shortest path, the smaller the probability of success. For an increase of 1 in the shortest path, the odds decrease by 8%. It coincides with the success rate observed previously, that decreases the longer the shortest path. As expected, the opposite effect happens for the number of links to the target article: having 93 more links pointing to an article multiplies the odds of finding it by 2.36. It also agrees with our previous hypotheses.
 
+The main factor for success is thus the number of links leading to the target! The shortest path has only a slight negative influence on the probability of success whereas the categories of the target article have a moderate positive or negative influence. Starting from an article in the Design_and_Technology category decrease moderatly the probabilities of success. 
 
 
 <div class="chat">

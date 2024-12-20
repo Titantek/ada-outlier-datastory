@@ -53,7 +53,7 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 <p>Content for section 3...</p> 
 -->
 
-**Welcome to our ADA project ! Follow Marty and Doc through their adventures exploring ✨the Wikispeedia Dataset✨**
+**Welcome to our ADA project! Follow Marty and Doc through their adventures exploring ✨the Wikispeedia Dataset✨**
 
 
 <div class="chat">
@@ -539,7 +539,7 @@ We can now evaluate the model performance on the test set!
 Now we are ready to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
 
 | 7085 samples in the test set | Predicted as win (4962) | Predicted as defeat (2123) |
-| :-----: | :---: | :---: |
+|:-----: |:---: |:---: |
 | **Real win (5197)** | 3943 | 1254 |
 | **Real defeat (1888)** | 1019 | 869 |
 
@@ -575,20 +575,18 @@ First, the ROC AUC gives us a value of 0.67, showing reasonable better performan
    </div>
 </div>
 
-<h2 id="section1">Section 1</h2>
-<p>Content for section 1...</p>
 
 # Part 2: How did Wikipedia's structure evolve since 2007?
 
-Let us now compare the differences between the old Wikipedia from 2007 and our current Wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much that changes compared to now ! 
+Let us now compare the differences between the old Wikipedia from 2007 and our current Wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much Wikipedia in 2024 has changed compared to 2007! 
 
 
 ## 2.A. Number of links 
 
 {: .box-note}
-  **Basic Comparison:** \
-  2007 : 119882 links \
-  2024 : 225800 links
+  **Basic comparison:** \
+  2007: 119882 links \
+  2024: 225800 links
 
 As a first analysis, let's just compare basic statistics on the two different Wikipedias, such as the number of links per article on average and its distribution: 
 
@@ -606,27 +604,27 @@ As expected, there is much more links per page **on average** in our 2024 datase
   
   <div class="Doc">
       <div class="message">
-        Wait a bit Marty let's look more into the details before driving any conclusions. Let's look at individual articles:
+        Wait a bit Marty, let's look more into the details before driving any conclusions. Let's look at individual articles:
       </div>
       <div class="icon"></div>
   </div>
 </div>
 
 
-In the plot below, we visualize every article within our dataset of the 4604 selected articles from the Wikispeedia game on the x axis and compute the difference in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, in orange, corresponds to less links on the page in 2024 than in 2007.
+In the plot below, we visualize on the x axis every article within our dataset of the 4604 selected articles from the Wikispeedia game and compute the difference in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, in orange, corresponds to less links on the page in 2024 than in 2007.
 
 ![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
 
 <div class="chat">
   <div class="Doc">
         <div class="message">
-          Overall we see that there is much more pages that gain new links than pages losing links in 2024 !
+          Overall we see that there is much more pages that gain new links than pages losing links in 2024!
         </div>
         <div class="icon"></div>
     </div>
     <div class="Doc_crazy">
       <div class="message">
-        Let's now move to the <b>interesting</b> part : the network of the links...
+        Let's now move to the interesting part: the network of the links...
       </div>
       <div class="icon"></div>
   </div>
@@ -639,13 +637,13 @@ For now, we only have been looking at the repartitions of links on the pages wit
 <div class="chat">
   <div class="Marty">
         <div class="message">
-          Hey Doc... What is actually the shortest path ? 
+          Hey Doc... What is actually the shortest path? 
         </div>
         <div class="icon"></div>
     </div>
     <div class="Doc_crazy">
       <div class="message">
-        Well Marty it's in the name ! The most direct path from one point to another in a network is the shortest path. We should look at how direct the connections between articles are in 2024 and see where it gets us.
+        Well Marty it's in the name! The most direct path from one point to another in a network is the shortest path. We should look at how direct the connections between articles are in 2024 and see where it gets us.
       </div>
       <div class="icon"></div>
   </div>
@@ -653,16 +651,16 @@ For now, we only have been looking at the repartitions of links on the pages wit
 
 {: .box-note}
    **Shortest Path Algorithm** \
-  There exist different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path Matrix (*SPM*) as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
+  There exists different strategies to compute the shortest path. Here we have decided to use the Floyd-Warshall Algorithm from the 'Networkx' librairy. This algorithm provides the same result for the Shortest Path Matrix (*SPM*) as the one computed in the orginal dataset provided by the source article, when tested on the 2007 dataset.
 
-First let's compare the average shortest path !
+First let's compare the average shortest path!
 
-|   | in 2007 | in 2024 | P value |
-| :------ |:--- | :--- | :--- |
+|   | in 2007 | in 2024 | p value |
+|:------ |:--- |:--- |:--- |
 | Average Shortest Path | 2.808365 | 2.452919 | ~0.0 |
 
 We see that it **is** significantly shorter in 2024 than in 2007, which is a good sign for Marty!
-To see more in details how this plays out, we create the following heatmap where we plot the SPM from 2007 minus the SPM from 2024 :
+To see more in details how this plays out, we create the following heatmap where we plot the SPM from 2007 minus the SPM from 2024:
 
 <iframe 
     src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
@@ -671,18 +669,18 @@ To see more in details how this plays out, we create the following heatmap where
     title=" ">
 </iframe>
 
-In this plot, positive values represent when the shortest path is smaller in 2024 than in 2007, whereas negative values correspond to when the shortest path is longer in 2024 than in 2007. 
-Apart for some big red or blue lines, that mean that the specific article is more (or less) connected to the whole database in 2024 than in 2007, it is difficult to get a general feeling for how the shortest path has changed between the two as the heatmap appears mostly white. We will need to look at other indicators then. 
+In this plot, positive values (in blue) occur when the shortest path is smaller in 2024 than in 2007, whereas negative values (in red) correspond to a shortest path  longer in 2024 than in 2007. 
+Apart for some big red (or blue) lines, that mean that the specific article is more (or less) connected to the whole database in 2024 than in 2007, it is difficult to get a general feeling for how the shortest path has changed between the two as the heatmap appears mostly white. Thus we will need to look at other indicators. 
 Let's now look at the Strongly Connected Components for each graph. 
 
 {: .box-note}
    **Strongly Connected Components (SCCs)** \
-   SCCs are subparts of a graph where every node can be reached from every node in the SCCs. In our case, as we face directed graphs, this information is particularly useful : it is harder for the graph to form SCCs than for an undirected graph, as node A and B are in the same SCCs if and only if the path from A to B exist **and** the path from B to A exists too. To compare the structures of our networks we can look at the SCCs. 
+   SCCs are subparts of a graph where every node can be reached from every node in the SCCs. In our case, as we face directed graphs, this information is particularly useful: it is harder for the graph to form SCCs than for an undirected graph, as node A and B are in the same SCCs if and only if a path from A to B **and** from B to A exists too. To compare the structures of our networks, we can look at the SCCs. 
 
-The two networks share a globally similar SCCs structure : only 1 big SCC that contains most of the articles, a few SCCs of only 2 articles and the rest of the articles that are not part of any real SCCs. The proportions of each structure do however vary between the two years :
+The two networks share a globally similar SCCs structure: only 1 big SCC that contains most of the articles, a few SCCs of only 2 articles and the rest of the articles that are not part of any real SCCs. The proportion of each structure do however vary between the two years:
 
 | SCCs  | in 2007 | in 2024 | 
-| :------ |:--- | :--- | 
+|:------ |:--- |:--- | 
 | Number of articles within the big SCC  | 4051 | 3910 |
 | Number of articles outside any SCC | 512 | 683 |
 | Number of SCCs of size 2 | 18 | 5 | 
@@ -691,28 +689,28 @@ The two networks share a globally similar SCCs structure : only 1 big SCC that c
 <div class="chat">
   <div class="Marty">
         <div class="message">
-          So what's your verdict Doc ? 
+          So what's your verdict Doc? 
         </div>
         <div class="icon"></div>
     </div>
     <div class="Doc_crazy">
       <div class="message">
-        Hmm... Still hard to conclude anything Marty! Both networks contain similarly sized SCCs but they still differ in the content of articles and different links... We should look at what articles are the most important in the networks too!
+        Hmm... Still hard to conclude anything Marty! Both networks contain similarly sized SCCs but they still differ in the content of articles and different links... We should look at which articles are the most important in the networks too!
       </div>
       <div class="icon"></div>
   </div>
 </div>
 
-How can we investigate the 'importance' of an article in the network ? Different methods exist but we selected here the PageRank Centrality as our measurement of a page's importance. 
+How can we investigate the 'importance' of an article in the network? Different methods exist but we selected here the PageRank Centrality as our measurement of the importance of a page. 
 
 {: .box-note}
    **PageRank Centrality** 
-   This measure represents how 'important' a node is by how many inlinks redirect to it from other central nodes. The more there are links redirecting to a node the more it is central, and the more central nodes redirect to a node, the more central this node gets. It is often used by web search engines to rank web pages, and thus is perfectly adapted to our analysis. 
-   The pagerank centrality $$x_i$$ can thus be computed as follows : 
+   This measure represents how 'important' a node is by how many incomming links redirect to it from other central nodes. The more there are links redirecting to a node the more it is central, and the more central nodes redirect to a node, the more central this node gets. It is often used by web search engines to rank web pages, and thus is perfectly adapted to our analysis. 
+   The pagerank centrality $$x_i$$ can thus be computed as follows: 
    $$ x_i = \sum_j a_{ji} \frac{x_j}{\sum_{j} a_{ji}} $$
    with $$a_{ji}$$ entry (j,i) of adjacency matrix $$A$$
 
-We decide to plot the nodes that have a pagerank value in the top 0.5% for better visualization here. The size and colors of the nodes are linked to the nodes pagerank scores and allow us to visualize the centrality measurement on the following plots: 
+We decide to plot the nodes that have a pagerank value in the top 0.5% for better visualization here. The size and colors of the nodes are linked to the nodes pagerank scores and allow us to visualize the centrality measurement in the following plots: 
 
 <iframe 
     src="/ada-outlier-datastory/assets/img/pagerank2007.html" 
@@ -726,20 +724,20 @@ We decide to plot the nodes that have a pagerank value in the top 0.5% for bette
 </iframe>
 
 
-Looking at those graphs, we can compare the articles the most 'central' in the pagerank sense in the two networks. What we see is that in 2007, the 'United_States' article really dominates the whole network and is the most connected to the others, with a pagerank centrality of 0.0096. 
+Looking at those graphs, we can compare most 'central' articles in the pagerank sense for the two networks.  We see that in 2007, the 'United_States' article really dominates the whole network and is the most connected to the others, with a pagerank centrality of 0.0096. 
 In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 
 
-<!-- ![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
+<!--![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
 <div class="chat">
   <div class="Marty">
         <div class="message">
-          And so what do you conclude Doc ? 
+          And so what do you conclude Doc? 
         </div>
         <div class="icon"></div>
     </div>
     <div class="Doc_crazy">
       <div class="message">
-        It's difficult Marty... Hard to say how those differences in the networks would impact the players. Let's just look at the Hop Distance Distribution plot before finishing up !
+        It's difficult Marty... Hard to say how those differences in the networks would impact the players. Let's just look at the Hop Distance Distribution plot before finishing up!
       </div>
       <div class="icon"></div>
   </div>
@@ -747,44 +745,44 @@ In 2024, there is no such node really 'dominating' the rest. The top node become
 
 {: .box-note}
    **Hop Distance Distribution Plot** \
-   Another interesting characteristic of networks can be visualized through what is called an Hop Distance Distribution Plot (or a Reachability Plot). We are plotting the average number of reachable nodes versus the number of hops needed to reach them. This plot represent how many articles we can reach on average after a certain number of clicks. This kind of plot can provide information on : \
-   • The network diameter \ 
-   • The Presence of Hubs \
-   • The Efficiency of Routing in the network
+   Another interesting characteristic of networks can be visualized through what is called an Hop Distance Distribution Plot (or a Reachability Plot). We are plotting the average number of reachable nodes versus the number of hops needed to reach them. This plot represent how many articles we can reach on average after a certain number of clicks. This kind of plot can provide information on: \
+   • the network diameter \
+   • the Presence of Hubs \
+   • the Efficiency of Routing in the network
 
 On this plot, we can compare the reachability of the two networks: 
 
 ![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
 
-We can observe a few things: first, the 2024 curve does not plateau at the same value as the 2007 one. This can be explained by a few factors: in our 2024 dataset, some articles from 2007 have been deleted and thus will never be reachable in 2024. There are also some articles that may have lost all their incoming links in 2024 because the links structure got completely changed and more specialized. Thus no links from the selected 4604 could redirect to them as there were not close enough. 
-Secondly, we see that both curves follow the same pattern, with a very sharp increase, almost exponential, and then reaching a plateau. This is a typical behaviour of internet networks and reflects a good connectivity and efficiency of routing. With each link clicked, the increase in average reachable nodes is extremely big. The biggest increase in both curves occurs between hop 2 and 3. This reveals the presence of central hubs that allow redirection to many other nodes when reached. This information is also reflected by the very small average shortest paths that we have observed earlier on.
-Finally, we observe that the plateau is reached sooner in the case of 2024 : after only 5 hops versus 6 in 2007. Again this shows that the network in 2024 is probably easier to naviguate than in 2007 : in 5 hops you can reach the maximum average number of reachable nodes. 
+We can observe a few things: first, the 2024 curve does not plateau at the same value as the 2007 one. This can be explained by a few factors: in our 2024 dataset, some articles from 2007 have been deleted and thus will never be reachable in 2024. There are also some articles that may have lost all their incoming links in 2024 because the link structure got completely changed and more specialized. Thus no link from the selected 4604 articles could redirect to them as there were not close enough. 
+Secondly, we see that both curves follow the same pattern, with a very sharp increase, and then reaching a plateau. This is a typical behaviour of internet networks and reflects a good connectivity and efficiency of routing. With each link clicked, the increase in average reachable nodes is extremely big. The biggest increase in both curves occurs between hop 2 and 3. This reveals the presence of central hubs that allow redirection to many other nodes when reached. This information is also reflected by the very small average shortest paths that we have observed earlier on.
+Finally, we observe that the plateau is reached sooner in the case of 2024: after only 5 hops versus 6 in 2007. Again this shows that the network in 2024 is probably easier to naviguate than in 2007: in 5 hops you can reach the maximum average number of reachable nodes. 
 
 {: .box-note}
    **Clustering Coefficient** 
+   The Clustering coefficient measure the degree to which nodes will tend to cluster together. Here we use the overall average clustering coefficient which averages over all clustering coefficients of the graph. 
 
-
-If we look at the clustering coefficients of the graphs we observe the following values : 
+If we look at the clustering coefficients of the graphs we observe the following values: 
 
 |   | 2007 | 2024 |
 | Average clustering coefficient | 0.19 | 0.26 |
 
-Again, the clustering seems to be higher in 2024 than in 2007 ! This should also improve the connectivity of the network. 
+Again, the clustering seems to be higher in 2024 than in 2007! This should also improve the connectivity of the network. 
 
 ## 2.C. Conclusions on the structural differences observed
 
-As we saw, many differences exist between the 2 networks, but it is hard to conclude wheter this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per page is bigger in 2024. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we have studied could impact the paths played in 2007.
+As we saw, many differences exist between the 2 networks, but it is hard to conclude whether this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per page is bigger in 2024. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we have studied could impact the paths played in 2007.
 
 <div class="chat">
   <div class="Marty">
         <div class="message">
-          I think I get it this time, Doc! We cannot really know for sure that the game would be easier in 2024 because, well, we haven't tried it yet !
+          I think I get it this time, Doc! We cannot really know for sure that the game would be easier in 2024 because, well, we haven't tried it yet!
         </div>
         <div class="icon"></div>
     </div>
    <div class="Doc">
       <div class="message">
-        Precisely Marty ! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other ? 
+        Precisely Marty! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other? 
       </div>
       <div class="icon"></div>
   </div>
@@ -796,9 +794,9 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
     </div>
 </div>
 
+\
 
-
-## Part 3 : What are the possible consequences of Wikipedia’s changes in player’s performances ?
+## Part 3: What are the possible consequences of Wikipedia’s changes in player’s performances?
 
 ### 3.A. Player's path analysis
 
@@ -807,7 +805,7 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      We saw that there are several changes in the structure of wikipedia, but what are the possible consequences of these changes on the player's performances ?
+      We saw that there are several changes in the structure of wikipedia, but what are the possible consequences of these changes on the player's performances?
       </div>
    </div>
 
@@ -837,7 +835,7 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Hmmmm, we just saw that the player's path is different, but how can we compare the structure of the wikipedia in 2024 and now ?
+      Hmmmm, we just saw that the player's path is different, but how can we compare the structure of the wikipedia in 2024 and now?
       </div>
    </div>
 
@@ -882,7 +880,7 @@ Again, we observe that the distribution of the combined similarity scores of art
 The evolution of Wikipedia's structure from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.s
 
 
-# Part 4: Are the players(LLMs) stronger in 2024 than in 2007 ?
+# Part 4: Are the players(LLMs) stronger in 2024 than in 2007?
 
 <div class="chat">
   <div class="Marty">
@@ -1072,7 +1070,7 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 - We looked at how the different structure of wikipedia 2024 could have impacted the paths played in 2007 
    - we see that the target page appears sooner in the paths played in 2007 both in unfinished and finished paths so more clicks would be saved 
-   - we look more into the structural difference : we compare the textual contents in 2007 versus 2024 and the graph structure of both. By looking at the similarities we conclude that the 2024 structure is more coherent and organized
+   - we look more into the structural difference: we compare the textual contents in 2007 versus 2024 and the graph structure of both. By looking at the similarities we conclude that the 2024 structure is more coherent and organized
 
 - We simulated games by training 2 different LLMs to play on Wikispeedia 2007 and Wikispeedia 2024 
   - We compared the two models between each other and with players from 2007

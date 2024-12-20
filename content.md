@@ -1011,14 +1011,14 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 {: .box-error}
    Contrary to what Doc tells Marty, we actually do not know for sure if the 2024 version of Wikispeedia would be easier to play. 
-   To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. 
-   However our analysis still leads us to think this would be the case and gives us pretty good reasons and intuition to answer this question. \
+   To really conclude on this we would need data from real players on the 2024 version and compare their perfomance to 2007. 
+   However, our analysis still leads us to think that the players would be more performant on current data. \
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
 
 
 ![einstein](/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png)
 
-<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Gabrielle Blouvac" style="width:200px">
+<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Einstein" style="width:200px">
 
 <!-- 
 

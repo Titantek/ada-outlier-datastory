@@ -781,7 +781,7 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 
    <div class="Doc">
       <div class="message">
-      Precisely Marty! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other? 
+      Precisely Marty! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other? </div>
       <div class="icon"></div>
    </div>
    <div class="Doc_crazy">
@@ -789,7 +789,7 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
           I know what we can do, let's look at how our new wikipedia structure of 2024 could impact the games played in 2007!
         </div>
         <div class="icon"></div>
-    </div>
+   </div>
 </div>
 
 \

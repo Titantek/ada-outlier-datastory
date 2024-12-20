@@ -950,11 +950,17 @@ Reasoning: [REASONING]\
 Answer: Hence the choice is: '[ANSWER]'*
 
 
-We will select the games that the model will play based on the number of time the games were attempted by the players. To visualize the number of attempts per game, we will use a CCDF plot. We will use the players path length distribution to select the maximum number of prompts we will give to the model per game, we will choose the tail of the path length distribution as the maximum number of prompts.
+
+We will select the games for the model to play based on how many times each game was attempted by the players, visualized using a CCDF plot. Additionally, we will determine the maximum number of prompts to give the model per game by analyzing the players' path length distribution. Using the CCDF of the path length.
+
+{: .box-note}
+**CCDF** is the complementary cumulative distribution function (CCDF) of a probability distribution. It is used to visualize the tail of the distribution. The CCDF is defined as: $$ CCDF(x) = 1 - CDF(x) $$
+
+
 
 ![players_path_length](assets/img/llm_parameter.svg)
 
-From the CCDF, we observe that the number of attempts no longer decreases after 10. Therefore, we will focus on games that players have attempted more than 10 times. Additionally, the tail of the path length distribution tapers off around 50 clicks, so we will limit the maximum number of clicks the model can make per game to 50.
+From the CCDF, we observe that the number of attempts stops decreasing after 10, so we will focus on games that players have attempted more than 10 times. On the path length CCDF graph, the distribution seems to taper off around 30 clicks. However, we set the maximum number of clicks for the model to 50 to allow additional room for evaluation, particularly in cases where the model may perform less effectively and require more steps to complete the task.
 
 ## 4.B. Comparison of the models with the players
 

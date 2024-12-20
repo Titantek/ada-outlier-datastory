@@ -304,12 +304,13 @@ First, the diagonal that represents links staying in the same category has bigge
 </div>
 
 The data is now cleaned. Here are some statistics before and after cleaning.
+
 {: .box-note}
-      • number of games before cleaning: 76 048 \
-      • success rate before cleaning: 67.4% \
-      • number of games after cleaning: 70 842 \
-      • success rate after cleaning: 72.3% \
-      • percentage of games discarded: 6.8%
+   • number of games before cleaning: 76 048 \
+   • success rate before cleaning: 67.4% \
+   • number of games after cleaning: 70 842 \
+   • success rate after cleaning: 72.3% \
+   • percentage of games discarded: 6.8%
 
 We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
@@ -917,7 +918,7 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
   </div>
 </div>
 
-## Prompt design for the LLMs and games selection to compare the models with the players
+## 4.A. Prompt design for the LLMs and games selection to compare the models with the players
 
 
 {: .box-note}
@@ -960,7 +961,7 @@ We will select the games that the model will play based on the number of time th
 
 We observe on the CCDF that the number of attempts stop deacreasing after 10 attempts. so we will select the games that have been attempted more than 10 times by the players. And the tail of the path length distribution stops around 50 clicks, so the maximum number of prompts we will give to the model per game will be 50.
 
-## Comparison of the models with the players
+## 4.B. Comparison of the models with the players
 
 
 <div class="chat">
@@ -1015,7 +1016,7 @@ The Jaccard similarity shows that neither llama3 nor mistral use the same path a
 
 Finally, based on the result we can says that boths models don't act like a players. But llama3 find more paths than mistral and falls in the confidence interval of the players in 78.5% of the cases.
 
-## LLMs performance between 2007 and 2024
+## 4.C. LLMs performance between 2007 and 2024
 
 <div class="chat">
 

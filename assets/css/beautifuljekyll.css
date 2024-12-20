@@ -1177,8 +1177,8 @@ pre {
 
 /* Common icon styles */
 .icon {
-  width: 130px;
-  height: 130px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
@@ -1234,6 +1234,7 @@ pre {
 .Einstein .icon {
   background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png");
   order: 2;
+  width: 150px
 }
 
 .Einstein .message {

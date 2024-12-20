@@ -687,18 +687,20 @@ The two networks share a globally similar SCCs structure: only 1 big SCC that co
 | Overall Average Shortest Path Across SCCs | 1.1148 | 1.3110 |
 
 <div class="chat">
-  <div class="Marty">
-        <div class="message">
-          So what's your verdict Doc? 
-        </div>
-        <div class="icon"></div>
-    </div>
-    <div class="Doc_crazy">
+
+   <div class="Marty">
+      <div class="icon"></div>
       <div class="message">
-        Hmm... Still hard to conclude anything Marty! Both networks contain similarly sized SCCs but they still differ in the content of articles and different links... We should look at which articles are the most important in the networks too!
+      So what's your verdict Doc?
+      </div>
+   </div>
+
+   <div class="Doc_crazy">
+      <div class="message">
+      Hmm... Still hard to conclude anything Marty! Both networks contain similarly sized SCCs but they still differ in the content of articles and different links... We should look at which articles are the most important in the networks too!
       </div>
       <div class="icon"></div>
-  </div>
+   </div>
 </div>
 
 How can we investigate the 'importance' of an article in the network? Different methods exist but we selected here the PageRank Centrality as our measurement of the importance of a page. 
@@ -728,20 +730,22 @@ Looking at those graphs, we can compare most 'central' articles in the pagerank 
 In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 
 
 <!--![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
+
 <div class="chat">
-  <div class="Marty">
-        <div class="message">
-          And so what do you conclude Doc? 
-        </div>
-        <div class="icon"></div>
-    </div>
-    <div class="Doc_crazy">
-      <div class="message">
-        It's difficult Marty... Hard to say how those differences in the networks would impact the players. Let's just look at the Hop Distance Distribution plot before finishing up!
-      </div>
+   <div class="Marty">
       <div class="icon"></div>
-  </div>
+      <div class="message">
+       And so what do you conclude Doc?
+      </div>
+   </div>
+
+   <div class="Doc_crazy">
+      <div class="message">
+      It's difficult Marty... Hard to say how those differences in the networks would impact the players. Let's just look at the Hop Distance Distribution plot before finishing up!
+      <div class="icon"></div>
+   </div>
 </div>
+
 
 {: .box-note}
    **Hop Distance Distribution Plot** \
@@ -771,22 +775,22 @@ Again, the clustering seems to be higher in 2024 than in 2007! This should also 
 
 ## 2.C. Conclusions on the structural differences observed
 
-As we saw, many differences exist between the 2 networks, but it is hard to conclude whether this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per page is bigger in 2024. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we have studied could impact the paths played in 2007.
+As we saw, many differences exist between the 2 networks, but it is hard to conclude whether this would render a 2024 version of the Wikispeedia game easier to play or not. Our intuition is that it should be the case, as on average the shortest path is smaller and the number of links per page is bigger in 2024. As part 1 also tells us, the number of links reaching the target page is also a predictor of the path sucess. Moreover as we just saw, the number of hops needed to reach the average number of nodes is smaller too. However we still cannot infer based on this that the game would be easier for the players, and will thus see how the differences in structure that we have studied could impact the paths played in 2007.
 
 <div class="chat">
-  <div class="Marty">
-        <div class="message">
-          I think I get it this time, Doc! We cannot really know for sure that the game would be easier in 2024 because, well, we haven't tried it yet!
-        </div>
-        <div class="icon"></div>
-    </div>
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+       I think I get it this time, Doc! We cannot really know for sure that the game would be easier in 2024 because, well, we haven't tried it yet!
+      </div>
+   </div>
+
    <div class="Doc">
       <div class="message">
-        Precisely Marty! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other? 
-      </div>
+      Precisely Marty! We have a pretty good proof that the two networks are different enough in how they are structured but how can we know if one is easier than the other? 
       <div class="icon"></div>
-  </div>
-  <div class="Doc_crazy">
+   </div>
+   <div class="Doc_crazy">
         <div class="message">
           I know what we can do, let's look at how our new wikipedia structure of 2024 could impact the games played in 2007!
         </div>
@@ -795,6 +799,7 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 </div>
 
 \
+
 
 ## Part 3: What are the possible consequences of Wikipedia’s changes in player’s performances?
 

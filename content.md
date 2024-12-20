@@ -984,11 +984,11 @@ From the CCDF, we observe that the number of attempts no longer decreases after 
 </div>
 
 
-First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths not found by llama3 and mistral.
+First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths found by llama3 and mistral.
 
-![llms_path_not_found](assets/img/llms_path_not_found.svg)
+![llms_path_found](assets/img/llms_path_not_found.svg)
 
-We observe that llama3 finds 2% more paths than mistral.
+We observe that llama3 finds 3% more paths than mistral.
 
 We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 

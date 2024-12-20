@@ -84,8 +84,8 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 {: .box-warning}
    **🎮 Wikispeedia 🎮** \
-   Wikispeedia is a game where starting from a given Wikipedia page you you need to reach a given target Wikipedia article only by navigating through the links to other articles you can find on each page. The goal of the game is to be fast and click on the minimum of links possible but there is no time restriction! 
-   For example, the other day I had to start from Electric Field to Fractal. I clicked on Physics, Mathematics, Geometry, Symmetry and on this page I could find Fractal! 
+   Wikispeedia is a game where starting from a given Wikipedia page you you need to reach a given target Wikipedia article only by navigating through the links to other articles you can find on each page. The goal of the game is to reach the target article but clicking on the least ammount of links possible! 
+   Let's take the example of a game starting from Electric Field and leading to Fractal. We can click on Physics, Mathematics, Geometry, Symmetry and on this page we can find Fractal! 
    There are so many links and pages in Wikipedia that it is very rare that two pages are not linked at all. 
    Try one game of Wikispeedia yourself <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here</a>!
 
@@ -163,11 +163,10 @@ HERE:: more analysis?
 
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 -->
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+<div class="iframe-container" style="aspect-ratio: 4 / 3;">
    <iframe 
       src="/ada-outlier-datastory/assets/img/bar_cat.html" 
-      title="Pie chart of the categories"
-      style="max-width: 80%; height: auto;" >
+      title="Bar plot of the categories">
    </iframe>
 </div>
 
@@ -197,18 +196,13 @@ Back in 2007, science articles represented almost 25% of the encyclopedia, where
 
 Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+<div class="iframe-container" style="aspect-ratio: 1;">
    <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
-      alt='links_categories' 
-      style="max-width: 80%; height: auto;" ></iframe>
+      alt='links_categories' ></iframe>
 </div>
-<!-- INITIAL TEXT:
-Wow, lots of information on this plot! First, the diagonal, i.e. links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from science, geography and countries. For science and geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles about countries: there are more than twice of links pointing to countries as links going out from countries. It seems logical as for many concepts, the place of invention discovery or birth is mentioned, including the country. Science articles are the ones linking out the least to other categories, with only 41% of links going elsewhere than in science articles. With these data in mind, are there categories of articles that are harder to guess?
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players.
 
-BUBBLES AND PLAIN TEXT:
--->
 
 <div class="chat">
 
@@ -302,11 +296,11 @@ The data is now cleaned. Here are some statistics before and after cleaning.
 
 We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 0px;">
+<div class="iframe-container" style="aspect-ratio: 16 / 3;">
    <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;"
    alt='categories_finished_paths_start2target'></iframe>
 
-   <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;" alt='categories_unfinished_paths_start2target'></iframe>
+   <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;" alt='categories_unfinished_paths_start2target'></iframe>>
 </div>
 
 <!--
@@ -399,15 +393,15 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the proportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases. We find an exception for a shortest path of length 4, where the success rate is slightly higher than for a length of 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" style="max-width: 80%; height: auto;" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+<div class="iframe-container" style="aspect-ratio: 16 / 9;">
+   <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 </div>
 
 ### 1.B.2) Number of links to the target
 
 Another parameter that influence the success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence to check if the finished paths distribution has a greater mean than the unfinished paths distribution. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely conclude that the distribution for finished paths has a greater mean!
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+<div class="iframe-container" style="aspect-ratio: 16 / 9;">
    <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" style="max-width: 80%; height: auto;" alt='distrib_links_to_target'></iframe>
 </div>
 
@@ -441,7 +435,7 @@ Another parameter that influence the success might be the number of links leadin
 
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in the training set, whereas validation and testing sets gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite imbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with p-value below the significance threshold:
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+<div class="iframe-container" style="aspect-ratio: 2;">
    <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
    style="max-width: 80%; height: auto;" alt='results_log_reg'></iframe>
 </div>
@@ -663,9 +657,8 @@ To see more in details how this plays out, we create the following heatmap where
 
 <iframe 
     src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
-    
     height="630px"
-    title=" ">
+    title="">
 </iframe>
 
 In this plot, positive values (in blue) occur when the shortest path is smaller in 2024 than in 2007, whereas negative values (in red) correspond to a shortest path  longer in 2024 than in 2007. 
@@ -823,14 +816,21 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 
 To analyze the player's path, we will analyze the case where the player's path is unfinished and finished. First, we will process the player's path to detect if the target was encountered by the player during his game. Then, we will count the number of paths that could have been shortened and compare the number of clicks that could be saved by the players in the structure of wikipedia in 2007 and 2024 based on the current path choosen by the player.
 
-![Player's path](/ada-outlier-datastory/assets/img/unfinished_shortened_path.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/comparison_nb_paths.svg" alt="Unfinished Path" style="max-width: 70%; height: auto;">
+</div>
 
 
-![Player's path](/ada-outlier-datastory/assets/img/finished_shortened_path.svg)
+Globally, we observe that for the most of the game player there is no difference in the number of game shortened between 2007 and 2024. But we can see that the 2024 version shortened more path than 2007 whether for unfinished and finished paths. This might suggests that the 2024 version has the potential to make players stronger ? That said, let's not jump to conclusions and take a closer look...
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/comparison_nb_clicks.svg" alt="Comparison finished / unfinished path" style="max-width: 70%; height: auto;">
+</div>
 
 
-We observe on both unfinished and finished paths graphs above that the structure of wikipedia in 2024 allows to shortened more paths than in 2007 and the number of clicks saved is greater in 2024 than in 2007. 
-Based on this results, we can conclude that the structure of wikipedia in 2024 would allow to players to reach the target page in less clicks than in 2007.
+Looking at the number of clicks saved, it turns out 2007 does better for unfinished paths compared to 2024, even though it impacts fewer paths overall (305 paths for 833 clicks saved in 2007 versus 423 paths for 705 clicks saved in 2024). On the other hand, for finished paths, 2024 clearly takes the lead, with 3,863 clicks saved across 2,716 paths, compared to just 1,000 clicks saved for 1,000 paths in 2007.
+
+Based on this results, it seems like that the structure of wikipedia in 2024 would allow to players to reach the target faster than in 2007.
 
 ## 3.B. Structural comparison
 
@@ -839,13 +839,13 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Hmmmm, we just saw that the player's path is different, but how can we compare the structure of the wikipedia in 2024 and now?
+      Hmmmm, we just saw that the player's path is different, but how can we compare if the structure of the wikipedia in 2024 and now is more efficient?
       </div>
    </div>
 
    <div class="Doc_crazy">
       <div class="message">
-      Don't worry let me show you how we can compare the efficiency of Wikipedia's structure in 2007 and 2024!
+      Don't worry, let me show you how we can compare the efficiency of Wikipedia's structure in 2007 and 2024!
       </div>
       <div class="icon"></div>
    </div>
@@ -856,33 +856,56 @@ Based on this results, we can conclude that the structure of wikipedia in 2024 w
    To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
-   The similarity is calculated as follows: $$ \begin{equation}
-      \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
-   \end{equation} $$\
+   The similarity is calculated as follows: 
+   
+   <div style="display: flex; justify-content: center;">
+      $$ \begin{equation}
+         \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
+      \end{equation} $$\
+   </div>
+
    where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.\
    \
-   Then, our similarity score is the average of the similarity scores obtained with the two methods.\
-      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$\
+   Then, our similarity score is the average of the similarity scores obtained with the two methods.
+   <div style="display: flex; justify-content: center;">
+      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$
+   </div>
    where $$a_1$$ and $$a_2$$ are two articles.
-
-
 
 First let's see the structural and content-based similarity between articles in 2007 and 2024.
 
-![sbert_n2v_graph](/ada-outlier-datastory/assets/img/node2vec_and_sbert.png)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/node2vec_and_sbert.png" alt="Node2Vec and SBERT" style="max-width: 70%; height: auto;">
+</div>
 
 We can observe a slight improvement in the similarity for both structural and content-based similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia has evolved to be more coherent and organized.
 
-
 The combined similarity score of each article is calculated by taking the average of the structural and content-based similarity scores. The combined similarity score is then used to compare the structure of Wikipedia in 2007 and 2024.
 
-![similarity_graph](/ada-outlier-datastory/assets/img/similarity.png)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/similarity.png" alt="Combined similarity score" style="max-width: 70%; height: auto;">
+</div>
 
-Again, we observe that the distribution of the combined similarity scores of articles in 2024 is slightly higher than in 2007. But is this difference significant? Let's perform a t-test to compare the two distributions. We choose a significance level of $$\alpha=5$$% and we obtain a `p-value` = $$2.59 \times 10^{-13}$$ and a `statistic` of $$-7.32$$. Thus, we reject the null hypothesis and conclude that there is a significant difference between the two groups.
+Again, we observe that the distribution of the combined similarity scores of articles in 2024 is slightly higher than in 2007. But is this difference significant? We perform a T-test to compare the two distributions. We choose a significance level of $$\alpha=5$$% and we obtain a p-value < 0.05. Thus, that provides very strong evidence that the mean of the distribution of similarities of 2007 is less than the mean of the distribution of similarities of 2024.
 
+The evolution of Wikipedia's structure from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.
 
-The evolution of Wikipedia's structure from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.s
+<div class="chat">
 
+   <div class="Marty">
+      <div class="icon"></div>
+      <div class="message">
+         Ok! I would definitely perform better if the articles were from 2024!
+      </div>
+   </div>
+
+   <div class="Doc">
+      <div class="message">
+         Haha, I'm glad you're regaining your self-confidence! But we still have a lot to discover. Let's move on to the next question!
+      </div>
+      <div class="icon"></div>
+   </div>
+</div>
 
 # 4. Are the players(LLMs) stronger in 2024 than in 2007?
 
@@ -1086,8 +1109,8 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
    </div>
 
    <div class="Marty_crazy">
-    <div class="icon"></div>
-    <div class="message">Lead the way Doc!</div>
+      <div class="icon"></div>
+      <div class="message">You can play Pedanlte<a href="https://cemantle.certitudes.org/pedantle" target="_blank" rel="noopener noreferrer">here!</a> Lead the way Doc!</div>
   </div>
    
 </div>
@@ -1139,4 +1162,5 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 [2] Robert West, Joelle Pineau, and Doina Precup:
      Wikispeedia: An Online Game for Inferring Semantic Distances between Concepts.
      21st International Joint Conference on Artificial Intelligence (IJCAI), 2009.
+
 

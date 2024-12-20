@@ -35,7 +35,7 @@ toc: true
 
 {: .box-warning}
    **🎮 Wikispeedia 🎮** \
-   Wikispeedia is a game where starting from a given Wikipedia page you you need to reach a given target Wikipedia article only by navigating through the links to other articles you can find on each page. The goal of the game is to reach the target article but clicking on the least ammount of links possible! 
+   Wikispeedia is a game where the player starts from a given Wikipedia page and needs to reach another Wikipedia article only by navigating through the links present in the articles. The goal of the game is to reach the target article but clicking on the least ammount of links possible! 
    Let's take the example of a game starting from Electric Field and leading to Fractal. We can click on Physics, Mathematics, Geometry, Symmetry and on this page we can find Fractal! 
    There are so many links and pages in Wikipedia that it is very rare that two pages are not linked at all. 
    Try a game of Wikispeedia yourself <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here</a>!
@@ -991,7 +991,7 @@ To assess Llama3's performance from 2007 to 2024, we will analyze and compare th
 We observe that in 2024, Llama3 discovers 4% more paths compared to 2007. However, does Llama3 in 2024 exhibit a better path length distribution than it did in 2007?
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="ada-outlier-datastory/assets/img/llama3_2007_2024.svg" alt="llama3_2007_2024" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/llama3_2007_2024.svg" alt="llama3_2007_2024" style="max-width: 70%; height: auto;">
 </div>
 
 

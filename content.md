@@ -1118,7 +1118,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <div class="line"></div>
         <div class="logo-container">
             <a href="https://github.com/julia-guignon" target="_blank" class="logo" ><img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
-            <a href="www.linkedin.com/in/julia-guignon-4806832b0" target="_blank" class="logo" ><img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
+            <a href="https://www.linkedin.com/in/julia-guignon-4806832b0" target="_blank" class="logo" ><img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
     <div class="team-member">

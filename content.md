@@ -152,6 +152,23 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 ### 1.A.1) Article categories and destination of the links
 For most articles, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
+<div class="chat">
+   <div class="Marty">
+      <div class="message">
+      Hi Einstein!
+      </div>
+      <div class="icon"></div>
+   </div>
+
+   <div class="Einstein">
+      <div class="icon"></div>
+      <div class="message">
+      Woof!
+      </div>
+   </div>
+
+</div>
+
 <div style="display: flex; justify-content: center;">
    <div class="iframe-container" style="aspect-ratio: 4 / 3;">
       <iframe 
@@ -1083,6 +1100,9 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
    To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. 
    However our analysis still leads us to think this would be the case and gives us pretty good reasons and intuition to answer this question. \
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
+
+
+![einstein](assets/img/Marty_and_Doc/einstein.png)
 
 <!-- 
 

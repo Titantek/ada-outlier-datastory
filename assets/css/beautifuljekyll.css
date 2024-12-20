@@ -1226,6 +1226,22 @@ pre {
   order: 1;
 }
 
+/* Einstein's styles */
+.Einstein{
+  align-self: flex-end; /* Align Doc's bubble to the right */
+}
+
+.Einstein .icon {
+  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png");
+  order: 2;
+}
+
+.Einstein .message {
+  background-color: #f3ffb6; /* Light cyan for Doc */
+  flex-direction: row-reverse; /* Icon on the right of the text */
+  color: #161345;
+  order: 1;
+}
 
 
 /* Interactive plots */

@@ -1087,8 +1087,10 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Evidently! Oh this makes me think, have you ever played <a href="https://cemantle.certitudes.org/pedantle" target="_blank">Pedantle</a>? 
-      This is the cool kid's new game, it looks very interesting too! Follow me let's go explore it together!</div>
+      <div class="message">
+      You can play Pedanlte<a href="https://cemantle.certitudes.org/pedantle" target="_blank" rel="noopener noreferrer">here!</a>
+      </div>
+
    </div>
 
    <div class="Marty_crazy">

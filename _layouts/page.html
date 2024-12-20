@@ -31,7 +31,6 @@ layout: base
         {{ content | inject_anchors }}
       </div>  
       
-      
       {% if page.after-content %}
         <div class="after-content">
           {% for file in page.after-content %}
@@ -45,21 +44,21 @@ layout: base
   </div>
 </main>
 </div><script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const tocButton = document.getElementById("toggle-toc");
-    const tocWrapper = document.getElementById("toc-wrapper");
-    const markdownContent = document.getElementById("markdown-content");
+document.addEventListener("DOMContentLoaded", () => {
+  const tocButton = document.getElementById("toggle-toc");
+  const tocWrapper = document.getElementById("toc-wrapper");
+  const markdownContent = document.getElementById("markdown-content");
 
-    tocButton.addEventListener("click", () => {
-      if (tocWrapper.style.left === "0px") {
-        tocWrapper.style.left = "-300px"; // Hide TOC
-        markdownContent.style.marginLeft = "0"; // Reset content position
-        tocButton.title = "Show TOC";
-      } else {
-        tocWrapper.style.left = "0px"; // Show TOC
-        markdownContent.style.marginLeft = "300px"; // Shift content
-        tocButton.title = "Hide TOC";
-      }
-    });
+  tocButton.addEventListener("click", () => {
+    if (tocWrapper.style.left === "0px") {
+      tocWrapper.style.left = "-30%"; // Adjust for the new width
+      markdownContent.style.marginLeft = "0"; // Reset content position
+      tocButton.title = "Show TOC";
+    } else {
+      tocWrapper.style.left = "0px"; // Show TOC
+      markdownContent.style.marginLeft = "30%"; // Shift content
+      tocButton.title = "Hide TOC";
+    }
   });
+});
 </script>

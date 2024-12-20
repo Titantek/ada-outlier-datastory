@@ -1319,5 +1319,49 @@ button:hover {
   display: flex;
   gap: 20px;
 }
+/* TOC Wrapper */
+#toc-wrapper {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hidden */
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  padding: 20px;
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+}
 
+/* Main Content */
+#markdown-content {
+  margin-left: 0; /* Default position */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* TOC Toggle Button */
+#toggle-toc {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-toc:hover {
+  background-color: #0056b3;
+}
+
+#toggle-toc i {
+  margin: 0;
+}
 

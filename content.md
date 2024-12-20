@@ -128,12 +128,21 @@ For most articles, one main category is followed by more precise subcategories. 
 
 </div>
 
- <div class="iframe-container" >
-   <iframe id="myIframe"
-      src="/ada-outlier-datastory/assets/img/bar_cat.html" 
-      title="Bar plot of the categories">
-   </iframe>
-</div>
+
+<iframe
+   src="/ada-outlier-datastory/assets/img/bar_cat.html" 
+   title="Bar plot of the categories"
+   style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 75%;
+    height: 550px;
+    margin-right: auto;
+    border: none;">
+</iframe>
+
 
 
 Back in 2007, science articles represented almost 25% of the encyclopedia, whereas art articles comprised less than 1% of it. 
@@ -141,10 +150,17 @@ Back in 2007, science articles represented almost 25% of the encyclopedia, where
 
 Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
 
- <div class="iframe-container" >
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/links_categories.html" 
-      alt='links_categories' ></iframe>
-</div>
+<iframe  src="/ada-outlier-datastory/assets/img/links_categories.html" 
+   alt='links_categories' 
+    style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 75%;
+    height: 850px;
+    margin-right: auto;
+    border: none;">></iframe>
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players.
 
@@ -241,12 +257,29 @@ The data is now cleaned. Here are some statistics before and after cleaning.
 
 We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
- <div class="iframe-container" >
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" 
-   alt='categories_finished_paths_start2target'></iframe>
-</div>
- <div class="iframe-container" >
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" alt='categories_unfinished_paths_start2target'></iframe>
+<div style="display: flex;
+    gap: 0px;
+    margin-left: -150px;
+    width: 1550px;
+    height: 850px;
+    transform: scale(0.8);
+    ">
+  <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html"
+          alt="categories_finished_paths_start2target"
+          style="    
+          flex-grow: 1;
+         width: auto;
+         height: auto;
+         border: none;">
+  </iframe>
+  <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html"
+          alt="categories_unfinished_paths_start2target"
+          style="    
+          flex-grow: 1;
+            width: auto;
+            height: auto;
+            border: none;">
+  </iframe>
 </div>
 
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a $$\chi^2$$ contingency test. 
@@ -290,16 +323,34 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the proportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases. We find an exception for a shortest path of length 4, where the success rate is slightly higher than for a length of 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
- <div class="iframe-container" >
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
-</div>
+<iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" alt='distrib_path_lengths_wrt_shortest_path'
+   style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 80%;
+    height: 600px;
+    margin-right: auto;
+    border: none;">
+></iframe>
 
 ### 1.B.2) Number of links to the target
 
 Another parameter that influence the success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence to check if the finished paths distribution has a greater mean than the unfinished paths distribution. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely conclude that the distribution for finished paths has a greater mean!
- <div class="iframe-container" >
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/distrib_links_to_target" alt='distrib_links_to_target'></iframe>
-</div>
+
+<iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" 
+alt='distrib_links_to_target'
+   style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 75%;
+    height: 550px;
+    margin-right: auto;
+    border: none;">></iframe>
+
 
 <div class="chat">
    <div class="Marty">
@@ -332,10 +383,18 @@ Another parameter that influence the success might be the number of links leadin
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in the training set, whereas validation and testing sets gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite imbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with p-value below the significance threshold:
 
- <div class="iframe-container" >
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
-   alt='results_log_reg'></iframe>
-</div>
+<iframe id="myIframe" src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
+   alt='results_log_reg'
+      style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 100%;
+    height: 550px;
+    margin-left: 40px;
+    margin-right: auto;
+    border: none;">></iframe>
 
 <div class="chat">
    <div class="Marty_crazy">
@@ -556,12 +615,19 @@ First let's compare the average shortest path!
 We see that it **is** significantly shorter in 2024 than in 2007, which is a good sign for Marty!
 To see more in details how this plays out, we create the following heatmap where we plot the SPM from 2007 minus the SPM from 2024:
 
- <div class="iframe-container" >
 <iframe 
     src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
-    title="">
+    title=""
+   style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 75%;
+    height: 650px;
+    margin-right:40px;
+    border: none;">
 </iframe>
-</div>
 
 In this plot, positive values (in blue) occur when the shortest path is smaller in 2024 than in 2007, whereas negative values (in red) correspond to a shortest path  longer in 2024 than in 2007. 
 Apart for some big red (or blue) lines, that mean that the specific article is more (or less) connected to the whole database in 2024 than in 2007, it is difficult to get a general feeling for how the shortest path has changed between the two as the heatmap appears mostly white. Thus we will need to look at other indicators. 
@@ -608,20 +674,35 @@ How can we investigate the 'importance' of an article in the network? Different 
 
 We decide to plot the nodes that have a pagerank value in the top 0.5% for better visualization here. The size and colors of the nodes are linked to the nodes pagerank scores and allow us to visualize the centrality measurement in the following plots: 
 
- <div class="iframe-container" >
 <iframe 
-   id="myIframe"
     src="/ada-outlier-datastory/assets/img/pagerank2007.html" 
-    title=" ">
+    title=" "
+   style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 75%;
+    height: 1000px;
+    margin-right: auto;
+    border: none;
+    transform: scale(0.75);">
 </iframe>
-</div>
- <div class="iframe-container" >
+
 <iframe 
-   id="myIframe"
     src="/ada-outlier-datastory/assets/img/pagerank2024.html" 
-    title=" ">
+    title=" "
+       style="display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-left: auto;
+    width: 75%;
+    height: 1000px;
+    margin-right: auto;
+    border: none;
+    transform: scale(0.75);">
 </iframe>
-</div>
 
 
 Looking at those graphs, we can compare most 'central' articles in the pagerank sense for the two networks.  We see that in 2007, the 'United_States' article really dominates the whole network and is the most connected to the others, with a pagerank centrality of 0.0096. 

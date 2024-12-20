@@ -1083,13 +1083,22 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Evidently! Oh this makes me think, have you ever played Pedantle? This new game looks very interesting too, let's go dive into it!</div>
+      <div class="message">Evidently! Oh this makes me think, have you ever played <a href="https://cemantle.certitudes.org/pedantle" target="_blank" rel="noopener noreferrer">Pedantle</a>? 
+      This is the cool kid's new game, it looks very interesting too! Follow me let's go explore it together!</div>
    </div>
+
+   <div class="Marty_crazy">
+    <div class="icon"></div>
+    <div class="message">Lead the way Doc!</div>
+  </div>
    
 </div>
 
-Contrary to what Doc tells Marty, we actually do not know for sure if the 2024 version of Wikispeedia would be easier to play. To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. However our analysis still leads us to think this would be the case and gives us a pretty good approximation and intuition to answer this question. 
-Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
+{: .box-error}
+   Contrary to what Doc tells Marty, we actually do not know for sure if the 2024 version of Wikispeedia would be easier to play. 
+   To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. 
+   However our analysis still leads us to think this would be the case and gives us a pretty good approximation and intuition to answer this question. \
+   Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
 
 <!-- 
 

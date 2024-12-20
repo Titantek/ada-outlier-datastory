@@ -1247,8 +1247,7 @@ pre {
 */
 
 .iframe-container {
-  width: 80%;                /* Make the container responsive */
-  aspect-ratio: 4 / 3;      /* Set the aspect ratio (e.g., 16:9) */
+  width: 100%;                /* Make the container responsive */
   margin: 0 auto;            /* Center the iframe horizontally */
   display: flex;
   justify-content: center;   /* Optional: Center content inside */

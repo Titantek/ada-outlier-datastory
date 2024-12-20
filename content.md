@@ -126,7 +126,9 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 
 
-# Part 1: How are people performing in Wikispeedia?
+# 1. How are people performing in Wikispeedia?
+
+
 
 <div class="chat">
 
@@ -267,21 +269,13 @@ First, the diagonal that represents links staying in the same category has bigge
 
 ### 1.A.2) Success and categories
 
+{: .box-note}
+   **🧹 Cleaning the data 🧹**  \
+      • There are some articles that don't appear in the categories file so we don't know their categories. Thus we remove those games. \
+      • Some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
+      
+
 <div class="chat">
-   <div class="Marty">
-      <div class="icon"></div>
-      <div class="message">
-      What do you mean? What's wrong with the data?
-      </div>
-   </div>
-
-   <div class="Doc">
-      <div class="message">
-      First, there are some articles that don't appear in our categories file... We don't know their categories. Thus, we will remove these games. Second, some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
-      </div>
-      <div class="icon"></div>
-   </div>
-
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
@@ -295,7 +289,6 @@ First, the diagonal that represents links staying in the same category has bigge
       </div>
       <div class="icon"></div>
    </div>
-
 </div>
 
 The data is now cleaned. Here are some statistics before and after cleaning.
@@ -576,7 +569,7 @@ First, the ROC AUC gives us a value of 0.67, showing reasonable better performan
 </div>
 
 
-# Part 2: How did Wikipedia's structure evolve since 2007?
+# 2. How did Wikipedia's structure evolve since 2007?
 
 Let us now compare the differences between the old Wikipedia from 2007 and our current Wikipedia from 2024. The first factor that could influence the performances of the players is the number of links per articles. Wikipedia is expanding everyday thanks to its collaborative process and has significantly improved and grown since 2007. Let's see how much Wikipedia in 2024 has changed compared to 2007! 
 
@@ -706,7 +699,7 @@ The two networks share a globally similar SCCs structure: only 1 big SCC that co
 How can we investigate the 'importance' of an article in the network? Different methods exist but we selected here the PageRank Centrality as our measurement of the importance of a page. 
 
 {: .box-note}
-   **PageRank Centrality** 
+   **PageRank Centrality** \
    This measure represents how 'important' a node is by how many incomming links redirect to it from other central nodes. The more there are links redirecting to a node the more it is central, and the more central nodes redirect to a node, the more central this node gets. It is often used by web search engines to rank web pages, and thus is perfectly adapted to our analysis. 
    The pagerank centrality $$x_i$$ can thus be computed as follows: 
    $$ x_i = \sum_j a_{ji} \frac{x_j}{\sum_{j} a_{ji}} $$
@@ -742,6 +735,7 @@ In 2024, there is no such node really 'dominating' the rest. The top node become
    <div class="Doc_crazy">
       <div class="message">
       It's difficult Marty... Hard to say how those differences in the networks would impact the players. Let's just look at the Hop Distance Distribution plot before finishing up!
+      </div>
       <div class="icon"></div>
    </div>
 </div>
@@ -751,8 +745,8 @@ In 2024, there is no such node really 'dominating' the rest. The top node become
    **Hop Distance Distribution Plot** \
    Another interesting characteristic of networks can be visualized through what is called an Hop Distance Distribution Plot (or a Reachability Plot). We are plotting the average number of reachable nodes versus the number of hops needed to reach them. This plot represent how many articles we can reach on average after a certain number of clicks. This kind of plot can provide information on: \
    • the network diameter \
-   • the Presence of Hubs \
-   • the Efficiency of Routing in the network
+   • the presence of hubs \
+   • the efficiency of routing in the network
 
 On this plot, we can compare the reachability of the two networks: 
 
@@ -801,9 +795,9 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 \
 
 
-## Part 3: What are the possible consequences of Wikipedia’s changes in player’s performances?
+# 3. What are the possible consequences of Wikipedia’s changes in player’s performances?
 
-### 3.A. Player's path analysis
+## 3.A. Player's path analysis
 
 <div class="chat">
 
@@ -833,7 +827,7 @@ To analyze the player's path, we will analyze the case where the player's path i
 We observe on both unfinished and finished paths graphs above that the structure of wikipedia in 2024 allows to shortened more paths than in 2007 and the number of clicks saved is greater in 2024 than in 2007. 
 Based on this results, we can conclude that the structure of wikipedia in 2024 would allow to players to reach the target page in less clicks than in 2007.
 
-### 3.B. Structural comparison
+## 3.B. Structural comparison
 
 <div class="chat">
 
@@ -885,7 +879,7 @@ Again, we observe that the distribution of the combined similarity scores of art
 The evolution of Wikipedia's structure from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.s
 
 
-# Part 4: Are the players(LLMs) stronger in 2024 than in 2007?
+# 4. Are the players(LLMs) stronger in 2024 than in 2007?
 
 <div class="chat">
   <div class="Marty">

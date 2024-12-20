@@ -152,6 +152,24 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 ### 1.A.1) Article categories and destination of the links
 For most articles, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
+<div class="chat">
+   <div class="Marty">
+   <div class="icon"></div>
+      <div class="message">
+      Hi Einstein!
+      </div>
+      
+   </div>
+
+   <div class="Einstein">
+      <div class="icon"></div>
+      <div class="message">
+      Woof!
+      </div>
+   </div>
+
+</div>
+
 <div style="display: flex; justify-content: center;">
    <div class="iframe-container" style="aspect-ratio: 4 / 3;">
       <iframe 
@@ -946,7 +964,7 @@ We will select the games for the model to play based on how many times each game
 
 
 
-![players_path_length](assets/img/llm_parameter.svg)
+![players_path_length](/ada-outlier-datastory/assets/img/llm_parameter.svg)
 
 From the CCDF, we observe that the number of attempts stops decreasing after 10, so we will focus on games that players have attempted more than 10 times. On the path length CCDF graph, the distribution seems to taper off around 30 clicks. However, we set the maximum number of clicks for the model to 50 to allow additional room for evaluation, particularly in cases where the model may perform less effectively and require more steps to complete the task.
 
@@ -980,19 +998,19 @@ From the CCDF, we observe that the number of attempts stops decreasing after 10,
 
 First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths found by llama3 and mistral.
 
-![llms_path_found](assets/img/llms_path_not_found.svg)
+![llms_path_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
 
 We observe that llama3 finds 3% more paths than mistral.
 
 We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 
-![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
+![llms_player_path_length_distribution](/ada-outlier-datastory/assets/img/model_player_distribution.svg)
 
 Llama3's path length distribution visually aligns more closely with the players' distribution compared to Mistral. To confirm this observation, we conducted a t-test with a significance level of $$\alpha = 5\%$$. The results for Llama3 show a `p-value` of $$0.52$$ and a `statistic` of $$0.647$$, while for Mistral, the `p-value` is $$0.0006$$ and the `statistic` is $$3.428$$. Based on these findings, we fail to reject the null hypothesis for Llama3 but reject it for Mistral. This leads us to conclude that Llama3 better matches the players' path length distribution than Mistral.
 
 Finally, we will check whether the models' average path length falls within the range defined by the players' average path length plus or minus their standard deviation. For this, we will compare the path length averages of Llama3 and Mistral against the players' range.
 
-![llms_confidence_interval](assets/img/CI_player_model.svg)
+![llms_confidence_interval](/ada-outlier-datastory/assets/img/CI_player_model.svg)
 
 Llama3 falls within the players' confidence interval in 78.5% of cases, compared to 69.1% for Mistral. This further supports the conclusion that Llama3 performs better than Mistral.
 
@@ -1013,7 +1031,7 @@ A Jaccard similarity of 1 means the paths contain exactly the same articles, whi
 
 
 
-![llm_jacard](assets/img/jacard.svg)
+![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
 
 The Jaccard similarity reveals that both Llama3 and Mistral achieve slightly over 30% similarity with the players' paths. This suggests that while their paths overlap with the players' to some extent, most of the articles differ. Additionally, the similarity scores for the two models are so close that we cannot distinguish between their performances in this aspect.
 
@@ -1036,11 +1054,11 @@ Finally, based on the results, we can conclude that neither model behaves like t
 
 To assess Llama3's performance from 2007 to 2024, we will analyze and compare the number of paths it discovers as well as its path length distribution across these years.
 
-![llama3_2007_2024](assets/img/llama_path_not_found.svg)
+![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama_path_not_found.svg)
 
 We observe that in 2024, Llama3 discovers 4% more paths compared to 2007. However, does Llama3 in 2024 exhibit a better path length distribution than it did in 2007?
 
-![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
+![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama3_2007_2024.svg)
 
 We observe that Llama3 in 2024 exhibits a better path length distribution compared to 2007. To validate this observation, we performed a t-test with an alternative hypothesis that the path length distribution in 2024 is less than in 2007 (2024 < 2007). Using a significance level of $$alpha = 5$$%, the test yielded a `p-value` of $$0.023$$ and a `statistic` of $$-1.99$$. Since the p-value is below the significance level, we reject the null hypothesis and conclude that Llama3 in 2024 has a better path length distribution than in 2007.
 
@@ -1067,13 +1085,13 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Evidently! Oh this makes me think, have you ever played <a href="https://cemantle.certitudes.org/pedantle" target="_blank">Pedantle</a>? 
+      <div class="message">Evidently! Oh this makes me think, have you ever played Pedantle? 
       This is the cool kid's new game, it looks very interesting too! Follow me let's go explore it together!</div>
    </div>
 
    <div class="Marty_crazy">
       <div class="icon"></div>
-      <div class="message">You can play Pedanlte<a href="https://cemantle.certitudes.org/pedantle" target="_blank" rel="noopener noreferrer">here!</a> Lead the way Doc!</div>
+      <div class="message">You can play Pedantle<a href="https://cemantle.certitudes.org/pedantle" target="_blank" rel="noopener noreferrer">here!</a> Lead the way Doc!</div>
   </div>
    
 </div>
@@ -1083,6 +1101,9 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
    To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. 
    However our analysis still leads us to think this would be the case and gives us pretty good reasons and intuition to answer this question. \
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
+
+
+![einstein](/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png)
 
 <!-- 
 
@@ -1132,48 +1153,43 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
 
 <div class="team-container">
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/gabrielle.png" alt="Gabrielle Blouvac" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/gabrielle.png" alt="Gabrielle Blouvac" class="profile-image">
         <h3 class="name">Gabrielle Blouvac</h3>
         <div class="line"></div>
         <div class="icon-container">
-            <a href="https://github.com" target="_blank" class="icon">Git</a>
-            <a href="mailto:gabrielle@example.com" class="icon">✉️</a>
+            <a href="https://github.com/Gabrielle-Blouvac" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/anasse.png" alt="Anasse El Boudiri" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/anasse.png" alt="Anasse El Boudiri" class="profile-image">
         <h3 class="name">Anasse El Boudiri</h3>
         <div class="line"></div>
         <div class="icon-container">
-            <a href="https://github.com" target="_blank" class="icon">Git</a>
-            <a href="mailto:anasse@example.com" class="icon">✉️</a>
+            <a href="https://github.com/anassee15" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/julia.png" alt="Julia Guignon" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/julia.png" alt="Julia Guignon" class="profile-image">
         <h3 class="name">Julia Guignon</h3>
         <div class="line"></div>
         <div class="icon-container">
-            <a href="https://github.com" target="_blank" class="icon">Git</a>
-            <a href="mailto:julia@example.com" class="icon">✉️</a>
+            <a href="https://github.com/julia-guignon" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/jan.png" alt="Jan Steiner" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/jan.png" alt="Jan Steiner" class="profile-image">
         <h3 class="name">Jan Steiner</h3>
         <div class="line"></div>
         <div class="icon-container">
-            <a href="https://github.com" target="_blank" class="icon">Git</a>
-            <a href="mailto:jan@example.com" class="icon">✉️</a>
+            <a href="https://github.com/Titantek" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/eglantine.png" alt="Eglantine Vialaneix" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/eglantine.png" alt="Eglantine Vialaneix" class="profile-image">
         <h3 class="name">Eglantine Vialaneix</h3>
         <div class="line"></div>
         <div class="icon-container">
-            <a href="https://github.com" target="_blank" class="icon">Git</a>
-            <a href="mailto:eglantine@example.com" class="icon">✉️</a>
+            <a href="https://github.com/eglantine-vialaneix" target="_blank" class="github"></a>
         </div>
     </div>
 </div>

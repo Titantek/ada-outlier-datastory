@@ -61,23 +61,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-    // JavaScript for dynamic resizing
-    window.addEventListener('DOMContentLoaded', function () {
-      const iframe = document.getElementById('myIframe');
-      iframe.addEventListener('load', function () {
-        try {
-          // Access the content of the iframe
-          const iframeContent = iframe.contentWindow.document.body;
-          // Adjust the height based on the iframe's content
-          iframe.style.height = iframeContent.scrollHeight + 'px';
-          // Center the iframe
-          iframe.style.display = 'block';
-          iframe.style.marginLeft = 'auto';
-          iframe.style.marginRight = 'auto';
-        } catch (e) {
-          console.warn('Cross-origin access issue:', e);
-        }
-      });
-    });
 </script>

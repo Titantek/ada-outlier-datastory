@@ -1099,6 +1099,8 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <div class="logo-container">
             <a href="https://github.com/Gabrielle-Blouvac" target="_blank" >
                         <img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
+            <a href="https://www.linkedin.com" target="_blank" >
+                        <img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1107,6 +1109,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <div class="line"></div>
         <div class="logo-container">
             <a href="https://github.com/anassee15" target="_blank" >            <img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
+            <a href="https://www.linkedin.com/in/anasse-elboudiri/" target="_blank" ><img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1115,6 +1118,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <div class="line"></div>
         <div class="logo-container">
             <a href="https://github.com/julia-guignon" target="_blank" ><img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
+            <a href="www.linkedin.com/in/julia-guignon-4806832b0" target="_blank" ><img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1123,6 +1127,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <div class="line"></div>
         <div class="logo-container">
             <a href="https://github.com/Titantek" target="_blank" ><img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
+            <a href="https://www.linkedin.com/in/jan-steiner/" target="_blank" ><img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
     <div class="team-member">
@@ -1132,6 +1137,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <div class="logo-container">
             <a href="https://github.com/eglantine-vialaneix" target="_blank">
             <img src="/ada-outlier-datastory/assets/img/github.svg" alt="github"></a>
+            <a href="https://www.linkedin.com/in/eglantine-vialaneix-1b89aa234/" target="_blank" ><img src="/ada-outlier-datastory/assets/img/linkedin.svg" alt="linkedin"></a>
         </div>
     </div>
 </div>

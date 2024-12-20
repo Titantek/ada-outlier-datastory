@@ -163,7 +163,7 @@ HERE:: more analysis?
 
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 -->
-<div class="iframe-container" style="aspect-ratio: 4 / 3;">
+<div class="iframe-container" style="aspect-ratio: 1.8;">
    <iframe 
       src="/ada-outlier-datastory/assets/img/bar_cat.html" 
       title="Bar plot of the categories">

@@ -249,8 +249,8 @@ We can now have a look to the categories of starting articles and target article
    <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" alt='categories_unfinished_paths_start2target'></iframe>
 </div>
 
-Both heatmaps look similar! But what do the statistics tell us? Let's perform a $$\chi^2$$ contingency test: our null hypothesis is that the distributions are identical. 
-What is meant by distribution is the frequency of links from a start category to an end category. Here we simply take the data from the heatmap, in the form of counts. We choose a level of significance of $$\alpha=1$$%. The results are the following: `pvalue=0.0, statistic=2953.30`. We can thus safely reject the null hypothesis!
+Both heatmaps look similar! But what do the statistics tell us? Let's perform a $$\chi^2$$ contingency test. 
+We compare the distributions, i.e. the number of games from a start category to an end category, between the finished and unfinished paths datasets. We choose a level of significance of $$\alpha=1$$%. We obtain a p-value of 0.0 and a test statistic of 2953.30. It means that the distributions are in reality different!
 
 We can also look at it in a more general way and compute the distribution of the start categories without looking at the target (indicated as `category → *` in the heatmap), and vice-versa (indicated as `* → category`), for both finished and unfinished paths. Reproducing the t-test for those distributions, we obtain the same p-value of 0.0. We can thus also conclude that the distribution of the categories of the start and target articles are different between the finished and unfinished path datasets.
 
@@ -428,12 +428,12 @@ We can now evaluate the model performance on the test set!
 
 Now we are ready to assess the model quality on the test set. Here is the confusion matrix that allows to compute the metrics previously mentioned.
 
-| 7085 samples in the test set | Predicted as win (4962) | Predicted as defeat (2123) |
+| 7085 samples in the test set | Predicted as win (4835) | Predicted as defeat (2250) |
 |:-----: |:---: |:---: |
-| **Real win (5197)** | 3943 | 1254 |
-| **Real defeat (1888)** | 1019 | 869 |
+| **Real win (5197)** | 3856 | 1341 |
+| **Real defeat (1888)** | 979 | 909 |
 
-First, the ROC AUC gives us a value of 0.67, showing reasonable better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and the balanced accuracy is 0.68. The main reason for this reserved performance is the difficulty that the model has to identify defeats. Indeed, the specificity is only 0.46! So if we have a lost game, the model classifies it as such only 46% of the time. The recall is a bit better with 0.76. The precision is 0.79. It means that if the model classifies a game as a win, there is 4 chances out of 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct only 41% of the time! This is due to the imbalance between the number of wins and defeats among the samples as mentioned previously.
+First, the ROC AUC gives us a value of 0.67, showing reasonable better performance than a random classifier. Second, the macro-averaged F1-score is 0.61 and the balanced accuracy is 0.61. The main reason for this reserved performance is the difficulty that the model has to identify defeats. Indeed, the specificity is only 0.48! So if we have a lost game, the model classifies it as such only 48% of the time. The recall is a bit better with 0.75. The precision is 0.79. It means that if the model classifies a game as a win, there is 4 chances out of 5 that the prediction is correct. However, when the model classifies a game as a defeat, it is correct only 43% of the time! This is due to the imbalance between the number of wins and defeats among the samples as mentioned previously.
 
 <div class="chat">
    <div class="Marty">
@@ -1015,8 +1015,8 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
    However, our analysis still leads us to think that the players would be more performant on current data. \
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
 
-
-<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Einstein" style="width:800px">
+<div style="display: flex; justify-content: center; align-items:center;">
+<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Einstein" style="width:600px">
 
 <!-- 
 
@@ -1060,7 +1060,7 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
      Wikispeedia: An Online Game for Inferring Semantic Distances between Concepts.
      21st International Joint Conference on Artificial Intelligence (IJCAI), 2009.
 
-**All credits of the characters goes to the original movie Back To The Future, Universal Pictures**
+**All credits of the characters goes to the original movie Back To The Future, Universal Pictures.**
 
 All credits to the images used belong to us, produced by Gabrielle Blouvac.
 

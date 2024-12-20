@@ -83,17 +83,12 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 {: .box-warning}
    **🎮 Wikispeedia 🎮** \
-   Wikispeedia is a game where you start from one Wikipedia article and try to reach another article only by navigating through the links you can find on the pages. The goal of the game is to be as fast as possible but there is no restriction in time ! 
-
+   Wikispeedia is a game where starting from a given Wikipedia page you you need to reach a given target Wikipedia article only by navigating through the links to other articles you can find on each page. The goal of the game is to be fast and click on the minimum of links possible but there is no time restriction! 
+   For example, the other day I had to start from Electric Field to Fractal. I clicked on Physics, Mathematics, Geometry, Symmetry and on this page I could find Fractal! 
+   There are so many links and pages in Wikipedia that it is very rare that two pages are not linked at all. 
+   Try one game of Wikispeedia yourself <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here</a>!
 
 <div class="chat">
-
-   <div class="Marty">
-      <div class="icon"></div>
-      <div class="message">
-      You can play Wikispeedia<a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here!</a>
-      </div>
-   </div>
 
    <div class="Doc">
       <div class="message">
@@ -125,10 +120,10 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
 
 </div>
 
-In this project we use the data that players create by playing Wikispeedia. This data was collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/)
+{: .box-warning}
+   **📊 Wikispeedia database 📊** \
+   We will use the data that were collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/) recording all of the games that were  played since Wikispeedia has been created. After downloading the data, 
 
-
-~ Presentation of the dataset by Doc ~
 
 
 # Part 1: How are people performing in Wikispeedia?
@@ -167,7 +162,7 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 -->
 
 <iframe 
-    src="/ada-outlier-datastory/assets/img/pie_cat.html" 
+    src="/ada-outlier-datastory/assets/img/bar_cat.html" 
     class="responsive-iframe" 
     title="Pie chart of the categories"
     height="550px">
@@ -1057,6 +1052,25 @@ We observe that llama3 in 2024 has a better path length distribution than in 200
 
 Finally, we can conclude that the performance of llama3 has improved between 2007 and 2024. And so, the players playing in 2024 should be able to reach the target page in less clicks than in 2007.
 
+
+# Conclusion: A happy ending
+
+- We analyzed the performance of players on articles from 2007 
+  - Article are not evenly distributed among each categories
+  - Failing the game seem to be affected by the categories of the starting and targeted articles.
+  - The success rate of parties decreased as the actual shortest path possible between two articles increased.
+  - We identified some factors that help to predict the difficulty of a party. The most important one was the number of different articles that lead to the target page.
+
+- We were able to compare the structure created by the links between pages between 2007 and 2024. 
+  - An important number of articles changed names to a more specific one.
+  - The total number and average number of links per page increased since 2007.
+  - The average shortest path significnatly decreased
+  - No change in SCCs sizes
+  - Different network of the 0.5% top pagerank
+  - Decreased number of hops
+  - Higher clustering
+
+- 
 
 # References
 

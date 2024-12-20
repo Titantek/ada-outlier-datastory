@@ -252,8 +252,6 @@ First, the diagonal that represents links staying in the same category has bigge
    </div>
 </div>
 
-### 1.A.2) Success and categories
-
 <div class="chat">
    <div class="Marty_crazy">
       <div class="icon"></div>
@@ -268,6 +266,8 @@ First, the diagonal that represents links staying in the same category has bigge
       </div>
       <div class="icon"></div>
    </div>
+
+### 1.A.2) Success and categories
 
    <div class="Marty">
       <div class="icon"></div>
@@ -299,14 +299,15 @@ First, the diagonal that represents links staying in the same category has bigge
 
 </div>
 
+The data is now cleaned. Here are some statistics before and after cleaning.
 {: .box-note}
-   **Some statistics:** \
       • number of games before cleaning: 76 048 \
       • success rate before cleaning: 67.4% \
       • number of games after cleaning: 70 842 \
       • success rate after cleaning: 72.3% \
       • percentage of games discarded: 6.8%
 
+We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
 <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" width="800px" height="850px" 
 class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>

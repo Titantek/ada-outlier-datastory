@@ -3,7 +3,7 @@ layout: page
 cover-img: "/assets/img/Marty_and_Doc/titre.png"
 ---
 
-\
+
 
 # We are in 2024. 
 ## Marty gets out of his last ADA lecture, during which he was quite distracted and spent two hours playing some game on his computer…

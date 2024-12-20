@@ -16,8 +16,22 @@ layout: base
         </div>
       {% endif %}
 
-      {{ content }}
-
+      <div id="toc-wrapper">
+        <h2>Table of Contents</h2>
+        <div id="table-of-contents">
+          {{ content | toc_only }}
+        </div>
+      </div>
+      <button id="toggle-toc" style="margin-bottom: 10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div id="markdown-content">
+        {{ content | inject_anchors }}
+      </div>  
+      
+      
       {% if page.after-content %}
         <div class="after-content">
           {% for file in page.after-content %}
@@ -30,4 +44,22 @@ layout: base
     </div>
   </div>
 </main>
-</div>
+</div><script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tocButton = document.getElementById("toggle-toc");
+    const tocWrapper = document.getElementById("toc-wrapper");
+    const markdownContent = document.getElementById("markdown-content");
+
+    tocButton.addEventListener("click", () => {
+      if (tocWrapper.style.left === "0px") {
+        tocWrapper.style.left = "-300px"; // Hide TOC
+        markdownContent.style.marginLeft = "0"; // Reset content position
+        tocButton.title = "Show TOC";
+      } else {
+        tocWrapper.style.left = "0px"; // Show TOC
+        markdownContent.style.marginLeft = "300px"; // Shift content
+        tocButton.title = "Hide TOC";
+      }
+    });
+  });
+</script>

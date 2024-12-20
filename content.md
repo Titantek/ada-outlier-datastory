@@ -946,7 +946,7 @@ We will select the games for the model to play based on how many times each game
 
 
 
-![players_path_length](assets/img/llm_parameter.svg)
+![players_path_length](/ada-outlier-datastory/assets/img/llm_parameter.svg)
 
 From the CCDF, we observe that the number of attempts stops decreasing after 10, so we will focus on games that players have attempted more than 10 times. On the path length CCDF graph, the distribution seems to taper off around 30 clicks. However, we set the maximum number of clicks for the model to 50 to allow additional room for evaluation, particularly in cases where the model may perform less effectively and require more steps to complete the task.
 
@@ -980,19 +980,19 @@ From the CCDF, we observe that the number of attempts stops decreasing after 10,
 
 First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths found by llama3 and mistral.
 
-![llms_path_found](assets/img/llms_path_not_found.svg)
+![llms_path_found](/ada-outlier-datastory/assets/img/llms_path_not_found.svg)
 
 We observe that llama3 finds 3% more paths than mistral.
 
 We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 
-![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
+![llms_player_path_length_distribution](/ada-outlier-datastory/assets/img/model_player_distribution.svg)
 
 Llama3's path length distribution visually aligns more closely with the players' distribution compared to Mistral. To confirm this observation, we conducted a t-test with a significance level of $$\alpha = 5\%$$. The results for Llama3 show a `p-value` of $$0.52$$ and a `statistic` of $$0.647$$, while for Mistral, the `p-value` is $$0.0006$$ and the `statistic` is $$3.428$$. Based on these findings, we fail to reject the null hypothesis for Llama3 but reject it for Mistral. This leads us to conclude that Llama3 better matches the players' path length distribution than Mistral.
 
 Finally, we will check whether the models' average path length falls within the range defined by the players' average path length plus or minus their standard deviation. For this, we will compare the path length averages of Llama3 and Mistral against the players' range.
 
-![llms_confidence_interval](assets/img/CI_player_model.svg)
+![llms_confidence_interval](/ada-outlier-datastory/assets/img/CI_player_model.svg)
 
 Llama3 falls within the players' confidence interval in 78.5% of cases, compared to 69.1% for Mistral. This further supports the conclusion that Llama3 performs better than Mistral.
 
@@ -1013,7 +1013,7 @@ A Jaccard similarity of 1 means the paths contain exactly the same articles, whi
 
 
 
-![llm_jacard](assets/img/jacard.svg)
+![llm_jacard](/ada-outlier-datastory/assets/img/jacard.svg)
 
 The Jaccard similarity reveals that both Llama3 and Mistral achieve slightly over 30% similarity with the players' paths. This suggests that while their paths overlap with the players' to some extent, most of the articles differ. Additionally, the similarity scores for the two models are so close that we cannot distinguish between their performances in this aspect.
 
@@ -1036,11 +1036,11 @@ Finally, based on the results, we can conclude that neither model behaves like t
 
 To assess Llama3's performance from 2007 to 2024, we will analyze and compare the number of paths it discovers as well as its path length distribution across these years.
 
-![llama3_2007_2024](assets/img/llama_path_not_found.svg)
+![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama_path_not_found.svg)
 
 We observe that in 2024, Llama3 discovers 4% more paths compared to 2007. However, does Llama3 in 2024 exhibit a better path length distribution than it did in 2007?
 
-![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
+![llama3_2007_2024](/ada-outlier-datastory/assets/img/llama3_2007_2024.svg)
 
 We observe that Llama3 in 2024 exhibits a better path length distribution compared to 2007. To validate this observation, we performed a t-test with an alternative hypothesis that the path length distribution in 2024 is less than in 2007 (2024 < 2007). Using a significance level of $$alpha = 5$$%, the test yielded a `p-value` of $$0.023$$ and a `statistic` of $$-1.99$$. Since the p-value is below the significance level, we reject the null hypothesis and conclude that Llama3 in 2024 has a better path length distribution than in 2007.
 
@@ -1084,36 +1084,6 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
    However our analysis still leads us to think this would be the case and gives us pretty good reasons and intuition to answer this question. \
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
 
-<!-- 
-
-- We analyzed the performance of players on articles from 2007 
-  - Article are not evenly distributed among each categories
-  - Failing the game seems to be affected by the categories of the starting and targeted articles.
-  - The success rate of parties decreased as the actual shortest path possible between two articles increased.
-  - We identified some factors that help to predict the difficulty of a party. The most important one was the number of different articles that lead to the target page.
-
-- We were able to compare the structure created by the links between pages between 2007 and 2024. 
-  - An important number of articles changed names to a more specific one.
-  - The total number and average number of links per page increased since 2007.
-  - The average shortest path significnatly decreased
-  - No change in SCCs sizes
-  - Different network of the 0.5% top pagerank
-  - Decreased number of hops
-  - Higher clustering
-
-- We looked at how the different structure of wikipedia 2024 could have impacted the paths played in 2007 
-   - we see that the target page appears sooner in the paths played in 2007 both in unfinished and finished paths so more clicks would be saved 
-   - we look more into the structural difference: we compare the textual contents in 2007 versus 2024 and the graph structure of both. By looking at the similarities we conclude that the 2024 structure is more coherent and organized
-
-- We simulated games by training 2 different LLMs to play on Wikispeedia 2007 and Wikispeedia 2024 
-  - We compared the two models between each other and with players from 2007
-  - Llama was better at finding paths than Mistral
-  - Llama found paths that have a more similar length to players than Mistral
-  - However the paths chosen by both models are very different from the paths of players
-  - More generally, Llama wins more games when playing in 2024 than in 2007
-  - Llame finds shorter paths to the target in 2024 than in 2007
- 
- -->
 
 
 # References

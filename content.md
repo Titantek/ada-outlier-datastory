@@ -823,15 +823,16 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 To analyze the player's path, we will analyze the case where the player's path is unfinished and finished. First, we will process the player's path to detect if the target was encountered by the player during his game. Then, we will count the number of paths that could have been shortened and compare the number of clicks that could be saved by the players in the structure of wikipedia in 2007 and 2024 based on the current path choosen by the player.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/comparison_nb_clicks.svg" alt="Comparison finished / unfinished path" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/comparison_nb_paths.svg" alt="Unfinished Path" style="max-width: 70%; height: auto;">
 </div>
+
 
 Globally, we observe that for the most of the game player there is no difference in the number of game shortened between 2007 and 2024. But we can see that the 2024 version shortened more path than 2007 whether for unfinished and finished paths. This might suggests that the 2024 version has the potential to make players stronger ? That said, let's not jump to conclusions and take a closer look...
 
-
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/comparison_nb_paths.svg" alt="Unfinished Path" style="max-width: 50%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/comparison_nb_clicks.svg" alt="Comparison finished / unfinished path" style="max-width: 70%; height: auto;">
 </div>
+
 
 Looking at the number of clicks saved, it turns out 2007 does better for unfinished paths compared to 2024, even though it impacts fewer paths overall (305 paths for 833 clicks saved in 2007 versus 423 paths for 705 clicks saved in 2024). On the other hand, for finished paths, 2024 clearly takes the lead, with 3,863 clicks saved across 2,716 paths, compared to just 1,000 clicks saved for 1,000 paths in 2007.
 
@@ -863,7 +864,7 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
    \
    The similarity is calculated as follows: 
    
-   <div style="display: flex; justify-content: center;"">
+   <div style="display: flex; justify-content: center;">
       $$ \begin{equation}
          \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
       \end{equation} $$\
@@ -871,9 +872,9 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
 
    where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.\
    \
-   Then, our similarity score is the average of the similarity scores obtained with the two methods.\
+   Then, our similarity score is the average of the similarity scores obtained with the two methods.
    <div style="display: flex; justify-content: center;">
-      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$\
+      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$
    </div>
    where $$a_1$$ and $$a_2$$ are two articles.
 
@@ -900,7 +901,7 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-         OK! I would definitely be better if articles were from 2024!
+         Ok! I would definitely perform better if the articles were from 2024!
       </div>
    </div>
 

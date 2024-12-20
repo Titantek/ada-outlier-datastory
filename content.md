@@ -19,7 +19,7 @@ toc: true
 
    <div class="Doc">
       <div class="message">
-      What are you talking about Marty? You know your old Doc, I am not quite into online games or whatsoever.
+      What are you talking about Marty? You know your old Doc, I am not quite into online games or whatever.
       </div>
       <div class="icon"></div>
    </div>
@@ -35,7 +35,7 @@ toc: true
 
 {: .box-warning}
    **🎮 Wikispeedia 🎮** \
-   Wikispeedia is a game where the player starts from a given Wikipedia page and needs to reach another Wikipedia article only by navigating through the links present in the articles. The goal of the game is to reach the target article but clicking on the least ammount of links possible! 
+   Wikispeedia is a game where the player starts from a given Wikipedia page and needs to reach another Wikipedia article only by navigating through the links present in the articles. The goal of the game is to reach the target article but clicking on the least amount of links possible! 
    Let's take the example of a game starting from Electric Field and leading to Fractal. We can click on Physics, Mathematics, Geometry, Symmetry and on this page we can find Fractal! 
    There are so many links and pages in Wikipedia that it is very rare that two pages are not linked at all. 
    Try a game of Wikispeedia yourself <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank" rel="noopener noreferrer">here</a>!
@@ -52,7 +52,7 @@ toc: true
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Yeah Doc, sometimes I don't even now the target so I try but I just fail… Or I just keep going back and forth between articles because they just don't look like how I expected them to be, at all! It seems like they are not the Wikipedia articles that I know and they don't have the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
+      Yeah Doc, sometimes I don't even know the target so I try but I just fail… Or I keep going back and forth between some articles because they just don't look like how I expected them to be at all! It seems like they are not the Wikipedia articles that I know and they don't have the next link I was looking for, things like that… Is this game too old for me? Am I just bad at this game?
       </div>
    </div>
 
@@ -74,7 +74,7 @@ toc: true
 
 {: .box-warning}
    **📊 Wikispeedia database 📊** \
-   We will use the data that were collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/) recording all of the games that were  played since Wikispeedia has been created. After downloading the data, 
+   We will use the data that was collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/) recording all of the games that have been played during a specific time frame.
 
 <div class="chat">
    <div class="Doc">
@@ -148,7 +148,11 @@ For most articles, one main category is followed by more precise subcategories. 
 Back in 2007, science articles represented almost 25% of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
-Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
+Let's first look at the links between the articles: from which category to which category do the links go? Do they lead to an article from the same category or a different category? Is it easy to navigate to another category? 
+
+To answer these questions, we can investigate the categories of starting articles and target articles of the players. 
+
+Each row corresponds to the category of the source articles that the links come from, and each column corresponds to the category of the target articles reached by the links. 
 
 <iframe  src="/ada-outlier-datastory/assets/img/links_categories.html" 
    alt='links_categories' 
@@ -162,7 +166,7 @@ Let's first look at the links between the articles: from which to which category
     margin-right: auto;
     border: none;">></iframe>
 
-To answer this question, we can investigate the categories of starting articles and target articles of the players.
+
 
 
 <div class="chat">
@@ -184,7 +188,7 @@ To answer this question, we can investigate the categories of starting articles 
 </div>
 
 
-First, the diagonal that represents links staying in the same category has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from Science, Geography and Countries. It means that a higher proportion of links lead to those categories. For Science and Geography, it makes sense as these are the most represented categories as we have seen previously. On the other hand, it seems very easy to reach articles from the Countries category: 23% of the links lead to it! It seems logical as for many articles, a location is mentioned (place of discovery or birth, where an event took place, etc.), including the country. Science articles are the ones linking to other categories the least, with only 41% of links going elsewhere than to science articles.
+First, the diagonal that we see represents links staying in the same category. It has bigger values compared to the lines or columns in general. Then, we can observe that the brighter columns are the ones from Science, Geography and Countries. It means that a higher proportion of links lead to those categories. For Science and Geography, it makes sense as these are the most represented categories in the dataset. On the other hand, it seems very easy to reach articles in  the Countries category: 23% of the links lead to it! It seems logical as for many articles, a location is mentioned (place of discovery or birth, where an event took place, etc.), including the country. Science articles link to other categories the least, with only 41% of links going elsewhere than to science articles.
 
 
 <div class="chat">
@@ -283,7 +287,7 @@ We can now have a look to the categories of starting articles and target article
 </div>
 
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a $$\chi^2$$ contingency test. 
-We compare the distributions, i.e. the number of games from a start category to an end category, between the finished and unfinished paths datasets. We choose a level of significance of $$\alpha=1$$%. We obtain a p-value of 0.0 and a test statistic of 2953.30. It means that the distributions are in reality different!
+We compare the distributions, i.e. the number of games from a start category to an end category, between the finished and unfinished paths datasets. We choose a level of significance of $$\alpha=1$$%. We obtain a p-value of 0.0 and a test statistic of 2953.30. It means that the distributions are actually different!
 
 We can also look at it in a more general way and compute the distribution of the start categories without looking at the target (indicated as `category → *` in the heatmap), and vice-versa (indicated as `* → category`), for both finished and unfinished paths. Reproducing the t-test for those distributions, we obtain the same p-value of 0.0. We can thus also conclude that the distribution of the categories of the start and target articles are different between the finished and unfinished path datasets.
 
@@ -745,7 +749,7 @@ Secondly, we see that both curves follow the same pattern, with a very sharp inc
 Finally, we observe that the plateau is reached sooner in the case of 2024: after only 5 hops versus 6 in 2007. Again this shows that the network in 2024 is probably easier to naviguate than in 2007: in 5 hops you can reach the maximum average number of reachable nodes. 
 
 {: .box-note}
-   **Clustering Coefficient** 
+   **Clustering Coefficient** \
    The Clustering coefficient measure the degree to which nodes will tend to cluster together. Here we use the overall average clustering coefficient which averages over all clustering coefficients of the graph. 
 
 If we look at the clustering coefficients of the graphs we observe the following values: 
@@ -783,6 +787,8 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
 
 
 # 3. What are the possible consequences of Wikipedia’s changes in player’s performances?
+
+Now that we have looked into the basic differences between 2007 and 2024, let's apply what we saw to the paths data of 2007. How would the different structure of 2024 impact it ? 
 
 ## 3.A. Player's path analysis
 
@@ -890,6 +896,8 @@ The evolution of the structure of Wikipedia from 2007 to 2024 has led to an impr
 </div>
 
 # 4. Are the players(LLMs) stronger in 2024 than in 2007?
+
+As a final analysis, let's check how would an LLM perform on both datasets : 
 
 <div class="chat">
   <div class="Marty">

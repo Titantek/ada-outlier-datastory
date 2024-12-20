@@ -267,8 +267,12 @@ First, the diagonal that represents links staying in the same category has bigge
       <div class="icon"></div>
    </div>
 
+</div>
+
+
 ### 1.A.2) Success and categories
 
+<div class="chat">
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">

@@ -1053,7 +1053,7 @@ We observe that Llama3 in 2024 exhibits a better path length distribution compar
 In conclusion, we can state that Llama3's performance has improved between 2007 and 2024. As a result, players in 2024 are likely to reach the target page in fewer clicks compared to 2007.
 
 
-# Conclusion: A happy ending
+# Conclusion: 🎉 A happy ending 🎉
 
 - We analyzed the performance of players on articles from 2007 
   - Article are not evenly distributed among each categories

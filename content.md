@@ -154,7 +154,7 @@ In this project we use the data that players create by playing Wikispeedia. This
 
 ## 1.A. Categories
 
-### 1.A.1. Article categories and destination of the links
+### 1.A.1) Article categories and destination of the links
 For most articles, one main category is followed by more precise subcategories. For example, the mixed-breed dog article has the main category "Science", first subcategory "Biology" and second subcategory "Mammals". For simplicity, we will keep only the first category, i.e. the main one. You can take a look at the distribution of those main categories here.
 
 <!--
@@ -924,12 +924,12 @@ The evolution of Wikipedia's structure from 2007 to 2024 has led to an improveme
 {: .box-note}
    We will test out **llama3 8B** and **mistral 7B** models on the 2007 data and compare the results to the players's data using [Ollama](https://ollama.com/). The design of the prompts was inspired by the group [Human vs AI](https://drudilorenzo.github.io/ada-klech-data-story/).
 
-We will use the following prompt to the llm so it understands how to play wikispeedia:
+We will use the following prompt to the LLM so it understands how to play Wikispeedia:
 
 {: .box-code}
 *We now play the following game:\
 \
-I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one examples, then it's your turn:\
+I will give you a target word and a list from which you can choose an option. If the available options contains the target word, you choose it. Otherwise you choose the option that is most similar to it. Before starting, I give you one example, then it's your turn:\
 \
 you need to follow the same format as the example below: 
 Target word: George_Washington\
@@ -955,11 +955,11 @@ Reasoning: [REASONING]\
 Answer: Hence the choice is: '[ANSWER]'*
 
 
-We will select the games that the model will play based on the number of time the games was attempted by the players. To visualize the number of attempts per game, we will use a CCDF plot. And we will use the players's path length to distribution to select the maximum number of prompts we will give to the model per game based on the end of the distribution.
+We will select the games that the model will play based on the number of time the games were attempted by the players. To visualize the number of attempts per game, we will use a CCDF plot. We will use the players path length distribution to select the maximum number of prompts we will give to the model per game, we will choose the tail of the path length distribution as the maximum number of prompts.
 
 ![players_path_length](assets/img/llm_parameter.svg)
 
-We observe on the CCDF that the number of attempts stop deacreasing after 10 attempts. so we will select the games that have been attempted more than 10 times by the players. And the tail of the path length distribution stops around 50 clicks, so the maximum number of prompts we will give to the model per game will be 50.
+From the CCDF, we observe that the number of attempts no longer decreases after 10. Therefore, we will focus on games that players have attempted more than 10 times. Additionally, the tail of the path length distribution tapers off around 50 clicks, so we will limit the maximum number of clicks the model can make per game to 50.
 
 ## 4.B. Comparison of the models with the players
 
@@ -968,12 +968,12 @@ We observe on the CCDF that the number of attempts stop deacreasing after 10 att
 
   <div class="Marty">
     <div class="icon"></div>
-    <div class="message">Hmmm Doc, generating path with llms are going to take a lot of time, right? </div>
+    <div class="message">Hmmm Doc, generating path with LLMs are going to take a lot of time, right? </div>
   </div>
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message"> Yes Marty, generating path with llms are going to take a lot of time.</div>
+      <div class="message"> Yes Marty, generating path with LLMs are going to take a lot of time.</div>
    </div>
 
    <div class="Marty">
@@ -983,7 +983,7 @@ We observe on the CCDF that the number of attempts stop deacreasing after 10 att
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data. To see which model perfom the most like the players. And once we have the results, we will generate the data for 2024 with the selected model.</div>
+      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data to see which model perfom the most like the players. Once we have the results, we will generate the data for 2024 with the selected model.</div>
    </div>
 
 </div>
@@ -995,26 +995,40 @@ First, we are interested if LLMs models are able to find a path to the target ar
 
 We observe that llama3 finds 2% more paths than mistral.
 
-Now, we are interested in the path length distribution of the models. We will compare the path length distribution of the players with the path length distribution of the models.
+We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 
 ![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
 
-LLama3 seems to be slightly better than mistral in terms of path length distribution. Let's confirm this by doing a t-test. We choose a significance level of $$\alpha=5$$% and we obtain for llama3 a `p-value` = $$0.52$$ and a `statistic` of $$0.647$$ and for mistral a `p-value` = $$0.0006$$ and a `statistic` of $$3.428$$. Thus, we reject the null hypothesis for mistral and we can't reject the null hypothesis for llama3. We can conclude that llama3 is better than mistral in terms of path length distribution.
+Llama3's path length distribution visually aligns more closely with the players' distribution compared to Mistral. To confirm this observation, we conducted a t-test with a significance level of $$\alpha = 5\%$$. The results for Llama3 show a `p-value` of $$0.52$$ and a `statistic` of $$0.647$$, while for Mistral, the `p-value` is $$0.0006$$ and the `statistic` is $$3.428$$. Based on these findings, we fail to reject the null hypothesis for Llama3 but reject it for Mistral. This leads us to conclude that Llama3 better matches the players' path length distribution than Mistral.
 
-Finally, we are interested if the models fall in the confidence interval of the players (in the standard deviation of the players). We will compare the confidence interval of llama3 and mistral.
+Finally, we will check whether the models' average path length falls within the range defined by the players' average path length plus or minus their standard deviation. For this, we will compare the path length averages of Llama3 and Mistral against the players' range.
 
 ![llms_confidence_interval](assets/img/CI_player_model.svg)
 
-llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases. This strengthens the idea that llama3 is better than mistral.
+Llama3 falls within the players' confidence interval in 78.5% of cases, compared to 69.1% for Mistral. This further supports the conclusion that Llama3 performs better than Mistral.
 
-But, does the model find the same path as the players? We can compute the Jaccard similarity between the paths of the players and the models to determine if the path contains the same articles.
+But does the model follow the same path as the players? To assess this, we can calculate the Jaccard similarity between the paths taken by the players and the models to check if they contain the same articles.
+
+{: .box-note}
+**Jaccard similarity** is a metric used to compare the similarity between two sets. It is calculated as the size of the intersection of the sets divided by the size of their union. In this context, it measures how many articles are shared between the paths of the players and the models, relative to the total number of unique articles across both paths.\
+\
+$$J(A, B) = \frac{|A \cap B|}{|A \cup B|}$$\
+\
+Where: \
+   • $$A$$ is the set of articles in the player's path.\
+   • $$B$$ is the set of articles in the model's path.\
+   • $$|A \cap B|$$ is the number of articles common to both paths.\
+   • $$|A \cup B|$$ is the total number of unique articles across both paths.\
+\
+A Jaccard similarity of 1 means the paths contain exactly the same articles, while a value closer to 0 indicates very little overlap.
+
 
 
 ![llm_jacard](assets/img/jacard.svg)
 
-The Jaccard similarity shows that neither llama3 nor mistral use the same path as the players. They both shows similar results.
+The Jaccard similarity reveals that both Llama3 and Mistral achieve slightly over 30% similarity with the players' paths. This suggests that while their paths overlap with the players' to some extent, most of the articles differ. Additionally, the similarity scores for the two models are so close that we cannot distinguish between their performances in this aspect.
 
-Finally, based on the result we can says that boths models don't act like a players. But llama3 find more paths than mistral and falls in the confidence interval of the players in 78.5% of the cases.
+Finally, based on the results, we can conclude that neither model behaves like the players. However, Llama3 identifies more paths than Mistral, falls within the players' confidence interval in 78.5% of cases, and exhibits a path length distribution that is more similar to that of the players.
 
 ## 4.C. LLMs performance between 2007 and 2024
 
@@ -1022,7 +1036,7 @@ Finally, based on the result we can says that boths models don't act like a play
 
   <div class="Marty">
     <div class="icon"></div>
-    <div class="message">Doc, we have seen that llama3 is better than mistral in terms of path length distribution and falls in the confidence interval of the players in 78.5% of the cases. So, can we generate the data for 2024 with llama3 and compare the performance of llama3 between 2007 and 2024?</div>
+    <div class="message">Doc, we’ve observed that Llama3 outperforms Mistral in terms of path length distribution and falls within the players' confidence interval in 78.5% of cases. Could we proceed to generate the data for 2024 using Llama3 and then compare its performance between 2007 and 2024?</div>
   </div>
 
    <div class="Doc">
@@ -1031,11 +1045,11 @@ Finally, based on the result we can says that boths models don't act like a play
    </div>
 </div>
 
-To observe the performance of llama3 between 2007 and 2024, we will compare the number of paths found by llama3, the path length distribution of llama3 between 2007 and 2024.
+To assess Llama3's performance from 2007 to 2024, we will analyze and compare the number of paths it discovers as well as its path length distribution across these years.
 
 ![llama3_2007_2024](assets/img/llama_path_not_found.svg)
 
-We observe that llama3 in 2024 finds 4% more paths than in 2007. But, does llama3 in 2024 have a better path length distribution than in 2007?
+We observe that in 2024, Llama3 discovers 4% more paths compared to 2007. However, does Llama3 in 2024 exhibit a better path length distribution than it did in 2007?
 
 ![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
 

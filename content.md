@@ -1039,6 +1039,7 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 <div style="display: flex; justify-content: center; align-items:center;">
 <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Einstein" style="width:600px">
+</div>
 
 <!-- 
 

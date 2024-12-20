@@ -140,7 +140,8 @@ For most articles, one main category is followed by more precise subcategories. 
     width: 75%;
     height: 550px;
     margin-right: auto;
-    border: none;">
+    border: none;
+   margin-bottom: -20px;">
 </iframe>
 
 
@@ -164,7 +165,10 @@ Each row corresponds to the category of the source articles that the links come 
     width: 75%;
     height: 850px;
     margin-right: auto;
-    border: none;">></iframe>
+    border: none;
+    transform: scale(0.9);
+    margin-top: -30px;
+    margin-bottom: -50px;">></iframe>
 
 
 
@@ -267,6 +271,8 @@ We can now have a look to the categories of starting articles and target article
     width: 1550px;
     height: 850px;
     transform: scale(0.8);
+    margin-top: -70px;
+    margin-bottom: -90px;
     ">
   <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html"
           alt="categories_finished_paths_start2target"
@@ -336,7 +342,8 @@ This is well illustrated in the following plot. The longer the shortest path, th
     width: 80%;
     height: 600px;
     margin-right: auto;
-    border: none;">
+    border: none;
+    margin-bottom: -40px;">
 ></iframe>
 
 ### 1.B.2) Number of links to the target
@@ -544,7 +551,7 @@ Let us now compare the differences between the old Wikipedia from 2007 and our c
 As a first analysis, let's just compare basic statistics on the two different Wikipedias, such as the number of links per article on average and its distribution: 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/distrib_links_per_article.png" alt="distrib_links_per_article" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/distrib_links_per_article.png" alt="distrib_links_per_article" style="height: auto;">
 </div>
 
 As expected, there is much more links per page **on average** in our 2024 dataset! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
@@ -630,7 +637,8 @@ To see more in details how this plays out, we create the following heatmap where
     width: 75%;
     height: 650px;
     margin-right:40px;
-    border: none;">
+    border: none;
+    margin-bottom: -20px;">
 </iframe>
 
 In this plot, positive values (in blue) occur when the shortest path is smaller in 2024 than in 2007, whereas negative values (in red) correspond to a shortest path  longer in 2024 than in 2007. 
@@ -686,7 +694,7 @@ We decide to plot the nodes that have a pagerank value in the top 0.5% for bette
     margin-bottom:-125px;
     width: 1550px;
     height: 850px;
-    transform: scale(0.7);
+    transform: scale(0.75);
     ">
   <iframe 
     src="/ada-outlier-datastory/assets/img/pagerank2007.html" 
@@ -812,14 +820,14 @@ Now that we have looked into the basic differences between 2007 and 2024, let's 
 To analyze the player's path, we take both finished and unfinished paths into account. First, we will process the player's path to detect if the target was encountered by the player during his game before the end. Then, we will count the number of paths that could have been shortened. It will allow us to compare the number of clicks that could have been saved by the players thanks to the structure of Wikipedia in 2007 and 2024. 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/comparison_nb_paths.svg" alt="Unfinished Path" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/comparison_nb_paths.svg" alt="Unfinished Path" style="max-width: 90%; height: auto;">
 </div>
 
 
 Globally, we observe that for most of the games played, the shortened paths have the same length in 2007 and 2024. However, the shortened paths are shorter in the 2024 version than in the 2007 one for the finished paths. This might suggests that the 2024 version is easier to play. Let's not jump to conclusions and take a closer look... We plot the number of clicked saved by game.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/comparison_nb_clicks.svg" alt="Comparison finished / unfinished path" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/comparison_nb_clicks.svg" alt="Comparison finished / unfinished path" style="max-width: 80%; height: auto;">
 </div>
 
 
@@ -863,7 +871,7 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
 First let's see the structural and content-based similarity between articles in 2007 and 2024.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/node2vec_and_sbert.png" alt="Node2Vec and SBERT" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/node2vec_and_sbert.png" alt="Node2Vec and SBERT" style="max-width: 80%; height: auto;">
 </div>
 
 We can observe a slight improvement in the similarity for both structural and content-based similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia evolved and became more coherent and organized.
@@ -871,7 +879,7 @@ We can observe a slight improvement in the similarity for both structural and co
 The combined similarity score of each article is calculated by taking the average of the structural and content-based similarity scores. The combined similarity score is then used to compare the structure of Wikipedia in 2007 and 2024.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/similarity.png" alt="Combined similarity score" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/similarity.png" alt="Combined similarity score" style="max-width: 80%; height: auto;">
 </div>
 
 Again, we observe that the distribution of the combined similarity scores of articles in 2024 is slightly higher than in 2007. But is this difference significant? We perform a t-test to compare the two distributions. We choose a significance level of $$\alpha=5$$% and we obtain a p-value smaller than 0.05. Thus, that provides very strong evidence that the mean of the distribution of similarities of 2007 is less than the mean of the distribution of similarities of 2024.
@@ -972,7 +980,7 @@ We will select the games for the model to play based on how many times each game
 **CCDF** is the complementary cumulative distribution function (CCDF) of a probability distribution. It is used to visualize the tail of the distribution. The CCDF is defined as: $$ CCDF(x) = 1 - CDF(x) $$
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/llm_parameter.svg" alt="players_path_length" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/llm_parameter.svg" alt="players_path_length" style="max-width: 90%; height: auto;">
 </div>
 
 
@@ -1009,7 +1017,7 @@ From the CCDF, we observe that the number of attempts stops decreasing after 10,
 First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths found by llama3 and mistral.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/llms_path_not_found.svg" alt="llms_path_found" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/llms_path_not_found.svg" alt="llms_path_found" style="max-width: 80%; height: auto;">
 </div>
 
 We observe that llama3 finds 3% more paths than mistral.
@@ -1017,7 +1025,7 @@ We observe that llama3 finds 3% more paths than mistral.
 We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/model_player_distribution.svg" alt="llms_player_path_length_distribution" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/model_player_distribution.svg" alt="llms_player_path_length_distribution" style="height: auto;">
 </div>
 
 
@@ -1027,7 +1035,7 @@ Finally, we will check whether the models' average path length falls within the 
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/CI_player_model.svg" alt="llms_confidence_interval" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/CI_player_model.svg" alt="llms_confidence_interval" style="max-width: 80%; height: auto;">
 </div>
 
 Llama3 falls within the players' confidence interval in 78.5% of cases, compared to 69.1% for Mistral. This further supports the conclusion that Llama3 performs better than Mistral.
@@ -1049,7 +1057,7 @@ A Jaccard similarity of 1 means the paths contain exactly the same articles, whi
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/jacard.svg" alt="llm_jacard" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/jacard.svg" alt="llm_jacard" style="max-width: 80%; height: auto;">
 </div>
 
 The Jaccard similarity reveals that both Llama3 and Mistral achieve slightly over 30% similarity with the players' paths. This suggests that while their paths overlap with the players' to some extent, most of the articles differ. Additionally, the similarity scores for the two models are so close that we cannot distinguish between their performances in this aspect.
@@ -1080,7 +1088,7 @@ To assess Llama3's performance from 2007 to 2024, we will analyze and compare th
 We observe that in 2024, Llama3 discovers 4% more paths compared to 2007. However, does Llama3 in 2024 exhibit a better path length distribution than it did in 2007?
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <img src="/ada-outlier-datastory/assets/img/llama3_2007_2024.svg" alt="llama3_2007_2024" style="max-width: 70%; height: auto;">
+   <img src="/ada-outlier-datastory/assets/img/llama3_2007_2024.svg" alt="llama3_2007_2024" style="max-width: 80%; height: auto;">
 </div>
 
 

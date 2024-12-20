@@ -1017,9 +1017,7 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
 
 
-![einstein](/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png)
-
-<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Einstein" style="width:200px">
+<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Einstein" style="width:800px">
 
 <!-- 
 

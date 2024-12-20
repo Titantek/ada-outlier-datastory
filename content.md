@@ -674,36 +674,36 @@ How can we investigate the 'importance' of an article in the network? Different 
 
 We decide to plot the nodes that have a pagerank value in the top 0.5% for better visualization here. The size and colors of the nodes are linked to the nodes pagerank scores and allow us to visualize the centrality measurement in the following plots: 
 
-<iframe 
+<div style="    
+   display: flex;
+    gap: 0px;
+    margin-top: -125px;
+    margin-left: -225px;
+    margin-bottom:-125px;
+    width: 1550px;
+    height: 850px;
+    transform: scale(0.7);
+    ">
+  <iframe 
     src="/ada-outlier-datastory/assets/img/pagerank2007.html" 
     title=" "
-   style="display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    margin-left: auto;
-    width: 75%;
-    height: 1000px;
-    margin-right: auto;
-    border: none;
-    transform: scale(0.75);">
+   style="          
+   flex-grow: 1;
+            width: auto;
+            height: auto;
+            border: none;">
 </iframe>
 
 <iframe 
     src="/ada-outlier-datastory/assets/img/pagerank2024.html" 
     title=" "
-       style="display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    margin-left: auto;
-    width: 75%;
-    height: 1000px;
-    margin-right: auto;
-    border: none;
-    transform: scale(0.75);">
+   style="          
+   flex-grow: 1;
+            width: auto;
+            height: auto;
+            border: none;">
 </iframe>
-
+</div>
 
 Looking at those graphs, we can compare most 'central' articles in the pagerank sense for the two networks.  We see that in 2007, the 'United_States' article really dominates the whole network and is the most connected to the others, with a pagerank centrality of 0.0096. 
 In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 

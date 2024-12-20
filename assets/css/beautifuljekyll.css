@@ -1246,21 +1246,6 @@ pre {
 }
 
 
-/* Interactive plots */
-    /* Optional: Styles for a responsive iframe container */
-    .iframe-container {
-      /* position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* Maintain a 16:9 aspect ratio */
-      /*overflow: hidden; */
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
 /* button to content */
 button {
   display: flex; /* Enables flexbox for combining text and image */

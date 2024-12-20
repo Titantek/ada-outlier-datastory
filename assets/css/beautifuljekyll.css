@@ -1486,15 +1486,15 @@ button:hover {
 }
 
 /* Icon container */
-.icon-container {
+.logo-container {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
 }
 
-/* Icons styling */
-.icon {
+/* logos styling */
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;

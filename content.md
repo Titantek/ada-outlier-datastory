@@ -856,20 +856,13 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
    To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
-   The similarity is calculated as follows: 
-   
-   <div style="display: flex; justify-content: center;">
-      $$ \begin{equation}
-         \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
-      \end{equation} $$\
-   </div>
-
+   The similarity is calculated as follows: $$ \begin{equation}
+      \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
+   \end{equation} $$\
    where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.\
    \
-   Then, our similarity score is the average of the similarity scores obtained with the two methods.
-   <div style="display: flex; justify-content: center;">
-      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$
-   </div>
+   Then, our similarity score is the average of the similarity scores obtained with the two methods.\
+      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$\
    where $$a_1$$ and $$a_2$$ are two articles.
 
 First let's see the structural and content-based similarity between articles in 2007 and 2024.

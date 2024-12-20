@@ -792,7 +792,6 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
    </div>
 </div>
 
-\
 
 
 # 3. What are the possible consequences of Wikipedia’s changes in player’s performances?

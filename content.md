@@ -210,8 +210,10 @@ First, the diagonal that represents links staying in the same category has bigge
 
 {: .box-note}
    **🧹 Cleaning the data 🧹**  \
+   <div style="margin-left: 15px;">
       • There are some articles that don't appear in the categories file so we don't know their categories. Thus we remove those games. \
       • Some players seemed not to take the game very seriously... They didn't even click on a link! We will also remove these paths.
+   </div>
       
 
 <div class="chat">

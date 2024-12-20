@@ -154,10 +154,11 @@ For most articles, one main category is followed by more precise subcategories. 
 
 <div class="chat">
    <div class="Marty">
+   <div class="icon"></div>
       <div class="message">
       Hi Einstein!
       </div>
-      <div class="icon"></div>
+      
    </div>
 
    <div class="Einstein">

@@ -617,13 +617,12 @@ We decide to plot the nodes that have a pagerank value in the top 0.5% for bette
     src="/ada-outlier-datastory/assets/img/pagerank2024.html" 
     title=" ">
 </iframe>
- <div class="iframe-container">
+</div>
 
 
 Looking at those graphs, we can compare most 'central' articles in the pagerank sense for the two networks.  We see that in 2007, the 'United_States' article really dominates the whole network and is the most connected to the others, with a pagerank centrality of 0.0096. 
 In 2024, there is no such node really 'dominating' the rest. The top node becomes in turn 'World_War_II' with a centrality of 0.0038. The other articles in 2024 have a comparable centrality, and we see a network of mostly similar sized nodes, whereas in 2007 the network is really disequilibrated between the top node and the other 0.5% top nodes. Overall, the network for 2024 seems more balanced than in 2007, but almost the same nodes remain top ones, being mostly countries names. 
 
-<!--![heatmap_diff](/ada-outlier-datastory/assets/img/heatmap_diff.png) -->
 
 <div class="chat">
    <div class="Marty">

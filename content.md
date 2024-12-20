@@ -125,7 +125,14 @@ TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
    **📊 Wikispeedia database 📊** \
    We will use the data that were collected by the [EPFL Data Science Lab (dlab)](https://dlab.epfl.ch/) recording all of the games that were  played since Wikispeedia has been created. After downloading the data, 
 
-
+<div class="chat">
+   <div class="Doc">
+      <div class="message">
+      Let's go back to the past and study 2007!
+      </div>
+      <div class="icon"></div>
+   </div>
+</div>
 
 # 1. How are people performing in Wikispeedia?
 
@@ -550,7 +557,7 @@ First, the ROC AUC gives us a value of 0.67, showing reasonable better performan
 
    <div class="Doc_crazy">
       <div class="message">
-        Come with me, we still have a lot to discover! I think it's time for a small trip to the future...
+        Come with me, we still have a lot to discover! I think it's time to go back in 2024...
       </div>
       <div class="icon"></div>
    </div>
@@ -827,7 +834,7 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Hmmmm, we just saw that the player's path is different, but how can we compare if the structure of the wikipedia in 2024 and now is more efficient?
+      Hmmmm, we just saw that the player's path is different, but how can we compare which structure of Wikipedia is more efficient? 2007 or 2024?
       </div>
    </div>
 
@@ -1105,6 +1112,8 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 ![einstein](/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png)
 
+<img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png" alt="Gabrielle Blouvac" style="width:200px">
+
 <!-- 
 
 - We analyzed the performance of players on articles from 2007 
@@ -1146,6 +1155,10 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 [2] Robert West, Joelle Pineau, and Doina Precup:
      Wikispeedia: An Online Game for Inferring Semantic Distances between Concepts.
      21st International Joint Conference on Artificial Intelligence (IJCAI), 2009.
+
+**All credits of the characters goes to the original movie Back To The Future, Universal Pictures**
+
+All credits to the images used belongs to us, produced by Gabrielle Blouvac
 
 # Team
 

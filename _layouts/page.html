@@ -62,44 +62,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-    // // JavaScript for dynamic resizing
-    // window.addEventListener('DOMContentLoaded', function () {
-    //   const iframe = document.getElementById('myIframe');
-    //   iframe.addEventListener('load', function () {
-    //     try {
-    //       // Access the content of the iframe
-    //       const iframeContent = iframe.contentWindow.document.body;
-    //       // Adjust the height based on the iframe's content
-    //       iframe.style.height = iframeContent.scrollHeight + 'px';
-    //       // Center the iframe
-    //       iframe.style.display = 'block';
-    //       iframe.style.marginLeft = 'auto';
-    //       iframe.style.marginRight = 'auto';
-    //     } catch (e) {
-    //       console.warn('Cross-origin access issue:', e);
-    //     }
-    //   });
-    // });
+    // JavaScript for dynamic resizing
+    window.addEventListener('DOMContentLoaded', function () {
+      const iframe = document.getElementById('myIframe');
+      iframe.addEventListener('load', function () {
+        try {
+          // Access the content of the iframe
+          const iframeContent = iframe.contentWindow.document.body;
+          // Adjust the height based on the iframe's content
+          iframe.style.height = iframeContent.scrollHeight + 'px';
+          // Center the iframe
+          iframe.style.display = 'block';
+          iframe.style.marginLeft = 'auto';
+          iframe.style.marginRight = 'auto';
+        } catch (e) {
+          console.warn('Cross-origin access issue:', e);
+        }
+      });
+    });
 
-        // Function to center the iframe container dynamically
-      function centerIframe() {
-      const container = document.getElementById('iframeContainer');
-      const containerRect = container.getBoundingClientRect();
+    //     // Function to center the iframe container dynamically
+    //   function centerIframe() {
+    //   const container = document.getElementById('iframeContainer');
+    //   const containerRect = container.getBoundingClientRect();
 
-      // Get viewport dimensions
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
+    //   // Get viewport dimensions
+    //   const viewportWidth = window.innerWidth;
+    //   const viewportHeight = window.innerHeight;
 
-      // Calculate position to center the container
-      const topOffset = (viewportHeight - containerRect.height) / 2;
-      const leftOffset = (viewportWidth - containerRect.width) / 2;
+    //   // Calculate position to center the container
+    //   const topOffset = (viewportHeight - containerRect.height) / 2;
+    //   const leftOffset = (viewportWidth - containerRect.width) / 2;
 
-      // Apply the calculated offsets
-      container.style.top = `${topOffset}px`;
-      container.style.left = `${leftOffset}px`;
-    }
+    //   // Apply the calculated offsets
+    //   container.style.top = `${topOffset}px`;
+    //   container.style.left = `${leftOffset}px`;
+    // }
 
-    // Center the iframe on page load and on resize
-    window.addEventListener('load', centerIframe);
-    window.addEventListener('resize', centerIframe);
+    // // Center the iframe on page load and on resize
+    // window.addEventListener('load', centerIframe);
+    // window.addEventListener('resize', centerIframe);
 </script>

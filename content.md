@@ -1070,6 +1070,30 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 # Conclusion: 🎉 A happy ending 🎉
 
+
+<div class="chat">
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message">There we have it Marty! The game should be easier in 2024, you're not a looser don't worry!</div>
+   </div>
+
+  <div class="Marty_crazy">
+    <div class="icon"></div>
+    <div class="message">Thank you Doc! I knew there was something weird with this dataset.</div>
+  </div>
+
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message">Evidently! Oh this makes me think, have you ever played Pedantle? This new game looks very interesting too, let's go dive into it!</div>
+   </div>
+   
+</div>
+
+Contrary to what Doc tells Marty, we actually do not know for sure if the 2024 version of Wikispeedia would be easier to play. To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. However our analysis still leads us to think this would be the case and gives us a pretty good approximation and intuition to answer this question. 
+Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
+
+<!-- 
+
 - We analyzed the performance of players on articles from 2007 
   - Article are not evenly distributed among each categories
   - Failing the game seems to be affected by the categories of the starting and targeted articles.
@@ -1096,6 +1120,9 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
   - However the paths chosen by both models are very different from the paths of players
   - More generally, Llama wins more games when playing in 2024 than in 2007
   - Llame finds shorter paths to the target in 2024 than in 2007
+ 
+ -->
+
 
 # References
 

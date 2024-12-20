@@ -1247,16 +1247,18 @@ pre {
 */
 
 .iframe-container {
+  width: 80%;                /* Make the container responsive */
+  aspect-ratio: 4 / 3;      /* Set the aspect ratio (e.g., 16:9) */
+  margin: 0 auto;            /* Center the iframe horizontally */
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;    /* Center vertically */
-  margin-bottom: 20px;    /* Add spacing between containers */
-  min-height: 100px;      /* Optional: Set a minimum height for better layout during loading */
+  justify-content: center;   /* Optional: Center content inside */
+  align-items: center;       /* Optional: Center content inside */
 }
 
 iframe {
-  width: 80%;  /* Adjust as needed */
-  border: none; /* Remove iframe border */
+  width: 100%;               /* Take full width of the container */
+  height: 100%;              /* Take full height (determined by aspect ratio) */
+  border: none;              /* Remove iframe border */
 }
 
 /* button to content */

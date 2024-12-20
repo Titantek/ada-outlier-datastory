@@ -163,7 +163,7 @@ HERE:: more analysis?
 
 Second, we notice that among the 4598 articles, some have more than 1 main category: we count 590 articles with 2 main categories and 8 articles with 3. It complicates our analysis. To keep things simple, we will impose rules on which main category we think is the most important for the article considered. For this, we have created a partial ordering in the categories, based on what we could observed. The reasoning is explained on this page. HERE:: insert link to partial ordering page.
 -->
-<div class="iframe-container" style="aspect-ratio: 4 / 3;">
+<div class="iframe-container" style="aspect-ratio: 1.8;">
    <iframe 
       src="/ada-outlier-datastory/assets/img/bar_cat.html" 
       title="Bar plot of the categories">
@@ -856,20 +856,13 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
    To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
-   The similarity is calculated as follows: 
-   
-   <div style="display: flex; justify-content: center;">
-      $$ \begin{equation}
-         \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
-      \end{equation} $$\
-   </div>
-
+   The similarity is calculated as follows: $$ \begin{equation}
+      \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
+   \end{equation} $$\
    where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.\
    \
-   Then, our similarity score is the average of the similarity scores obtained with the two methods.
-   <div style="display: flex; justify-content: center;">
-      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$
-   </div>
+   Then, our similarity score is the average of the similarity scores obtained with the two methods.\
+      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$\
    where $$a_1$$ and $$a_2$$ are two articles.
 
 First let's see the structural and content-based similarity between articles in 2007 and 2024.

@@ -1171,7 +1171,7 @@ pre {
 .message {
   padding: 10px 15px;
   border-radius: 15px;
-  max-width: calc(100% - 100px); /* Leave space for the icon */
+  max-width: calc(100% - 80px); /* Leave space for the icon */
   word-wrap: break-word;
 }
 

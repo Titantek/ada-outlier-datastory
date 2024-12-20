@@ -1177,8 +1177,8 @@ pre {
 
 /* Common icon styles */
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
@@ -1226,25 +1226,41 @@ pre {
   order: 1;
 }
 
+/* Einstein's styles */
+.Einstein{
+  align-self: flex-end; /* Align Doc's bubble to the right */
+}
+
+.Einstein .icon {
+  background-image: url("/ada-outlier-datastory/assets/img/Marty_and_Doc/einstein.png");
+  order: 2;
+}
+
+.Einstein .message {
+  background-color: #f3ffb6; /* Light cyan for Doc */
+  flex-direction: row-reverse; /* Icon on the right of the text */
+  color: #161345;
+  order: 1;
+}
 
 
 /* Interactive plots */
 
-/*
+
 .iframe-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto; / * Adjust height based on content * /
-  padding: 20px; / * Optional: Add padding for spacing * /
+  height: auto; /* Adjust height based on content */
+  padding: 20px; /* Optional: Add padding for spacing */
 }
 
 .responsive-iframe {
-  width: 80%; / * Maintain 80% width * /
-  aspect-ratio: 16 / 9; / * Automatically calculate height for common video aspect ratio * /
+  width: 80%; /* Maintain 80% width */
+  aspect-ratio: 16 / 9; /* Automatically calculate height for common video aspect ratio */
   border: none;
 }
-*/
+
 
 .iframe-container {
   width: 100%;                /* Make the container responsive */
@@ -1431,5 +1447,77 @@ button:hover {
 
 #table-of-contents ul ul ul ul {
   margin-left: 60px; /* Level 4 Indentation */
+}
+
+.linkedin {
+  background-image: url("/ada-outlier-datastory/assets/img/linkedin.svg");
+}
+
+.github {
+  background-image: url("/ada-outlier-datastory/assets/img/github.svg");
+}
+/* Container for the entire team */
+.team-container {
+  display: flex;
+  justify-content: space-around; /* Evenly distribute team members */
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  padding: 20px;
+}
+
+/* Individual team member styling */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  text-align: center;
+  width: 150px;
+}
+
+/* Profile image styling */
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Name styling */
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Horizontal line under name */
+.line {
+  width: 50px;
+  height: 2px;
+  background-color: #ccc;
+  margin: 5px 0;
+}
+
+/* Icon container */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Icons styling */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s;
 }
 

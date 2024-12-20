@@ -5,55 +5,6 @@ cover-img: "/assets/img/Marty_and_Doc/coverimg.png"
 toc: true
 ---
 
-<!--
-TEMPLATE DE DIALOGUE POUR AVOIR LES IMAGES CORRECTEMENT:
-
-
-<div class="chat">
-
-   <div class="Marty_crazy">
-      <div class="icon"></div>
-      <div class="message">
-      text marty with crazy icon
-      </div>
-   </div>
-
-   <div class="Doc_crazy">
-      <div class="message">
-      text doc with crzay icon
-      </div>
-      <div class="icon"></div>
-   </div>
-
-   <div class="Marty">
-      <div class="icon"></div>
-      <div class="message">
-      text marty with normal icon
-      </div>
-   </div>
-
-   <div class="Doc">
-      <div class="message">
-      text doc with normal icon
-      </div>
-      <div class="icon"></div>
-   </div>
-
-</div>
--->
-
-<!-- 
-# TEMPLATE TO CREATE SUMMARY HEADINGS ON THE SIDE
-<h2 id="section1">Section 1</h2>
-<p>Content for section 1...</p>
-
-<h2 id="section2">Section 2</h2>
-<p>Content for section 2...</p>
-
-<h2 id="section3">Section 3</h2>
-<p>Content for section 3...</p> 
--->
-
 **Welcome to our ADA project! Follow Marty and Doc through their adventures exploring ✨the Wikispeedia Dataset✨**
 
 
@@ -177,24 +128,19 @@ For most articles, one main category is followed by more precise subcategories. 
 
 </div>
 
-<div style="display: flex; justify-content: center;">
-   <div class="iframe-container" style="aspect-ratio: 4 / 3;">
-      <iframe 
-         src="/ada-outlier-datastory/assets/img/bar_cat.html" 
-         title="Bar plot of the categories">
-      </iframe>
-   </div>
-</div>
+   <iframe 
+      src="/ada-outlier-datastory/assets/img/bar_cat.html" 
+      title="Bar plot of the categories">
+   </iframe>
+
 
 Back in 2007, science articles represented almost 25% of the encyclopedia, whereas art articles comprised less than 1% of it. 
 
 
 Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
 
-<div class="iframe-container" style="aspect-ratio: 1;">
    <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
       alt='links_categories' ></iframe>
-</div>
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players.
 
@@ -291,12 +237,10 @@ The data is now cleaned. Here are some statistics before and after cleaning.
 
 We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
-<div class="iframe-container" style="aspect-ratio: 16 / 3;">
    <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;"
    alt='categories_finished_paths_start2target'></iframe>
 
    <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;" alt='categories_unfinished_paths_start2target'></iframe>>
-</div>
 
 <!--
 <div class="chat">
@@ -388,17 +332,13 @@ One can assume that the shorter the shortest path, the more likely it is to find
 
 This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the proportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases. We find an exception for a shortest path of length 4, where the success rate is slightly higher than for a length of 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
-<div class="iframe-container" style="aspect-ratio: 16 / 9;">
    <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
-</div>
 
 ### 1.B.2) Number of links to the target
 
 Another parameter that influence the success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence to check if the finished paths distribution has a greater mean than the unfinished paths distribution. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely conclude that the distribution for finished paths has a greater mean!
 
-<div class="iframe-container" style="aspect-ratio: 16 / 9;">
    <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" style="max-width: 80%; height: auto;" alt='distrib_links_to_target'></iframe>
-</div>
 
 <div class="chat">
    <div class="Marty">
@@ -430,10 +370,8 @@ Another parameter that influence the success might be the number of links leadin
 
 
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in the training set, whereas validation and testing sets gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite imbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with p-value below the significance threshold:
-<div class="iframe-container" style="aspect-ratio: 2;">
    <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
    style="max-width: 80%; height: auto;" alt='results_log_reg'></iframe>
-</div>
 
 <div class="chat">
    <div class="Marty_crazy">

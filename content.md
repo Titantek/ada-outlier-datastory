@@ -1156,40 +1156,40 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/gabrielle.png" alt="Gabrielle Blouvac" class="profile-image">
         <h3 class="name">Gabrielle Blouvac</h3>
         <div class="line"></div>
-        <div class="icon-container github">
-            <a href="https://github.com/Gabrielle-Blouvac" target="_blank" class="icon">Git</a>
+        <div class="icon-container">
+            <a href="https://github.com/Gabrielle-Blouvac" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
         <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/anasse.png" alt="Anasse El Boudiri" class="profile-image">
         <h3 class="name">Anasse El Boudiri</h3>
         <div class="line"></div>
-        <div class="icon-container github">
-            <a href="https://github.com/anassee15" target="_blank" class="icon">Git</a>
+        <div class="icon-container">
+            <a href="https://github.com/anassee15" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
         <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/julia.png" alt="Julia Guignon" class="profile-image">
         <h3 class="name">Julia Guignon</h3>
         <div class="line"></div>
-        <div class="icon-container github">
-            <a href="https://github.com/julia-guignon" target="_blank" class="icon">Git</a>
+        <div class="icon-container">
+            <a href="https://github.com/julia-guignon" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
         <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/jan.png" alt="Jan Steiner" class="profile-image">
         <h3 class="name">Jan Steiner</h3>
         <div class="line"></div>
-        <div class="icon-container github">
-            <a href="https://github.com/Titantek" target="_blank" class="icon">Git</a>
+        <div class="icon-container">
+            <a href="https://github.com/Titantek" target="_blank" class="github"></a>
         </div>
     </div>
     <div class="team-member">
         <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/eglantine.png" alt="Eglantine Vialaneix" class="profile-image">
         <h3 class="name">Eglantine Vialaneix</h3>
         <div class="line"></div>
-        <div class="icon-container github">
-            <a href="https://github.com/eglantine-vialaneix" target="_blank" class="icon">Git</a>
+        <div class="icon-container">
+            <a href="https://github.com/eglantine-vialaneix" target="_blank" class="github"></a>
         </div>
     </div>
 </div>

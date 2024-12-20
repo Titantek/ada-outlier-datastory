@@ -1102,7 +1102,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
 
 <div class="team-container">
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/gabrielle.png" alt="Gabrielle Blouvac" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/gabrielle.png" alt="Gabrielle Blouvac" class="profile-image">
         <h3 class="name">Gabrielle Blouvac</h3>
         <div class="line"></div>
         <div class="icon-container">
@@ -1111,7 +1111,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/anasse.png" alt="Anasse El Boudiri" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/anasse.png" alt="Anasse El Boudiri" class="profile-image">
         <h3 class="name">Anasse El Boudiri</h3>
         <div class="line"></div>
         <div class="icon-container">
@@ -1120,7 +1120,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/julia.png" alt="Julia Guignon" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/julia.png" alt="Julia Guignon" class="profile-image">
         <h3 class="name">Julia Guignon</h3>
         <div class="line"></div>
         <div class="icon-container">
@@ -1129,7 +1129,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/jan.png" alt="Jan Steiner" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/jan.png" alt="Jan Steiner" class="profile-image">
         <h3 class="name">Jan Steiner</h3>
         <div class="line"></div>
         <div class="icon-container">
@@ -1138,7 +1138,7 @@ Here’s the fearless crew who hopped into the DeLorean for this wild adventure:
         </div>
     </div>
     <div class="team-member">
-        <img src="assets/img/Marty_and_Doc/eglantine.png" alt="Eglantine Vialaneix" class="profile-image">
+        <img src="/ada-outlier-datastory/assets/img/Marty_and_Doc/eglantine.png" alt="Eglantine Vialaneix" class="profile-image">
         <h3 class="name">Eglantine Vialaneix</h3>
         <div class="line"></div>
         <div class="icon-container">

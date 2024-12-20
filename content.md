@@ -257,14 +257,28 @@ The data is now cleaned. Here are some statistics before and after cleaning.
 
 We can now have a look to the categories of starting articles and target articles of the players! Each row corresponds to the category of the articles that the player started from, and each column corresponds to the category of the articles targeted by the player. 
 
-<div style="display: flex; justify-content: space-between; align-items: stretch; gap: 20px; margin: 20px 0; width: 100%;">
+<div style="display: flex;
+    gap: 0px;
+    margin-left: -150px;
+    width: 1550px;
+    height: 850px;
+    transform: scale(0.8);
+    ">
   <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html"
           alt="categories_finished_paths_start2target"
-          style="flex-grow: 1; width: 50%; height: 100vh; border: none;">
+          style="    
+          flex-grow: 1;
+         width: auto;
+         height: auto;
+         border: none;">
   </iframe>
   <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html"
           alt="categories_unfinished_paths_start2target"
-          style="flex-grow: 1; width: 50%; height: 100vh; border: none;">
+          style="    
+          flex-grow: 1;
+            width: auto;
+            height: auto;
+            border: none;">
   </iframe>
 </div>
 
@@ -671,7 +685,8 @@ We decide to plot the nodes that have a pagerank value in the top 0.5% for bette
     width: 75%;
     height: 1000px;
     margin-right: auto;
-    border: none;">
+    border: none;
+    transform: scale(0.75);">
 </iframe>
 
 <iframe 
@@ -685,7 +700,8 @@ We decide to plot the nodes that have a pagerank value in the top 0.5% for bette
     width: 75%;
     height: 1000px;
     margin-right: auto;
-    border: none;">
+    border: none;
+    transform: scale(0.75);">
 </iframe>
 
 

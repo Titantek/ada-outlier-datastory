@@ -1098,7 +1098,7 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 {: .box-error}
    Contrary to what Doc tells Marty, we actually do not know for sure if the 2024 version of Wikispeedia would be easier to play. 
    To really conclude on this we would need actual players information in 2024 and compare their perfomance to 2007. 
-   However our analysis still leads us to think this would be the case and gives us a pretty good approximation and intuition to answer this question. \
+   However our analysis still leads us to think this would be the case and gives us pretty good reasons and intuition to answer this question. \
    Hope you enjoyed Doc and Marty's adventures through time and Wikispeedia!
 
 <!-- 

@@ -1148,11 +1148,17 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 
 
- <script>
-    const iframe = document.getElementById('dynamicIframe');
-    
-    // Adjust iframe height after it loads
-    iframe.onload = function() {
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    };
-  </script>
+<script>
+   window.onload = function () {
+      const iframeDivs = document.querySelectorAll('div iframe');
+      iframeDivs.forEach((iframe) => {
+        iframe.onload = function () {
+          try {
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+          } catch (e) {
+            console.warn('Unable to access iframe content due to cross-origin restrictions.', iframe);
+          }
+        };
+      });
+   };
+</script>

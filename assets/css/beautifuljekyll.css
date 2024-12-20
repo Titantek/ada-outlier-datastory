@@ -1230,18 +1230,33 @@ pre {
 
 /* Interactive plots */
 
+/*
 .iframe-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto; /* Adjust height based on content */
-  padding: 20px; /* Optional: Add padding for spacing */
+  height: auto; / * Adjust height based on content * /
+  padding: 20px; / * Optional: Add padding for spacing * /
 }
 
 .responsive-iframe {
-  width: 80%; /* Maintain 80% width */
-  aspect-ratio: 16 / 9; /* Automatically calculate height for common video aspect ratio */
+  width: 80%; / * Maintain 80% width * /
+  aspect-ratio: 16 / 9; / * Automatically calculate height for common video aspect ratio * /
   border: none;
+}
+*/
+
+.iframe-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  margin-bottom: 20px;    /* Add spacing between containers */
+  min-height: 100px;      /* Optional: Set a minimum height for better layout during loading */
+}
+
+iframe {
+  width: 80%;  /* Adjust as needed */
+  border: none; /* Remove iframe border */
 }
 
 /* button to content */

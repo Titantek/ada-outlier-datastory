@@ -1057,7 +1057,7 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
 
 - We analyzed the performance of players on articles from 2007 
   - Article are not evenly distributed among each categories
-  - Failing the game seem to be affected by the categories of the starting and targeted articles.
+  - Failing the game seems to be affected by the categories of the starting and targeted articles.
   - The success rate of parties decreased as the actual shortest path possible between two articles increased.
   - We identified some factors that help to predict the difficulty of a party. The most important one was the number of different articles that lead to the target page.
 
@@ -1070,7 +1070,17 @@ In conclusion, we can state that Llama3's performance has improved between 2007 
   - Decreased number of hops
   - Higher clustering
 
-- 
+- We looked at how the different structure of wikipedia 2024 could have impacted the paths played in 2007 
+   - we see that the target page appears sooner in the paths played in 2007 both in unfinished and finished paths so more clicks would be saved 
+   - we look more into the structural difference : we compare the textual contents in 2007 versus 2024 and the graph structure of both. By looking at the similarities we conclude that the 2024 structure is more coherent and organized
+
+- We simulated games by training 2 different LLMs to play on Wikispeedia 2007 and Wikispeedia 2024 
+  - We compared the two models between each other and with players from 2007
+  - Llama was better at finding paths than Mistral
+  - Llama found paths that have a more similar length to players than Mistral
+  - However the paths chosen by both models are very different from the paths of players
+  - More generally, Llama wins more games when playing in 2024 than in 2007
+  - Llame finds shorter paths to the target in 2024 than in 2007
 
 # References
 

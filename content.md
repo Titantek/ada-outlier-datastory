@@ -166,7 +166,6 @@ Second, we notice that among the 4598 articles, some have more than 1 main categ
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
    <iframe 
       src="/ada-outlier-datastory/assets/img/bar_cat.html" 
-      class="responsive-iframe" 
       title="Pie chart of the categories"
       style="max-width: 80%; height: auto;" >
    </iframe>
@@ -200,7 +199,6 @@ Let's first look at the links between the articles: from which to which category
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
    <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
-      class= "responsive-iframe"
       alt='links_categories' 
       style="max-width: 80%; height: auto;" ></iframe>
 </div>
@@ -306,9 +304,9 @@ We can now have a look to the categories of starting articles and target article
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 0px;">
    <iframe src="/ada-outlier-datastory/assets/img/categories_finished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;"
-   class="responsive-iframe" alt='categories_finished_paths_start2target'></iframe>
+   alt='categories_finished_paths_start2target'></iframe>
 
-   <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" class="responsive-iframe" style="max-width: 40%; height: auto;" alt='categories_unfinished_paths_start2target'></iframe>
+   <iframe src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" style="max-width: 40%; height: auto;" alt='categories_unfinished_paths_start2target'></iframe>
 </div>
 
 <!--
@@ -402,7 +400,7 @@ One can assume that the shorter the shortest path, the more likely it is to find
 This is well illustrated in the following plot. The longer the shortest path, the fewer finished paths there are! The longest shortest path for which we have finished paths is 7, for which we have only 17 games played. There is an increase with the shortest path of the proportion of players that did not go far enough anyway to reach the target, as they stopped before even reaching the shortest path length. As we could expect, the largest success rate occurs with a shortest path of 1 and decreases while the shortest path increases. We find an exception for a shortest path of length 4, where the success rate is slightly higher than for a length of 3. However, the results should be taken precautionously due to the very different number of games played for each shortest path.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" class="responsive-iframe" style="max-width: 80%; height: auto;" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
+   <iframe src="/ada-outlier-datastory/assets/img/distrib_path_lengths_wrt_shortest_path.html" style="max-width: 80%; height: auto;" alt='distrib_path_lengths_wrt_shortest_path'></iframe>
 </div>
 
 ### 1.B.2) Number of links to the target
@@ -410,8 +408,7 @@ This is well illustrated in the following plot. The longer the shortest path, th
 Another parameter that influence the success might be the number of links leading to the target: intuitively, the more there are, the easier it is to reach the article. Let's work on this hypothesis. The following plot shows the distribution of the number of links to the target article depending on whether the player won or not. Both distribution shapes are similar, but the one from unfinished paths is shifted to the left and there is a peak at 1. Let's try a Welsch's t-test of independence to check if the finished paths distribution has a greater mean than the unfinished paths distribution. We obtain a p-value of 0 and a test statistic of 59.6. We can thus safely conclude that the distribution for finished paths has a greater mean!
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-   <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" style="max-width: 80%; height: auto;" alt='distrib_links_to_target'
-   class='responsive-iframe'></iframe>
+   <iframe src="/ada-outlier-datastory/assets/img/distrib_links_to_target" style="max-width: 80%; height: auto;" alt='distrib_links_to_target'></iframe>
 </div>
 
 <div class="chat">
@@ -446,7 +443,7 @@ Another parameter that influence the success might be the number of links leadin
 We first prepare the data: we split it in training, validation and testing datasets. 80% of the samples goes in the training set, whereas validation and testing sets gather 10% of the samples each. We use a logistic regression model that we fit on the training set. The data is quite imbalanced: more than 70% of the games are wins! We thus use sample weights to mitigate this effect. We fix the level of significance for the coefficients at 0.01. Here are the coefficients with p-value below the significance threshold:
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
    <iframe src="/ada-outlier-datastory/assets/img/results_log_reg_cat.html" 
-   class="responsive-iframe" style="max-width: 80%; height: auto;" alt='results_log_reg'></iframe>
+   style="max-width: 80%; height: auto;" alt='results_log_reg'></iframe>
 </div>
 
 <div class="chat">
@@ -666,7 +663,7 @@ To see more in details how this plays out, we create the following heatmap where
 
 <iframe 
     src="/ada-outlier-datastory/assets/img/heatmap_difference.html" 
-    class="responsive-iframe" 
+    
     height="630px"
     title=" ">
 </iframe>

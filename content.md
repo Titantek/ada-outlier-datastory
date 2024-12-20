@@ -444,7 +444,7 @@ We first prepare the data: we split it in training, validation and testing datas
    <div class="Marty_crazy">
       <div class="icon"></div>
       <div class="message">
-        Oh wow! It looks like you were right about the trends Doc! But how do we interpret all of this?
+        Oh wow! It looks like you were right about the trends Doc! Some categories seems to influence the success rate! But how do we interpret all of this?
       </div>
    </div>
 
@@ -802,35 +802,35 @@ As we saw, many differences exist between the 2 networks, but it is hard to conc
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      We saw that there are several changes in the structure of wikipedia, but what are the possible consequences of these changes on the player's performances?
+      We saw that there are several changes in the structure of Wikipedia, but what are the possible consequences of these changes on the player's performances?
       </div>
    </div>
 
    <div class="Doc_crazy">
       <div class="message">
-      I don't know Marty, but we can analyze the player's path to see if he could reach in theory the target page in less clicks in 2024 than in 2007.
+      I don't know Marty, but we can analyze the player's path to see if he could have reached in theory the target page in less clicks in 2024 than in 2007!
       </div>
       <div class="icon"></div>
    </div>
 </div>
 
-To analyze the player's path, we will analyze the case where the player's path is unfinished and finished. First, we will process the player's path to detect if the target was encountered by the player during his game. Then, we will count the number of paths that could have been shortened and compare the number of clicks that could be saved by the players in the structure of wikipedia in 2007 and 2024 based on the current path choosen by the player.
+To analyze the player's path, we take both finished and unfinished paths into account. First, we will process the player's path to detect if the target was encountered by the player during his game before the end. Then, we will count the number of paths that could have been shortened. It will allow us to compare the number of clicks that could have been saved by the players thanks to the structure of Wikipedia in 2007 and 2024. 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
    <img src="/ada-outlier-datastory/assets/img/comparison_nb_paths.svg" alt="Unfinished Path" style="max-width: 70%; height: auto;">
 </div>
 
 
-Globally, we observe that for the most of the game player there is no difference in the number of game shortened between 2007 and 2024. But we can see that the 2024 version shortened more path than 2007 whether for unfinished and finished paths. This might suggests that the 2024 version has the potential to make players stronger ? That said, let's not jump to conclusions and take a closer look...
+Globally, we observe that for most of the games played, the shortened paths have the same length in 2007 and 2024. However, the shortened paths are shorter in the 2024 version than in the 2007 one for the finished paths. This might suggests that the 2024 version is easier to play. Let's not jump to conclusions and take a closer look... We plot the number of clicked saved by game.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
    <img src="/ada-outlier-datastory/assets/img/comparison_nb_clicks.svg" alt="Comparison finished / unfinished path" style="max-width: 70%; height: auto;">
 </div>
 
 
-Looking at the number of clicks saved, it turns out 2007 does better for unfinished paths compared to 2024, even though it impacts fewer paths overall (305 paths for 833 clicks saved in 2007 versus 423 paths for 705 clicks saved in 2024). On the other hand, for finished paths, 2024 clearly takes the lead, with 3,863 clicks saved across 2,716 paths, compared to just 1,000 clicks saved for 1,000 paths in 2007.
+Looking at the number of clicks saved, it turns out that more clicks can be saved in the 2007 version for unfinished paths than in the 2024 version. However, it impacts fewer paths overall (305 paths for 833 clicks saved in 2007 versus 423 paths for 705 clicks saved in 2024). On the other hand, for finished paths, 2024 clearly takes the lead, with 3 863 clicks saved across 2 716 paths, compared to only 1 000 clicks saved for 1 000 paths in 2007.
 
-Based on this results, it seems like that the structure of wikipedia in 2024 would allow to players to reach the target faster than in 2007.
+Based on this results, it seems like that the structure of wikipedia in 2024 would allow to players to reach the target with less clicks than in 2007.
 
 ## 3.B. Structural comparison
 
@@ -839,7 +839,7 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
    <div class="Marty">
       <div class="icon"></div>
       <div class="message">
-      Hmmmm, we just saw that the player's path is different, but how can we compare if the structure of the wikipedia in 2024 and now is more efficient?
+      Hmmmm, we just saw that the player's path is different, but how can we know if the structure of Wikipedia now is more efficient than in 2007?
       </div>
    </div>
 
@@ -853,16 +853,16 @@ Based on this results, it seems like that the structure of wikipedia in 2024 wou
 </div>
 
 {: .box-note}
-   To compare wikipedia's structure between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two methods: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
+   To compare the structure of Wikipedia between 2007 and 2024, we compute the similarity between articles based on their content and structure. We use two metrics: `Node2Vec`, which captures the graph structure, and `Sentence-BERT`, which analyzes textual content of the first paragraph of the article. We will observe the evolution of both structural and content-based similarity between articles in 2007 and 2024 and then combine them to get the similarity score of each article. 
    \
    \
-   The similarity is calculated as follows: $$ \begin{equation}
-      \text{similarity score}(article) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(article, article_i)
+   Each similarity metric is calculated as follows: $$ \begin{equation}
+      \text{similarity metric}(\text{article}) = \frac{1}{n} \sum_{i=1}^{n} \text{similarity}(\text{article}, \text{article}_i)
    \end{equation} $$\
-   where $$n$$ is the number of outgoing links of the article, and $$article_i$$ is the $$i$$-th article linked to the article.\
+   where $$n$$ is the number of outgoing links of the article, and $$\text{article}_i$$ is the $$i$$-th article linked to the article.\
    \
-   Then, our similarity score is the average of the similarity scores obtained with the two methods.\
-      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$\
+   Then, our similarity score is the average of the similarity metrics obtained with the two methods.\
+      $$ \text{similarity}(a_1, a_2) = \frac{1}{2} \left( \text{similarity metric}(a_1, a_2)_{\text{Node2Vec}} + \text{similarity metric}(a_1, a_2)_{\text{Sentence-BERT}} \right) $$\
    where $$a_1$$ and $$a_2$$ are two articles.
 
 First let's see the structural and content-based similarity between articles in 2007 and 2024.
@@ -871,7 +871,7 @@ First let's see the structural and content-based similarity between articles in 
    <img src="/ada-outlier-datastory/assets/img/node2vec_and_sbert.png" alt="Node2Vec and SBERT" style="max-width: 70%; height: auto;">
 </div>
 
-We can observe a slight improvement in the similarity for both structural and content-based similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia has evolved to be more coherent and organized.
+We can observe a slight improvement in the similarity for both structural and content-based similarity between articles in 2024 compared to 2007. The similarity between articles in 2024 is higher than in 2007, which indicates that the structure of Wikipedia evolved and became more coherent and organized.
 
 The combined similarity score of each article is calculated by taking the average of the structural and content-based similarity scores. The combined similarity score is then used to compare the structure of Wikipedia in 2007 and 2024.
 
@@ -879,9 +879,9 @@ The combined similarity score of each article is calculated by taking the averag
    <img src="/ada-outlier-datastory/assets/img/similarity.png" alt="Combined similarity score" style="max-width: 70%; height: auto;">
 </div>
 
-Again, we observe that the distribution of the combined similarity scores of articles in 2024 is slightly higher than in 2007. But is this difference significant? We perform a T-test to compare the two distributions. We choose a significance level of $$\alpha=5$$% and we obtain a p-value < 0.05. Thus, that provides very strong evidence that the mean of the distribution of similarities of 2007 is less than the mean of the distribution of similarities of 2024.
+Again, we observe that the distribution of the combined similarity scores of articles in 2024 is slightly higher than in 2007. But is this difference significant? We perform a t-test to compare the two distributions. We choose a significance level of $$\alpha=5$$% and we obtain a p-value smaller than 0.05. Thus, that provides very strong evidence that the mean of the distribution of similarities of 2007 is less than the mean of the distribution of similarities of 2024.
 
-The evolution of Wikipedia's structure from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.
+The evolution of the structure of Wikipedia from 2007 to 2024 has led to an improvement in the similarity between articles. The structure of Wikipedia in 2024 is more coherent and organized than in 2007.
 
 <div class="chat">
 

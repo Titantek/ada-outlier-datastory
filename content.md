@@ -948,11 +948,17 @@ Reasoning: [REASONING]\
 Answer: Hence the choice is: '[ANSWER]'*
 
 
-We will select the games that the model will play based on the number of time the games were attempted by the players. To visualize the number of attempts per game, we will use a CCDF plot. We will use the players path length distribution to select the maximum number of prompts we will give to the model per game, we will choose the tail of the path length distribution as the maximum number of prompts.
+
+We will select the games for the model to play based on how many times each game was attempted by the players, visualized using a CCDF plot. Additionally, we will determine the maximum number of prompts to give the model per game by analyzing the players' path length distribution. Using the CCDF of the path length.
+
+{: .box-note}
+**CCDF** is the complementary cumulative distribution function (CCDF) of a probability distribution. It is used to visualize the tail of the distribution. The CCDF is defined as: $$ CCDF(x) = 1 - CDF(x) $$
+
+
 
 ![players_path_length](assets/img/llm_parameter.svg)
 
-From the CCDF, we observe that the number of attempts no longer decreases after 10. Therefore, we will focus on games that players have attempted more than 10 times. Additionally, the tail of the path length distribution tapers off around 50 clicks, so we will limit the maximum number of clicks the model can make per game to 50.
+From the CCDF, we observe that the number of attempts stops decreasing after 10, so we will focus on games that players have attempted more than 10 times. On the path length CCDF graph, the distribution seems to taper off around 30 clicks. However, we set the maximum number of clicks for the model to 50 to allow additional room for evaluation, particularly in cases where the model may perform less effectively and require more steps to complete the task.
 
 ## 4.B. Comparison of the models with the players
 
@@ -976,17 +982,17 @@ From the CCDF, we observe that the number of attempts no longer decreases after 
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data to see which model perfom the most like the players. Once we have the results, we will generate the data for 2024 with the selected model.</div>
+      <div class="message">Yes Marty, instead of generating the data directly for 2007 and 2024, we will compare the performance of the models on the 2007 data, to see which model perfom the most like the players. Once we have the results, we will generate the data for 2024 with the selected model.</div>
    </div>
 
 </div>
 
 
-First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths not found by llama3 and mistral.
+First, we are interested if LLMs models are able to find a path to the target article. We will compare the number of paths found by llama3 and mistral.
 
-![llms_path_not_found](assets/img/llms_path_not_found.svg)
+![llms_path_found](assets/img/llms_path_not_found.svg)
 
-We observe that llama3 finds 2% more paths than mistral.
+We observe that llama3 finds 3% more paths than mistral.
 
 We are now focusing on analyzing the path length distribution of the Llama3 and Mistral models, comparing them to the players' path length distribution to determine if either model aligns with the players' behavior.
 
@@ -1034,7 +1040,7 @@ Finally, based on the results, we can conclude that neither model behaves like t
 
    <div class="Doc">
       <div class="icon"></div>
-      <div class="message">Yes, we can generate the data for 2024 with llama3 and compare the performance of llama3 between 2007 and 2024.</div>
+      <div class="message">Yes, let's dive into it Marty!</div>
    </div>
 </div>
 
@@ -1051,7 +1057,7 @@ We observe that Llama3 in 2024 exhibits a better path length distribution compar
 In conclusion, we can state that Llama3's performance has improved between 2007 and 2024. As a result, players in 2024 are likely to reach the target page in fewer clicks compared to 2007.
 
 
-# Conclusion: A happy ending
+# Conclusion: 🎉 A happy ending 🎉
 
 - We analyzed the performance of players on articles from 2007 
   - Article are not evenly distributed among each categories

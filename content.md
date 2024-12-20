@@ -990,11 +990,17 @@ First, we are interested if LLMs models are able to find a path to the target ar
 
 We observe that llama3 finds 2% more paths than mistral.
 
-But does any of the models the same path length distribution as the players? We can compare the path length distribution of the players with the path length distribution of the models.
+Now, we are interested in the path length distribution of the models. We will compare the path length distribution of the players with the path length distribution of the models.
 
 ![llms_player_path_length_distribution](assets/img/model_player_distribution.svg)
 
-llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases.
+LLama3 seems to be slightly better than mistral in terms of path length distribution. Let's confirm this by doing a t-test. We choose a significance level of $$\alpha=5$$% and we obtain for llama3 a `p-value` = $$0.52$$ and a `statistic` of $$0.647$$ and for mistral a `p-value` = $$0.0006$$ and a `statistic` of $$3.428$$. Thus, we reject the null hypothesis for mistral and we can't reject the null hypothesis for llama3. We can conclude that llama3 is better than mistral in terms of path length distribution.
+
+Finally, we are interested if the models fall in the confidence interval of the players (in the standard deviation of the players). We will compare the confidence interval of llama3 and mistral.
+
+![llms_confidence_interval](assets/img/CI_player_model.svg)
+
+llama3 falls in 78.5% of the cases in the confidence interval of the players, while mistral falls in 69.1% of the cases. This strengthens the idea that llama3 is better than mistral.
 
 But, does the model find the same path as the players? We can compute the Jaccard similarity between the paths of the players and the models to determine if the path contains the same articles.
 
@@ -1007,7 +1013,30 @@ Finally, based on the result we can says that boths models don't act like a play
 
 ## LLMs performance between 2007 and 2024
 
+<div class="chat">
+
+  <div class="Marty">
+    <div class="icon"></div>
+    <div class="message">Doc, we have seen that llama3 is better than mistral in terms of path length distribution and falls in the confidence interval of the players in 78.5% of the cases. So, can we generate the data for 2024 with llama3 and compare the performance of llama3 between 2007 and 2024?</div>
+  </div>
+
+   <div class="Doc">
+      <div class="icon"></div>
+      <div class="message">Yes, we can generate the data for 2024 with llama3 and compare the performance of llama3 between 2007 and 2024.</div>
+   </div>
+</div>
+
+To observe the performance of llama3 between 2007 and 2024, we will compare the number of paths found by llama3, the path length distribution of llama3 between 2007 and 2024.
+
+![llama3_2007_2024](assets/img/llama_path_not_found.svg)
+
+We observe that llama3 in 2024 finds 4% more paths than in 2007. But, does llama3 in 2024 have a better path length distribution than in 2007?
+
 ![llama3_2007_2024](assets/img/llama3_2007_2024.svg)
+
+We observe that llama3 in 2024 has a better path length distribution than in 2007. Let's confirm this by doing a t-test. We choose a significance level of $$\alpha=5$$% and we obtain a `p-value` = $$0.047$$ and a `statistic` = $$-1.99$$. Thus, we reject the null hypothesis and conclude that llama3 in 2024 has a better path length distribution than in 2007.
+
+Finally, we can conclude that the performance of llama3 has improved between 2007 and 2024. And so, the players playing in 2024 should be able to reach the target page in less clicks than in 2007.
 
 
 # References

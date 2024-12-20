@@ -480,8 +480,9 @@ Let us now compare the differences between the old Wikipedia from 2007 and our c
 
 As a first analysis, let's just compare basic statistics on the two different Wikipedias, such as the number of links per article on average and its distribution: 
 
-
-![distrib_links_per_article](/ada-outlier-datastory/assets/img/distrib_links_per_article.png)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/distrib_links_per_article.png" alt="distrib_links_per_article" style="max-width: 70%; height: auto;">
+</div>
 
 As expected, there is much more links per page **on average** in our 2024 dataset! The distribution also shows that more pages have a higher number of links. This could probably influence users' performances. 
 
@@ -504,7 +505,9 @@ As expected, there is much more links per page **on average** in our 2024 datase
 
 In the plot below, we visualize on the x axis every article within our dataset of the 4604 selected articles from the Wikispeedia game and compute the difference in the number of links between the two timepoints. Anything above zero, in green, represents more links in 2024 than in 2007, and anything below, in orange, corresponds to less links on the page in 2024 than in 2007.
 
-![diff_links_per_article](/ada-outlier-datastory/assets/img/diff_links_per_article.png)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/diff_links_per_article.png" alt="diff_links_per_article" style="max-width: 70%; height: auto;">
+</div>
 
 <div class="chat">
   <div class="Doc">
@@ -651,7 +654,10 @@ In 2024, there is no such node really 'dominating' the rest. The top node become
 
 On this plot, we can compare the reachability of the two networks: 
 
-![reachable_nodes](/ada-outlier-datastory/assets/img/reachable_nodes.png)
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+   <img src="/ada-outlier-datastory/assets/img/reachable_nodes.png" alt="reachable_nodes" style="max-width: 70%; height: auto;">
+</div>
 
 We can observe a few things: first, the 2024 curve does not plateau at the same value as the 2007 one. This can be explained by a few factors: in our 2024 dataset, some articles from 2007 have been deleted and thus will never be reachable in 2024. There are also some articles that may have lost all their incoming links in 2024 because the link structure got completely changed and more specialized. Thus no link from the selected 4604 articles could redirect to them as there were not close enough. 
 Secondly, we see that both curves follow the same pattern, with a very sharp increase, and then reaching a plateau. This is a typical behaviour of internet networks and reflects a good connectivity and efficiency of routing. With each link clicked, the increase in average reachable nodes is extremely big. The biggest increase in both curves occurs between hop 2 and 3. This reveals the presence of central hubs that allow redirection to many other nodes when reached. This information is also reflected by the very small average shortest paths that we have observed earlier on.

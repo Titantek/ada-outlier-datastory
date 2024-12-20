@@ -1319,21 +1319,60 @@ button:hover {
   display: flex;
   gap: 20px;
 }
-/* TOC Wrapper */
+/* TOC Wrapper - Larger Sidebar */
 #toc-wrapper {
+  font-family: 'Roboto', sans-serif;
   position: fixed;
   top: 0;
-  left: -300px; /* Initially hidden */
-  width: 300px;
+  left: -30%; /* Initially hidden */
+  width: 30%; /* Increased width */
   height: 100%;
-  background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-color: #312f6a;
   border-right: 1px solid #ccc;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  padding: 20px;
+  padding: 25px;
   z-index: 1000;
   transition: left 0.3s ease-in-out;
 }
+
+/* TOC Title */
+#toc-wrapper h2 {
+  margin-top: 40px;
+  font-size: 20px; /* Increased font size */
+  color: white; /* Primary color */
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #403c8a; /* Primary color */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* TOC Links */
+#table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#table-of-contents li {
+  margin: 5px 0;
+}
+
+#table-of-contents li a {
+  font-size: 16px; /* Adjust font size */
+  color: white; /* Primary color */
+  padding: 5px;
+  border-radius: 4px;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* #table-of-contents li a:hover {
+  background-color: #007bff;
+  color: #ffffff;
+} */
 
 /* Main Content */
 #markdown-content {
@@ -1344,10 +1383,10 @@ button:hover {
 /* TOC Toggle Button */
 #toggle-toc {
   position: fixed;
-  top: 20px;
-  left: 10px;
-  padding: 10px 15px;
-  background-color: #007bff;
+  top: 30px;
+  left: 0px;
+  padding: 5px 10px;
+  background-color: #b4b2bc;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1363,5 +1402,18 @@ button:hover {
 
 #toggle-toc i {
   margin: 0;
+}
+
+/* Indentation for Each Level */
+#table-of-contents ul ul {
+  margin-left: 20px; /* Level 2 Indentation */
+}
+
+#table-of-contents ul ul ul {
+  margin-left: 40px; /* Level 3 Indentation */
+}
+
+#table-of-contents ul ul ul ul {
+  margin-left: 60px; /* Level 4 Indentation */
 }
 

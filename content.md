@@ -140,11 +140,10 @@ Back in 2007, science articles represented almost 25% of the encyclopedia, where
 
 
 Let's first look at the links between the articles: from which to which category do the links go? Do they lead to an article from the same category or to another? Is it easy to navigate to another category? Each row corresponds to the category of the articles that the links come from, and each column corresponds to the category of the articles reached by the links. 
-<div style="display: flex; justify-content: center;">
-<p align="center">
-   <iframe src="/ada-outlier-datastory/assets/img/links_categories.html" 
+
+ <div class="iframe-container">
+   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/links_categories.html" 
       alt='links_categories' ></iframe>
-</p>
 </div>
 
 To answer this question, we can investigate the categories of starting articles and target articles of the players.
@@ -247,7 +246,7 @@ We can now have a look to the categories of starting articles and target article
    alt='categories_finished_paths_start2target'></iframe>
 </div>
  <div class="iframe-container">
-   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" alt='categories_unfinished_paths_start2target'></iframe>>
+   <iframe id="myIframe" src="/ada-outlier-datastory/assets/img/categories_unfinished_paths_start2target_datastory.html" alt='categories_unfinished_paths_start2target'></iframe>
 </div>
 
 Both heatmaps look similar! But what do the statistics tell us? Let's perform a $$\chi^2$$ contingency test: our null hypothesis is that the distributions are identical. 
